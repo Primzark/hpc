@@ -1,0 +1,23 @@
+name: FTP Deploy
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on changes to 'main' branch
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # This checks out your code
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # The action to deploy via FTP
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Folder where files will be uploaded
+          local-dir: ./  # Upload everything from the repository
