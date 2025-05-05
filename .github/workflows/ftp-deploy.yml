@@ -19,5 +19,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Folder where files will be uploaded
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}/  # Folder where files will be uploaded
           local-dir: ./  # Upload everything from the repository
