@@ -51,54 +51,65 @@
     </div>
 </nav>
 
+
 <div class="custom-bg min-vh-100 py-5">
     <main class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
                 <!-- Page Title -->
-                <p class="display-6 fw-bold text-light mb-4">À propos</p>
+                <p class="display-6 fw-bold text-light mb-3">Rejoindre l’évènement</p>
+                <p class="fw-semibold custom-text mb-4">Inscription au tournoi</p>
 
-                <!-- Content Section -->
+                <!-- Form -->
                 <div class="form-section-bg p-4 rounded text-light">
+                    <form action="?page=valider_rejoindre_evenement" method="post">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="nom" class="form-label fw-semibold text-warning">Nom</label>
+                                <input type="text" class="form-control custom-bg" id="nom" name="nom"
+                                    placeholder="Entrez votre nom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="prenom" class="form-label fw-semibold text-warning">Prénom</label>
+                                <input type="text" class="form-control custom-bg" id="prenom" name="prenom"
+                                    placeholder="Entrez votre prénom" required>
+                            </div>
+                        </div>
 
-                    <!-- Notre histoire -->
-                    <p class="fw-bold mb-1">Notre histoire</p>
-                    <p class="custom-text mb-4">
-                        Fondé en 2010, le Harfleur Poker Club est né de la passion d’un groupe d’amateurs de poker
-                        souhaitant partager leur amour du jeu dans un cadre convivial. Depuis ses débuts modestes, le
-                        club a grandi pour devenir un lieu incontournable pour les joueurs de tous niveaux à Harfleur.
-                        Nous organisons des tournois réguliers et des événements communautaires.
-                    </p>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold text-warning">Adresse e-mail</label>
+                            <input type="email" class="form-control custom-bg" id="email" name="email"
+                                placeholder="Entrez votre e-mail" required>
+                        </div>
 
-                    <!-- Nos valeurs -->
-                    <p class="fw-bold mb-1">Nos valeurs</p>
-                    <p class="custom-text mb-4">
-                        Au Harfleur Poker Club, nous croyons en la camaraderie, le respect et l’esprit de compétition.
-                        Notre mission est de promouvoir le poker comme un jeu de stratégie et de plaisir, tout en
-                        offrant un environnement accueillant où chaque joueur peut s’épanouir, apprendre et créer des
-                        liens durables.
-                    </p>
+                        <div class="mb-4">
+                            <label for="commentaires" class="form-label fw-semibold text-warning">Commentaires
+                                (optionnel)</label>
+                            <textarea class="form-control custom-bg" id="commentaires" name="commentaires" rows="4"
+                                placeholder="Ajoutez des commentaires si nécessaire"></textarea>
+                        </div>
 
-                    <!-- Notre équipe -->
-                    <p class="fw-bold mb-1">Notre équipe</p>
-                    <p class="custom-text mb-4">
-                        Notre club est dirigé par une équipe dévouée, incluant notre président, Patrick PIEDNOEL, et un
-                        comité de bénévoles passionnés. Ensemble, ils organisent des événements mémorables et veillent à
-                        ce que chaque membre se sente chez lui au Harfleur Poker Club.
-                    </p>
+                        <!-- Buttons -->
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-warning btn-rounded w-100 fw-semibold">
+                                    <i class="bi bi-check2-circle me-2"></i>Confirmer l’inscription
+                                </button>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/Poker_website/src/Controller/RejoindreController.php"
+                                    class="btn btn-outline-warning btn-rounded w-100 d-flex align-items-center justify-content-center fw-semibold">
+                                    <i class="bi bi-arrow-left me-2"></i>Retour
+                                </a>
+                            </div>
+                        </div>
 
-                    <!-- Contactez-nous -->
-                    <p class="fw-bold mb-1">Contactez-nous</p>
-                    <p class="custom-text mb-0">
-                        Vous avez des questions ou souhaitez rejoindre le club ? Contactez-nous par email à <a
-                            href="mailto:patrick.piednoel@sfr.fr" class="text-warning">patrick.piednoel@sfr.fr</a> ou
-                        par téléphone au 06 28 20 64 35. Nous serons ravis de vous accueillir !
-                    </p>
-
+                    </form>
                 </div>
+
             </div>
         </div>
+        <?php include_once('../../templates/footer.php'); ?>
     </main>
-    <?php include_once('../../templates/footer.php'); ?>
 </div>

@@ -1,0 +1,92 @@
+.hero-text-bg {
+  background-image: url('/Poker_website/asset/img/Harfleur_poker_logo.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+ 
+  min-height: 300px;
+  
+}
+
+
+
+
+.custom-bg {
+  background-color: #181611 !important;
+}
+
+.custom-add {
+  background-color: #393628;
+}
+
+.custom-text {
+  color: #B8B29D;
+}
+
+.pitch-black {
+  background-color: #000000;
+}
+
+.form-section-bg {
+  background-color: #26241C;
+}
+
+.form-control.custom-bg {
+  color: #d8d8d8;
+  border: 1px solid #444;
+}
+
+.form-control.custom-bg::placeholder {
+  color: #6B7280;
+}
+
+.form-control.custom-add::placeholder {
+  color: #BAB49C;
+  opacity: 1; 
+}
+
+.login-hint {
+  color: #6B7280;
+}
+
+.field-text{
+ color:#BAB49C ;
+}
+
+.login-hint a {
+  color: #E6B619;
+  text-decoration: underline;
+}
+
+.form-control.custom-add,
+.form-control.custom-add:focus,
+.form-control.custom-add:-webkit-autofill {
+  color: #d8d8d8 !important;
+  background-color: #393628 !important;
+  border: 1px solid #444 !important;
+}
+
+.contact-icon {
+  color: #E6B619;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.section-divider {
+  border-top: 1px solid #6B7280;
+  margin: 1rem 0;
+}
+
+.nav-link:hover {
+  background-color: #393628;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s ease;
+}
+
+
+
+
+
+
+
+

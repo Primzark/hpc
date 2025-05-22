@@ -3,7 +3,7 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main  # Trigger deployment on changes to 'main' branch
+      - main  
 
 jobs:
   ftp-deploy:
@@ -11,13 +11,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # This checks out your code
+        uses: actions/checkout@v3  
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # The action to deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Déploiement FTP
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Folder where files will be uploaded
-          local-dir: ./  # Upload everything from the repository
+          server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Dossier ou les fichier vont etres envoyées.
+          local-dir: ./ 

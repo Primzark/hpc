@@ -1,0 +1,220 @@
+<?php include_once '../../templates/head.php'; ?>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-bg px-4 py-3 sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/Poker_website/public/index.php">
+            <span class="fw-bold text-white">Harfleur Poker Club</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-semibold"
+                            href="/Poker_website/src/Controller/DeconnexionController.php">Se déconnecter</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning fw-semibold"
+                            href="/Poker_website/src/Controller/ConnexionController.php">Se connecter</a>
+                    </li>
+                <?php endif; ?>
+                <li class="nav-item"><a class="nav-link text-white" href="/Poker_website/public/index.php">Accueil</a>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/ClassementController.php">Classement</a>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/RegleController.php">Règles du poker</a></li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/PartenaireController.php">Partenaires</a></li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/AjouterEvenementController.php">Ajouter un
+                        évènement</a>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/EvenementsController.php">Liste des évènements</a>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/ProposController.php">À
+                        propos</a></li>
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/ContactController.php">Nous
+                        contacter</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="custom-bg min-vh-100 py-5">
+    <main class="container">
+
+        <!-- Intro -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-12 col-lg-10">
+                <p class="text-light">
+                    Nous sommes fiers de collaborer avec des partenaires qui soutiennent le Harfleur Poker Club à
+                    travers le
+                    soutien aux évènements, des mentions dans la presse, et l’affichage de leurs logos sur nos
+                    équipements. Leur
+                    engagement nous permet de promouvoir le poker dans notre communauté et d’offrir des expériences
+                    mémorables à
+                    nos membres.
+                </p>
+            </div>
+        </div>
+
+        <!-- Partner 1 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/Logo-POKERSTARS.png" alt="PokerStars"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">PokerStars</p>
+                    <p class="custom-text mb-1">PokerStars, leader mondial du poker en ligne, est un partenaire clé qui
+                        soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 2 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/namur_casino.png" alt="Circus Casino Namur"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Circus Casino Namur</p>
+                    <p class="custom-text mb-1">Circus Casino Namur soutient nos évènements en offrant des espaces
+                        prestigieux pour nos tournois et en participant à l’organisation de compétitions d’envergure.
+                    </p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 3 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Pasino Le Havre</p>
+                    <p class="custom-text mb-1">Pasino Le Havre est un partenaire local qui accueille nos tournois en
+                        présentiel, offrant une expérience de jeu exceptionnelle à nos membres dans un cadre moderne.
+                    </p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 4 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Conforama</p>
+                    <p class="custom-text mb-1">Conforama, enseigne d’ameublement bien connue, soutient notre club en
+                        tant que sponsor local, contribuant à nos évènements et à notre visibilité.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 5 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/Logo_Texapoker2021_COULEUR(1).png" alt="Texapoker"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Texapoker</p>
+                    <p class="custom-text mb-1">Texapoker est un organisateur de tournois de poker qui collabore avec
+                        nous pour offrir des compétitions de haut niveau à nos joueurs.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 6 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/art_sport_poker_logo.png" alt="Art Sport Poker"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Art Sport Poker</p>
+                    <p class="custom-text mb-1">Art Sport Poker fournit des équipements et accessoires de poker,
+                        soutenant nos tournois avec des produits de qualité.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 7 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Auto-école d’Ingouville</p>
+                    <p class="custom-text mb-1">L’Auto-école d’Ingouville, située à proximité, est un partenaire local
+                        qui soutient nos initiatives communautaires et nos évènements.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 8 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/caval_brod_logo.png" alt="Caval Brod"
+                        class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">Caval Brod</p>
+                    <p class="custom-text mb-1">Caval Brod, entreprise locale, contribue à nos activités en tant que
+                        sponsor, renforçant notre présence dans la région.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Partner 9 -->
+        <div class="form-section-bg p-4 rounded mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <img src="/Poker_website/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
+                </div>
+                <div class="col-md-10">
+                    <p class="fw-bold text-light mb-1">DFDS</p>
+                    <p class="custom-text mb-1">DFDS, opérateur de ferries, soutient notre club en facilitant les
+                        déplacements pour nos tournois régionaux et internationaux.</p>
+                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <?php include_once('../../templates/footer.php'); ?>
+</div>

@@ -2,9 +2,9 @@
 session_start();
 require_once '../../config/database.php';
 
-// Vérifie que l'utilisateur est connecté
+// Redirection si l'utilisateur n'est pas connecté
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../../public/');
     exit;
 }
 
@@ -18,31 +18,17 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Vérifie si l'évènement existe
+// Récupère les infos de l'évènement
 $sql = "SELECT * FROM evenement WHERE id_eve = :id";
 $stmt = $pdo->prepare($sql);
 $stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
 $stmt->execute();
 $evenement = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Redirige si aucun évènement trouvé
+// Redirection si l'évènement n'existe pas
 if (!$evenement) {
     header('Location: ../../public/index.php');
     exit;
 }
 
-// Supprime les inscriptions liées à cet évènement (clé étrangère)
-$sql = "DELETE FROM s_inscrit_a WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-$stmt->execute();
-
-// Supprime l'évènement lui-même
-$sql = "DELETE FROM evenement WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-$stmt->execute();
-
-// Redirige vers la liste des évènements
-header('Location: ../../public/index.php?page=evenements');
-exit;
+include_once '../View/view_page_evenement.php';

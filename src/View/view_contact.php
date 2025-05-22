@@ -1,5 +1,6 @@
 <?php include_once '../../templates/head.php'; ?>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg px-4 py-3 sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center gap-2" href="/Poker_website/public/index.php">
@@ -44,7 +45,7 @@
                         href="/Poker_website/src/Controller/ProposController.php">À
                         propos</a></li>
                 <li class="nav-item"><a class="nav-link text-white"
-                        href="/Poker_website/src/Controller/ContactController.php">Nous
+                        href="/Poker_website/src/ControllerContactController.php">Nous
                         contacter</a></li>
             </ul>
         </div>
@@ -56,47 +57,57 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
+
                 <!-- Page Title -->
-                <p class="display-6 fw-bold text-light mb-4">À propos</p>
+                <p class="display-6 fw-bold text-light mb-4">Nous Contacter</p>
 
-                <!-- Content Section -->
-                <div class="form-section-bg p-4 rounded text-light">
+                <!-- Contact Info Section -->
+                <div class="form-section-bg p-4 rounded text-light mb-4">
 
-                    <!-- Notre histoire -->
-                    <p class="fw-bold mb-1">Notre histoire</p>
-                    <p class="custom-text mb-4">
-                        Fondé en 2010, le Harfleur Poker Club est né de la passion d’un groupe d’amateurs de poker
-                        souhaitant partager leur amour du jeu dans un cadre convivial. Depuis ses débuts modestes, le
-                        club a grandi pour devenir un lieu incontournable pour les joueurs de tous niveaux à Harfleur.
-                        Nous organisons des tournois réguliers et des événements communautaires.
+                    <p class="fw-semibold text-light mb-3">
+                        <i class="bi bi-info-circle-fill text-warning me-2"></i>Informations de Contact
                     </p>
+                    <div class="section-divider"></div>
 
-                    <!-- Nos valeurs -->
-                    <p class="fw-bold mb-1">Nos valeurs</p>
-                    <p class="custom-text mb-4">
-                        Au Harfleur Poker Club, nous croyons en la camaraderie, le respect et l’esprit de compétition.
-                        Notre mission est de promouvoir le poker comme un jeu de stratégie et de plaisir, tout en
-                        offrant un environnement accueillant où chaque joueur peut s’épanouir, apprendre et créer des
-                        liens durables.
-                    </p>
+                    <div class="mb-3">
+                        <i class="bi bi-geo-alt-fill contact-icon"></i>
+                        <span class="fw-semibold text-warning">Adresse :</span>
+                        Harfleur Poker Club, 123 Rue de la Passion, 76600 Le Havre, France
+                    </div>
 
-                    <!-- Notre équipe -->
-                    <p class="fw-bold mb-1">Notre équipe</p>
-                    <p class="custom-text mb-4">
-                        Notre club est dirigé par une équipe dévouée, incluant notre président, Patrick PIEDNOEL, et un
-                        comité de bénévoles passionnés. Ensemble, ils organisent des événements mémorables et veillent à
-                        ce que chaque membre se sente chez lui au Harfleur Poker Club.
-                    </p>
+                    <div class="mb-3">
+                        <i class="bi bi-envelope-fill contact-icon"></i>
+                        <span class="fw-semibold text-warning">Email :</span>
+                        patrick.piednoel@sfr.fr
+                    </div>
 
-                    <!-- Contactez-nous -->
-                    <p class="fw-bold mb-1">Contactez-nous</p>
-                    <p class="custom-text mb-0">
-                        Vous avez des questions ou souhaitez rejoindre le club ? Contactez-nous par email à <a
-                            href="mailto:patrick.piednoel@sfr.fr" class="text-warning">patrick.piednoel@sfr.fr</a> ou
-                        par téléphone au 06 28 20 64 35. Nous serons ravis de vous accueillir !
-                    </p>
+                    <div class="mb-3">
+                        <i class="bi bi-telephone-fill contact-icon"></i>
+                        <span class="fw-semibold text-warning">Téléphone :</span>
+                        +33 123 45 67 89
+                    </div>
 
+                    <div>
+                        <i class="bi bi-share-fill contact-icon"></i>
+                        <span class="fw-semibold text-warning">Réseaux Sociaux :</span>
+                        Facebook | Twitter | Instagram
+                    </div>
                 </div>
+
+                <!-- Map Section -->
+                <div class="form-section-bg p-4 rounded text-light">
+                    <p class="fw-semibold text-light mb-3">
+                        <i class="bi bi-geo-fill text-warning me-2"></i>Notre Localisation
+                    </p>
+                    <div class="section-divider"></div>
+
+                    <div class="ratio ratio-16x9 rounded overflow-hidden">
+                        <iframe src="https://www.google.com/maps?q=Harfleur,France&output=embed" style="border:0;"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
             </div>
         </div>
     </main>
