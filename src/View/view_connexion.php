@@ -1,4 +1,5 @@
-<?php include_once '../../templates/head.php'; ?>
+<?php include_once('../../templates/head.php'); ?>
+
 
 <div class="custom-bg min-vh-100 d-flex align-items-center">
   <main class="container py-5">
@@ -44,4 +45,6 @@
       </div>
     </div>
   </main>
+  <?php include_once('../../templates/VisualFooter.php'); ?>
+  <?php include_once('../../templates/footer.php'); ?>
 </div>

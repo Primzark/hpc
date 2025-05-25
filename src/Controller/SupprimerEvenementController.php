@@ -2,47 +2,45 @@
 session_start();
 require_once '../../config/database.php';
 
-// Vérifie que l'utilisateur est connecté
+// Check user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../../public/index.php');
     exit;
 }
 
-// Vérifie que l'ID de l'évènement est bien fourni et valide
+// Validate event ID from GET
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header('Location: ../../public/index.php');
     exit;
 }
 
-// Connexion à la base de données
+$id_eve = (int) $_GET['id'];
+
+// Create PDO connection once
 $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Vérifie si l'évènement existe
-$sql = "SELECT * FROM evenement WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
+// Check if event exists
+$stmt = $pdo->prepare("SELECT * FROM evenement WHERE id_eve = :id");
+$stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
 $stmt->execute();
-$evenement = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Redirige si aucun évènement trouvé
-if (!$evenement) {
-    header('Location: ../../public/index.php');
+if (!$stmt->fetch(PDO::FETCH_ASSOC)) {
+    // Event not found, redirect to events list
+    header('Location: ../../public/index.php?page=evenements');
     exit;
 }
 
-// Supprime les inscriptions liées à cet évènement (clé étrangère)
-$sql = "DELETE FROM s_inscrit_a WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
+// Delete related inscriptions first due to foreign key constraints
+$stmt = $pdo->prepare("DELETE FROM s_inscrit_a WHERE id_eve = :id");
+$stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
 $stmt->execute();
 
-// Supprime l'évènement lui-même
-$sql = "DELETE FROM evenement WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
+// Delete the event itself
+$stmt = $pdo->prepare("DELETE FROM evenement WHERE id_eve = :id");
+$stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
 $stmt->execute();
 
-// Redirige vers la liste des évènements
+// Redirect back to events page
 header('Location: ../../public/index.php?page=evenements');
 exit;

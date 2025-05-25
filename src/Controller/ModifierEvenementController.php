@@ -1,88 +1,75 @@
 <?php
 session_start();
 require_once '../../config/database.php';
+require_once '../Model/model-evenement.php';
 
 $errors = [];
 $regex_basic = "/^[^#%^&*\][;}{=+\\|><\`~]*$/";
 
-// Fonction de nettoyage d'entrée
-function safeInput($data)
-{
+function safeInput($data) {
     return htmlspecialchars(trim($data));
 }
 
 // Redirection si non connecté
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../../public/index.php?page=connexion');
     exit;
 }
 
-// Vérification de l'ID évènement
+// Vérifie l’ID de l’événement
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../../public/index.php?page=accueil');
     exit;
 }
 
-$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$id_evenement = intval($_GET['id']);
+$evenement = Evenement::getById($id_evenement);
 
-// Récupération des données de l'évènement
-$sql = "SELECT * FROM evenement WHERE id_eve = :id";
-$stmt = $pdo->prepare($sql);
-$stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-$stmt->execute();
-$evenement = $stmt->fetch(PDO::FETCH_ASSOC);
-
-// Redirection si évènement non trouvé
+// Redirection si événement inexistant
 if (!$evenement) {
-    header('Location: ../../public/index.php');
+    header('Location: ../../public/index.php?page=accueil');
     exit;
 }
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $titre = safeInput($_POST['titre']);
+    $date = safeInput($_POST['date']);
+    $heure = safeInput($_POST['heure']);
+    $lieu = safeInput($_POST['lieu']);
+    $description = safeInput($_POST['description']);
 
-    if (empty($_POST['titre']) || !preg_match($regex_basic, $_POST['titre'])) {
+    // Validation
+    if (empty($titre) || !preg_match($regex_basic, $titre)) {
         $errors['titre'] = "Titre invalide";
     }
-
-    if (empty($_POST['date'])) {
+    if (empty($date)) {
         $errors['date'] = "Date obligatoire";
     }
-
-    if (empty($_POST['heure'])) {
+    if (empty($heure)) {
         $errors['heure'] = "Heure obligatoire";
     }
-
-    if (empty($_POST['lieu']) || !preg_match($regex_basic, $_POST['lieu'])) {
+    if (empty($lieu) || !preg_match($regex_basic, $lieu)) {
         $errors['lieu'] = "Lieu invalide";
     }
-
-    if (empty($_POST['description']) || !preg_match($regex_basic, $_POST['description'])) {
+    if (empty($description) || !preg_match($regex_basic, $description)) {
         $errors['description'] = "Description invalide";
     }
 
     if (empty($errors)) {
-        $sql = "UPDATE evenement 
-                SET eve_titre = :titre, 
-                    eve_date = :date, 
-                    eve_heure = :heure, 
-                    eve_lieu = :lieu, 
-                    eve_description = :description
-                WHERE id_eve = :id";
+        $success = Evenement::updateEvenement($id_evenement, [
+            'titre' => $titre,
+            'date' => $date,
+            'heure' => $heure,
+            'lieu' => $lieu,
+            'description' => $description
+        ]);
 
-        $stmt = $pdo->prepare($sql);
-
-        $stmt->bindValue(':titre', safeInput($_POST['titre']), PDO::PARAM_STR);
-        $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
-        $stmt->bindValue(':heure', $_POST['heure'], PDO::PARAM_STR);
-        $stmt->bindValue(':lieu', safeInput($_POST['lieu']), PDO::PARAM_STR);
-        $stmt->bindValue(':description', safeInput($_POST['description']), PDO::PARAM_STR);
-        $stmt->bindValue(':id', $_GET['id'], PDO::PARAM_INT);
-
-        if ($stmt->execute()) {
-            header('Location: PageEvenementController.php?id=' . $_GET['id']);
+        if ($success) {
+            header("Location: PageEvenementController.php?id=" . $id_evenement);
             exit;
+        } else {
+            $errors['global'] = "Erreur lors de la mise à jour de l'évènement.";
         }
     }
 }

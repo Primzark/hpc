@@ -1,4 +1,4 @@
-<?php include_once '../../templates/head.php'; ?>
+<?php include_once('../../templates/head.php'); ?>
 
 <div class="custom-bg min-vh-100 d-flex align-items-center">
     <main class="container py-5">
@@ -30,10 +30,10 @@
 
                     <form action="/Poker_website/src/Controller/UtilisateurInscriptionController.php" method="post">
                         <div class="mb-3">
-                            <label for="pseudo" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
-                            <input type="text" class="form-control custom-bg" id="pseudo" name="pseudo"
+                            <label for="nom" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
+                            <input type="text" class="form-control custom-bg" id="nom" name="nom"
                                 placeholder="Entrez votre nom d'utilisateur"
-                                value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>" required>
+                                value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
                         </div>
 
                         <div class="mb-3">
@@ -69,4 +69,6 @@
             </div>
         </div>
     </main>
+    <?php include_once('../../templates/VisualFooter.php'); ?>
+    <?php include_once('../../templates/footer.php'); ?>
 </div>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../../config/database.php';
+require_once '../../src/Model/model-evenement.php'; // include your Evenement model
 
 $errors = [];
 $regex = "/^[^#%^&*\][;}{=+\\|><`~]*$/";
@@ -56,28 +57,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $uploadDir = '../../asset/img/';
         $uploadPath = $uploadDir . $newName;
 
-        // DB connection
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $sql = "INSERT INTO evenement (eve_titre, eve_date, eve_heure, eve_lieu, eve_description, id_type_eve, eve_image)
-                VALUES (:titre, :date, :heure, :lieu, :description, :type, :image)";
-
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':titre', safeInput($_POST['titre']), PDO::PARAM_STR);
-        $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
-        $stmt->bindValue(':heure', $_POST['heure'], PDO::PARAM_STR);
-        $stmt->bindValue(':lieu', safeInput($_POST['lieu']), PDO::PARAM_STR);
-        $stmt->bindValue(':description', safeInput($_POST['details']), PDO::PARAM_STR);
+        // Determine type id based on titre
         $type = ($_POST['titre'] === 'Tournois') ? 2 : 1;
-        $stmt->bindValue(':type', $type, PDO::PARAM_INT);
-        $stmt->bindValue(':image', $newName, PDO::PARAM_STR);
 
-        if ($stmt->execute()) {
-            move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath);
-            header('Location: ../../public/index.php?page=accueil');
-            exit;
-        }
+        // Call the Evenement model method ajouter()
+        Evenement::ajouter(
+            safeInput($_POST['titre']),
+            safeInput($_POST['lieu']),
+            $_POST['date'],
+            $_POST['heure'],
+            safeInput($_POST['details']),
+            $newName,
+            $type
+        );
+
+        // Move uploaded file after successful DB insertion
+        move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath);
+
+        header('Location: ../../public/index.php?page=accueil');
+        exit;
     }
 }
 

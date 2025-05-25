@@ -7,9 +7,10 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Récupérer les 3 prochains tournois
 $sqlTournois = "SELECT * FROM evenement 
-                WHERE id_type_eve = 2 AND eve_date >= CURDATE() 
-                ORDER BY eve_date ASC 
+                WHERE id_type_eve = 2 
+                ORDER BY eve_date DESC 
                 LIMIT 3";
+
 $stmtTournois = $pdo->prepare($sqlTournois);
 $stmtTournois->execute();
 $tournois = $stmtTournois->fetchAll(PDO::FETCH_ASSOC);
