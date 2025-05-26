@@ -1,8 +1,8 @@
-document.getElementById('joinEventBtn').addEventListener('click', function() {
+document.getElementById('joinEventBtn').addEventListener('click', function () {
     const btn = this;
     const eventId = btn.getAttribute('data-event-id');
 
-    fetch('/Poker_website/src/Controller/rejoindre_evenement.php', {
+    fetch('/Poker_website/src/Controller/ajax_rejoindre_evenement.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'event=' + encodeURIComponent(eventId)
@@ -25,6 +25,3 @@ document.getElementById('joinEventBtn').addEventListener('click', function() {
     })
     .catch(() => alert('Erreur réseau, veuillez réessayer.'));
 });
-
-
-

@@ -2,7 +2,7 @@
 
 
 <div class="custom-bg min-vh-100 d-flex align-items-center">
-  <main class="container py-5">
+  <div class="container py-5">
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
 
@@ -44,7 +44,7 @@
 
       </div>
     </div>
-  </main>
-  <?php include_once('../../templates/VisualFooter.php'); ?>
-  <?php include_once('../../templates/footer.php'); ?>
+    <?php include_once('../../templates/VisualFooter.php'); ?>
+    <?php include_once('../../templates/footer.php'); ?>
+  </div>
 </div>

@@ -65,7 +65,7 @@
 
                         <!-- Buttons -->
                         <div class="d-flex flex-column flex-md-row gap-3">
-                            <button type="submit" class="btn btn-warning btn-rounded px-4">Publier</button>
+                            <button type="submit" class="btn btn-warning btn-rounded px-4">Ajouter</button>
                             <a href="/Poker_website/src/Controller/EvenementsController.php"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2"></span> Retour
@@ -75,5 +75,7 @@
                 </div>
             </div>
         </div>
+        <?php include_once('../../templates/VisualFooter.php'); ?>
+        <?php include_once('../../templates/footer.php'); ?>
     </div>
 </div>

@@ -33,16 +33,13 @@ if (!$evenement) {
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $titre = safeInput($_POST['titre']);
     $date = safeInput($_POST['date']);
     $heure = safeInput($_POST['heure']);
     $lieu = safeInput($_POST['lieu']);
     $description = safeInput($_POST['description']);
 
     // Validation
-    if (empty($titre) || !preg_match($regex_basic, $titre)) {
-        $errors['titre'] = "Titre invalide";
-    }
+  
     if (empty($date)) {
         $errors['date'] = "Date obligatoire";
     }
@@ -58,7 +55,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
         $success = Evenement::updateEvenement($id_evenement, [
-            'titre' => $titre,
             'date' => $date,
             'heure' => $heure,
             'lieu' => $lieu,

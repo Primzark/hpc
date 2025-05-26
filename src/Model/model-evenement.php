@@ -1,7 +1,9 @@
 <?php
-class Evenement {
+class Evenement
+{
 
-    public static function ajouter($titre, $lieu, $date, $heure, $description, $image, $id_type_eve) {
+    public static function ajouter($titre, $lieu, $date, $heure, $description, $image, $id_type_eve)
+    {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -18,7 +20,8 @@ class Evenement {
         $stmt->execute();
     }
 
-    public static function getAll() {
+    public static function getAll()
+    {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -27,7 +30,8 @@ class Evenement {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function getById($id_eve) {
+    public static function getById($id_eve)
+    {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -38,20 +42,21 @@ class Evenement {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public static function updateEvenement($id_eve, $data) {
+    public static function updateEvenement($id_eve, $data)
+    {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "UPDATE evenement 
-                SET eve_titre = :titre, eve_lieu = :lieu, eve_date = :date, eve_heure = :heure, eve_description = :description 
-                WHERE id_eve = :id";
+            SET eve_lieu = :lieu, eve_date = :date, eve_heure = :heure, eve_description = :description 
+            WHERE id_eve = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_eve);
-        $stmt->bindValue(':titre', $data['titre']);
         $stmt->bindValue(':lieu', $data['lieu']);
         $stmt->bindValue(':date', $data['date']);
         $stmt->bindValue(':heure', $data['heure']);
         $stmt->bindValue(':description', $data['description']);
         return $stmt->execute();
     }
+
 }

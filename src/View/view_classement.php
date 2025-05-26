@@ -61,7 +61,7 @@
 
             </div>
         </div>
+        <?php include_once('../../templates/VisualFooter.php'); ?>
+        <?php include_once('../../templates/footer.php'); ?>
     </div>
-     <?php include_once('../../templates/VisualFooter.php'); ?>
-    <?php include_once('../../templates/footer.php'); ?>
 </div>

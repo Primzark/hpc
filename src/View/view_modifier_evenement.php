@@ -14,19 +14,6 @@
                         method="post" enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
-                            <!-- Type d'évènement -->
-                            <div class="col-md-6">
-                                <label for="id_type_eve" class="form-label fw-semibold text-light">Type
-                                    d'évènement</label>
-                                <select class="form-select custom-select" id="id_type_eve" name="id_type_eve" required>
-                                    <option value="">Choisir un type</option>
-                                    <option value="2" <?= $evenement['id_type_eve'] == 2 ? 'selected' : '' ?>>Tournoi
-                                    </option>
-                                    <option value="1" <?= $evenement['id_type_eve'] == 1 ? 'selected' : '' ?>>Actualité
-                                    </option>
-                                </select>
-                            </div>
-
                             <!-- Lieu -->
                             <div class="col-md-6">
                                 <label for="lieu" class="form-label fw-semibold text-light">Lieu</label>
@@ -73,7 +60,7 @@
 
                         <!-- Buttons -->
                         <div class="d-flex flex-column flex-md-row gap-3">
-                            <button type="submit" class="btn btn-warning btn-rounded px-4">Publier</button>
+                            <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer modification</button>
                             <a href="/Poker_website/src/Controller/PageEvenementController.php"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2">&#8592;</span> Retour
@@ -83,7 +70,7 @@
                 </div>
             </div>
         </div>
+        <?php include_once('../../templates/VisualFooter.php'); ?>
+        <?php include_once('../../templates/footer.php'); ?>
     </div>
-    <?php include_once('../../templates/VisualFooter.php'); ?>
-    <?php include_once('../../templates/footer.php'); ?>
 </div>
