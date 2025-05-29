@@ -3,10 +3,11 @@ session_start();
 require_once '../../config/database.php';
 
 // Redirection si l'utilisateur n'est pas connecté
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     header('Location: ../../public/index.php');
+//     exit;
+// }
+
 
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);

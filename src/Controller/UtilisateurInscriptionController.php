@@ -54,10 +54,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
     if (empty($errors)) {
-        Utilisateur::ajouter($_POST['nom'], '', $_POST['email'], $_POST['password']);
-        header('Location: index.php'); // Redirection après succès
+        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password']);
+
+        // Récupère l'utilisateur fraîchement créé
+        $user = Utilisateur::getByEmail($_POST['email']);
+
+        // Démarre la session utilisateur
+        $_SESSION['user_id'] = $user['id_uti'];
+        $_SESSION['user_admin'] = $user['uti_admin'];
+
+        // Redirige vers l'accueil connecté
+        header('Location: ../../public/index.php?page=accueil');
         exit;
     }
+
 }
 
 include_once '../View/view_inscription.php'; // Affiche le formulaire

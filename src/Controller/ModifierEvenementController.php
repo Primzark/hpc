@@ -6,7 +6,8 @@ require_once '../Model/model-evenement.php';
 $errors = [];
 $regex_basic = "/^[^#%^&*\][;}{=+\\|><\`~]*$/";
 
-function safeInput($data) {
+function safeInput($data)
+{
     return htmlspecialchars(trim($data));
 }
 
@@ -39,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = safeInput($_POST['description']);
 
     // Validation
-  
+
     if (empty($date)) {
         $errors['date'] = "Date obligatoire";
     }

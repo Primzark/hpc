@@ -16,50 +16,62 @@
 
                 <!-- Form Container -->
                 <div class="form-section-bg p-4 rounded text-light">
-
-                    <!-- Display Errors -->
-                    <?php if (!empty($errors)): ?>
-                        <div class="alert alert-danger">
-                            <ul class="mb-0">
-                                <?php foreach ($errors as $error): ?>
-                                    <li><?= htmlspecialchars($error) ?></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endif; ?>
-
-                    <form action="/Poker_website/src/Controller/UtilisateurInscriptionController.php" method="post">
+                    <form action="/Poker_website/src/Controller/UtilisateurInscriptionController.php" method="post"
+                        novalidate>
+                        <!-- Nom -->
                         <div class="mb-3">
                             <label for="nom" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
-                            <input type="text" class="form-control custom-bg" id="nom" name="nom"
-                                placeholder="Entrez votre nom d'utilisateur"
+                            <input type="text"
+                                class="form-control custom-bg <?= isset($errors['nom']) ? 'is-invalid' : '' ?>" id="nom"
+                                name="nom" placeholder="Entrez votre nom d'utilisateur"
                                 value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
+                            <?php if (isset($errors['nom'])): ?>
+                                <div class="invalid-feedback"><?= $errors['nom'] ?></div>
+                            <?php endif; ?>
                         </div>
 
+                        <!-- Email -->
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
-                            <input type="email" class="form-control custom-bg" id="email" name="email"
-                                placeholder="Entrer votre mail" value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
-                                required>
+                            <input type="email"
+                                class="form-control custom-bg <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
+                                id="email" name="email" placeholder="Entrer votre mail"
+                                value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
+                            <?php if (isset($errors['email'])): ?>
+                                <div class="invalid-feedback"><?= $errors['email'] ?></div>
+                            <?php endif; ?>
                         </div>
 
+                        <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
-                            <input type="password" class="form-control custom-bg" id="password" name="password"
-                                placeholder="Entrer votre mot de passe" required>
+                            <input type="password"
+                                class="form-control custom-bg <?= isset($errors['password']) ? 'is-invalid' : '' ?>"
+                                id="password" name="password" placeholder="Entrer votre mot de passe" required>
+                            <?php if (isset($errors['password'])): ?>
+                                <div class="invalid-feedback"><?= $errors['password'] ?></div>
+                            <?php endif; ?>
                         </div>
 
+                        <!-- Confirmation mot de passe -->
                         <div class="mb-4">
                             <label for="confirm_password" class="form-label fw-semibold custom-text">Confirmer le mot de
                                 passe</label>
-                            <input type="password" class="form-control custom-bg" id="confirm_password"
-                                name="confirm_password" placeholder="Confirmer mot de passe" required>
+                            <input type="password"
+                                class="form-control custom-bg <?= isset($errors['confirm_password']) ? 'is-invalid' : '' ?>"
+                                id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe"
+                                required>
+                            <?php if (isset($errors['confirm_password'])): ?>
+                                <div class="invalid-feedback"><?= $errors['confirm_password'] ?></div>
+                            <?php endif; ?>
                         </div>
 
+                        <!-- Submit Button -->
                         <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-warning">S'inscrire</button>
                         </div>
 
+                        <!-- Login Link -->
                         <p class="text-center login-hint small">
                             Déjà un compte ? <a
                                 href="/Poker_website/src/Controller/ConnexionController.php">Connectez-vous ici</a>
@@ -68,6 +80,7 @@
                 </div>
             </div>
         </div>
+
         <?php include_once('../../templates/VisualFooter.php'); ?>
         <?php include_once('../../templates/footer.php'); ?>
     </div>

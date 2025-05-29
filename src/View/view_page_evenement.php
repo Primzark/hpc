@@ -6,43 +6,45 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-10">
 
-        <!-- Title + Modifier Button -->
+        <!-- Title + Modifier + Supprimer -->
         <div class="row align-items-center mb-4">
           <div class="col-md-6">
             <p class="display-6 fw-bold text-light mb-0">Info évènement</p>
           </div>
-          <div class="col-md-6 text-md-end mt-3 mt-md-0">
-            <a href="/Poker_website/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
-              class="btn btn-warning">Modifier</a>
-            <!-- Trigger Button -->
-            <button class="btn btn-sm custom-add text-light px-3 py-2" data-bs-toggle="modal"
-              data-bs-target="#confirmDeleteModal" data-event-id="<?= $evenement['id_eve'] ?>">
-              Supprimer
-            </button>
-            <!-- Delete Confirmation Modal -->
-            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content custom-bg text-light">
-                  <div class="modal-header border-0">
-                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmer la suppression</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                      aria-label="Fermer"></button>
-                  </div>
-                  <div class="modal-body">
-                    Êtes-vous sûr de vouloir supprimer cet évènement ?
-                  </div>
-                  <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Annuler</button>
-                    <a href="#" class="btn custom-add text-light" id="confirmDeleteBtn">Supprimer</a>
+          <?php if (isset($_SESSION['user_id'])): ?>
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+              <a href="/Poker_website/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                class="btn btn-warning">Modifier</a>
+
+              <!-- Trigger Button -->
+              <button class="btn btn-sm custom-add text-light px-3 py-2" data-bs-toggle="modal"
+                data-bs-target="#confirmDeleteModal" data-event-id="<?= $evenement['id_eve'] ?>">
+                Supprimer
+              </button>
+
+              <!-- Delete Confirmation Modal -->
+              <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content custom-bg text-light">
+                    <div class="modal-header border-0">
+                      <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmer la suppression</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Fermer"></button>
+                    </div>
+                    <div class="modal-body">
+                      Êtes-vous sûr de vouloir supprimer cet évènement ?
+                    </div>
+                    <div class="modal-footer border-0">
+                      <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Annuler</button>
+                      <a href="#" class="btn custom-add text-light" id="confirmDeleteBtn">Supprimer</a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-          </div>
+          <?php endif; ?>
         </div>
-
 
         <!-- Main Card -->
         <div class="form-section-bg p-4 rounded text-light">
@@ -74,20 +76,6 @@
                 </div>
               </div>
 
-
-              <div class="row mb-3">
-                <div class="col-6">
-                  <i class="bi bi-cash-coin text-warning me-2"></i>
-                  <span class="fw-semibold text-warning">Buy-in</span><br>
-                  <span class="custom-text">50 €</span>
-                </div>
-                <div class="col-6">
-                  <i class="bi bi-trophy-fill text-warning me-2"></i>
-                  <span class="fw-semibold text-warning">Prize Pool</span><br>
-                  <span class="custom-text">5 000 € garanti</span>
-                </div>
-              </div>
-
               <div class="row mb-3">
                 <div class="col-12">
                   <i class="bi bi-info-circle text-warning me-2"></i>
@@ -96,36 +84,41 @@
                 </div>
               </div>
 
-
             </div>
 
             <!-- Right Image Column -->
             <div class="col-md-6 text-center">
               <img src="/Poker_website/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
                 alt="Image de l'évènement" class="img-fluid rounded" style="max-height: 280px;">
-
             </div>
           </div>
 
           <!-- Action Buttons -->
           <div class="row g-3 mt-4">
-            <div class="col-md-6">
-              <a href="/Poker_website/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
-                class="btn btn-warning btn-rounded w-100 fw-semibold">
-                <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
-              </a>
+            <?php if (isset($_SESSION['user_id'])): ?>
+              <div class="col-md-6">
+                <a href="/Poker_website/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
+                  class="btn btn-warning btn-rounded w-100 fw-semibold">
+                  <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
+                </a>
+              </div>
+            <?php else: ?>
+              <div class="col-md-6 d-flex align-items-center">
+                <p class="text-warning mb-0 fw-semibold">
+                  Vous devez vous <a href="/Poker_website/src/Controller/ConnexionController.php"
+                    class="text-warning text-decoration-underline">connecter</a> pour pouvoir rejoindre l'évènement.
+                </p>
+              </div>
+            <?php endif; ?>
 
-
-              </a>
-
-            </div>
             <div class="col-md-6">
               <a href="/Poker_website/public/index.php"
-                class="btn btn-outline-warning btn-rounded w-100 d-flex align-items-center justify-content-center fw-semibold">
+                class="btn btn-outline-warning btn-rounded w-100 fw-semibold text-center">
                 <i class="bi bi-arrow-left me-2"></i> Retour
               </a>
             </div>
           </div>
+
 
         </div>
 
@@ -138,11 +131,12 @@
 
 <script>
   const deleteModal = document.getElementById('confirmDeleteModal');
-  deleteModal.addEventListener('show.bs.modal', function (event) {
-    const button = event.relatedTarget;
-    const eventId = button.getAttribute('data-event-id');
-    const confirmBtn = document.getElementById('confirmDeleteBtn');
-    confirmBtn.href = '/Poker_website/src/Controller/SupprimerEvenementController.php?id=' + eventId;
-
-  });
+  if (deleteModal) {
+    deleteModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const eventId = button.getAttribute('data-event-id');
+      const confirmBtn = document.getElementById('confirmDeleteBtn');
+      confirmBtn.href = '/Poker_website/src/Controller/SupprimerEvenementController.php?id=' + eventId;
+    });
+  }
 </script>

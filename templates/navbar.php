@@ -31,9 +31,13 @@
                         href="/Poker_website/src/Controller/RegleController.php">Règles du poker</a></li>
                 <li class="nav-item"><a class="nav-link text-white"
                         href="/Poker_website/src/Controller/PartenaireController.php">Partenaires</a></li>
-                <li class="nav-item"><a class="nav-link text-white"
-                        href="/Poker_website/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
-                </li>
+
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item"><a class="nav-link text-white"
+                            href="/Poker_website/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
+                    </li>
+                <?php endif; ?>
+
                 <li class="nav-item"><a class="nav-link text-white"
                         href="/Poker_website/src/Controller/EvenementsController.php">Liste des évènements</a></li>
                 <li class="nav-item"><a class="nav-link text-white"
