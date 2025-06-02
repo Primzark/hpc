@@ -48,7 +48,7 @@ class Evenement
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "UPDATE evenement 
-            SET eve_lieu = :lieu, eve_date = :date, eve_heure = :heure, eve_description = :description 
+            SET eve_lieu = :lieu, eve_date = :date, eve_heure = :heure, eve_description = :description, eve_image = :image 
             WHERE id_eve = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_eve);
@@ -56,6 +56,7 @@ class Evenement
         $stmt->bindValue(':date', $data['date']);
         $stmt->bindValue(':heure', $data['heure']);
         $stmt->bindValue(':description', $data['description']);
+        $stmt->bindValue(':image', $data['image']);
         return $stmt->execute();
     }
 

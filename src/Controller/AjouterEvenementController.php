@@ -13,7 +13,7 @@ function safeInput($string)
 
 // Redirect if not logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: /Poker_website/public/index.php');
     exit;
 }
 
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Move uploaded file after successful DB insertion
         move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath);
 
-        header('Location: ../../public/index.php?page=accueil');
+        header('Location: /Poker_website/public/index.php');
         exit;
     }
 }

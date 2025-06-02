@@ -5,32 +5,37 @@ include_once('../../templates/navbar.php');
 
 <div class="custom-bg min-vh-100 py-5">
     <div class="container">
-        <!-- Title -->
         <p class="display-6 fw-bold text-light mb-4">Classement</p>
 
-        <!-- Add button (only visible if user is connected) -->
         <?php if (isset($_SESSION['user_id'])): ?>
             <a href="/Poker_website/src/Controller/AjouterClassementController.php" class="btn btn-warning mb-4">
                 Ajouter un classement
             </a>
         <?php endif; ?>
 
-        <!-- Ranking Grid -->
         <div class="form-section-bg p-4 rounded">
             <div class="row g-0 text-light">
-                <!-- Header Row -->
                 <div class="row border-bottom py-2">
-                    <div class="col-2 col-md-1 fw-bold">Rang</div>
-                    <div class="col-6 col-md-7 fw-bold">Joueur</div>
-                    <div class="col-4 col-md-4 fw-bold">Points</div>
+                    <div class="col-1 fw-bold">Rang</div>
+                    <div class="col-6 fw-bold">Joueur</div>
+                    <div class="col-3 fw-bold">Points</div>
+                    <div class="col-2 fw-bold text-center">Action</div>
                 </div>
 
-                <!-- Data Rows -->
                 <?php foreach ($classement as $entry): ?>
-                    <div class="row border-bottom py-2 custom-text">
-                        <div class="col-2 col-md-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>
-                        <div class="col-6 col-md-7"><?= htmlspecialchars($entry['cla_nomjoueur']) ?></div>
-                        <div class="col-4 col-md-4"><?= htmlspecialchars($entry['cla_points']) ?></div>
+                    <div class="row border-bottom py-2 custom-text align-items-center">
+                        <div class="col-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>
+                        <div class="col-6"><?= htmlspecialchars($entry['cla_nomjoueur']) ?></div>
+                        <div class="col-3"><?= htmlspecialchars($entry['cla_points']) ?></div>
+
+                        <div class="col-2 text-center">
+                            <?php if (isset($_SESSION['user_id'])): ?>
+                                <a href="/Poker_website/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
+                                    class="btn btn-warning">
+                                    Supprimer
+                                </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
