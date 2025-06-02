@@ -5,7 +5,7 @@ require_once '../Model/model-evenement.php';
 require_once '../Model/model-inscription.php'; // ← AJOUT
 
 if (!isset($_GET['event']) || !is_numeric($_GET['event'])) {
-    header('Location: /Poker_website/public/index.php');
+    header('Location: ../../public/index.php');
     exit;
 }
 
@@ -13,7 +13,7 @@ $eventId = (int) $_GET['event'];
 $evenement = Evenement::getById($eventId); // updated method name
 
 if (!$evenement) {
-    header('Location: /Poker_website/public/index.php');
+    header('Location: ../../public/index.php');
     exit;
 }
 

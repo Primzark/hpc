@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['user_admin'] = $user['uti_admin'];
 
                 // Redirection vers la page d'accueil
-                header('Location: /Poker_website/public/index.php');
+                header('Location: ../../public/index.php');
                 exit;
             } else {
                 // Mot de passe incorrect

@@ -5,7 +5,7 @@ include_once "../Model/model-evenement.php";
 include_once "../Model/model-inscription.php";
 
 if (!isset($_GET['id'])) {
-    header("Location: /Poker_website/public/index.php");
+    header("Location: ../../public/index.php");
     exit;
 }
 

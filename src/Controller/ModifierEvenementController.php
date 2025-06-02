@@ -4,11 +4,33 @@ require_once '../../config/database.php';
 require_once '../Model/model-evenement.php';
 
 $errors = [];
-$regex_basic = "/^[^#%^&*\][;}{=+\\|><\`~]*$/";
+$regex_basic = "/^[^#%^&*\\][;}{=+\\|><`~]*$/";
 
 function safeInput($data)
 {
     return htmlspecialchars(trim($data));
+}
+
+function convertToWebP($sourcePath, $destinationPath, $quality = 80)
+{
+    $info = getimagesize($sourcePath);
+    $mime = $info['mime'];
+
+    if ($mime == 'image/jpeg') {
+        $image = imagecreatefromjpeg($sourcePath);
+        imagewebp($image, $destinationPath, $quality);
+        imagedestroy($image);
+        return true;
+    }
+
+    if ($mime == 'image/png') {
+        $image = imagecreatefrompng($sourcePath);
+        imagewebp($image, $destinationPath, $quality);
+        imagedestroy($image);
+        return true;
+    }
+
+    return false;
 }
 
 // Redirection si non connecté
@@ -19,7 +41,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Vérifie l’ID de l’événement
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: /Poker_website/public/index.php');
+    header('Location: ../../public/index.php');
     exit;
 }
 
@@ -39,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lieu = safeInput($_POST['lieu']);
     $description = safeInput($_POST['description']);
 
-    // Validation
     if (empty($date)) {
         $errors['date'] = "Date obligatoire";
     }
@@ -53,30 +74,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['description'] = "Description invalide";
     }
 
-    if (empty($errors)) {
-        // 1) Gestion du champ image : si upload, on le déplace, sinon on garde l’ancien
-        if (isset($_FILES['image']) && $_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE) {
-            if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
-                $newName = uniqid() . "_" . basename($_FILES['image']['name']);
-                $uploadDir = '../../asset/img/';
-                $uploadPath = $uploadDir . $newName;
+    $imageToSave = $evenement['eve_image'];
 
-                if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadPath)) {
-                    $imageToSave = $newName;
-                } else {
-                    $errors['image'] = "Impossible de déplacer le fichier uploadé.";
-                    $imageToSave = $evenement['eve_image'];
-                }
-            } else {
-                $errors['image'] = "Erreur lors de l'upload de l'image.";
-                $imageToSave = $evenement['eve_image'];
-            }
-        } else {
-            // Aucun fichier uploadé → on conserve l’ancien nom de l’image
-            $imageToSave = $evenement['eve_image'];
+    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $tmpPath = $_FILES['image']['tmp_name'];
+        $newFileName = uniqid() . '.webp';
+        $uploadDir = '../../asset/img/';
+        $destinationPath = $uploadDir . $newFileName;
+
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
         }
 
-        // 2) Appel de la mise à jour en base AVEC la clé 'image'
+        $conversionSuccess = convertToWebP($tmpPath, $destinationPath);
+        if ($conversionSuccess) {
+            $imageToSave = $newFileName;
+        } else {
+            $errors['image'] = "Format d'image non supporté (JPEG et PNG uniquement).";
+        }
+    }
+
+    if (empty($errors)) {
         $success = Evenement::updateEvenement($id_evenement, [
             'date' => $date,
             'heure' => $heure,

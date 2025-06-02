@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_admin'] = $user['uti_admin'];
 
         // Redirige vers l'accueil connecté
-        header('Location: ../../public/index.php?page=accueil');
+        header('Location: ../../public/index.php');
         exit;
     }
 
