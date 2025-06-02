@@ -11,7 +11,7 @@ function safeInput($string)
     return htmlspecialchars(trim($string));
 }
 
-function convertToWebP($sourcePath, $destinationPath, $quality = 80)
+function convertToWebP($sourcePath, $destinationPath, $quality = 75)
 {
     $info = getimagesize($sourcePath);
     $mime = $info['mime'];
