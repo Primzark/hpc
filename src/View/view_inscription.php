@@ -18,9 +18,13 @@
                 <div class="form-section-bg p-4 rounded text-light">
                     <form action="/Poker_website/src/Controller/UtilisateurInscriptionController.php" method="post"
                         novalidate>
+
                         <!-- Nom -->
                         <div class="mb-3">
                             <label for="nom" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
+                            <div class="form-text login-hint mb-1">
+                                Minimum 4 caractères. Lettres, chiffres, . _ - +
+                            </div>
                             <input type="text"
                                 class="form-control custom-bg <?= isset($errors['nom']) ? 'is-invalid' : '' ?>" id="nom"
                                 name="nom" placeholder="Entrez votre nom d'utilisateur"
@@ -33,6 +37,9 @@
                         <!-- Email -->
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
+                            <div class="form-text login-hint mb-1">
+                                Exemple : nom@domaine.com
+                            </div>
                             <input type="email"
                                 class="form-control custom-bg <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
                                 id="email" name="email" placeholder="Entrer votre mail"
@@ -45,6 +52,9 @@
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
+                            <div class="form-text login-hint mb-1">
+                                Minimum 4 caractères. Lettres, chiffres, . @ -
+                            </div>
                             <input type="password"
                                 class="form-control custom-bg <?= isset($errors['password']) ? 'is-invalid' : '' ?>"
                                 id="password" name="password" placeholder="Entrer votre mot de passe" required>

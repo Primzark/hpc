@@ -30,12 +30,15 @@
                     <?php endforeach; ?>
                 <?php endif; ?>
 
-                <div class="mt-4">
-                    <a href="/Poker_website/src/Controller/AjouterEvenementController.php"
-                        class="btn btn-warning btn-rounded w-100 fw-semibold">
-                        <i class="bi bi-plus-lg me-2"></i> Ajouter un évènement
-                    </a>
-                </div>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="mt-4">
+                        <a href="/Poker_website/src/Controller/AjouterEvenementController.php"
+                            class="btn btn-warning btn-rounded w-100 fw-semibold">
+                            <i class="bi bi-plus-lg me-2"></i> Ajouter un évènement
+                        </a>
+                    </div>
+                <?php endif; ?>
+
 
             </div>
         </div>

@@ -1,15 +1,19 @@
-<?php include_once('../../templates/head.php'); ?>
-<?php include_once('../../templates/navbar.php'); ?>
+<?php
+include_once('../../templates/head.php');
+include_once('../../templates/navbar.php');
+?>
 
 <div class="custom-bg min-vh-100 py-5">
     <div class="container">
         <!-- Title -->
         <p class="display-6 fw-bold text-light mb-4">Classement</p>
 
-        <!-- Add button -->
-        <a href="/Poker_website/src/Controller/AjouterClassementController.php" class="btn btn-primary mb-4">
-            Ajouter un classement
-        </a>
+        <!-- Add button (only visible if user is connected) -->
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="/Poker_website/src/Controller/AjouterClassementController.php" class="btn btn-warning mb-4">
+                Ajouter un classement
+            </a>
+        <?php endif; ?>
 
         <!-- Ranking Grid -->
         <div class="form-section-bg p-4 rounded">

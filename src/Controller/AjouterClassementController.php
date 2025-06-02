@@ -11,6 +11,11 @@ function safeInput($string)
     return htmlspecialchars(trim($string));
 }
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../../public/index.php');
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate player name
     if (!isset($_POST['cla_nomjoueur']) || trim($_POST['cla_nomjoueur']) === '') {
@@ -44,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         if ($result) {
-            header('Location: ../../public/index.php?page=classement');
+            header('Location: ../Controller/ClassementController.php');
             exit;
         } else {
             $errors['general'] = "Erreur lors de l'ajout du classement.";
