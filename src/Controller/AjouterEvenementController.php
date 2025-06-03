@@ -18,19 +18,15 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 75)
 
     if ($mime == 'image/jpeg') {
         $image = imagecreatefromjpeg($sourcePath);
-        imagewebp($image, $destinationPath, $quality);
-        imagedestroy($image);
-        return true;
-    }
-
-    if ($mime == 'image/png') {
+    } elseif ($mime == 'image/png') {
         $image = imagecreatefrompng($sourcePath);
-        imagewebp($image, $destinationPath, $quality);
-        imagedestroy($image);
-        return true;
+    } else {
+        return false;
     }
 
-    return false;
+    $result = imagewebp($image, $destinationPath, $quality);
+    imagedestroy($image);
+    return $result;
 }
 
 if (!isset($_SESSION['user_id'])) {
@@ -71,9 +67,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $type = ($_POST['titre'] === 'Tournois') ? 2 : 1;
 
+        // Insert event first (without image for now)
+        $pdo = new PDO(
+            'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8',
+            DB_USER,
+            DB_PASS
+        );
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("INSERT INTO evenement (eve_titre, eve_date, eve_heure, eve_lieu, eve_description, id_type_eve) 
+                                VALUES (:titre, :date, :heure, :lieu, :description, :type)");
+        $stmt->bindValue(':titre', safeInput($_POST['titre']), PDO::PARAM_STR);
+        $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
+        $stmt->bindValue(':heure', $_POST['heure'], PDO::PARAM_STR);
+        $stmt->bindValue(':lieu', safeInput($_POST['lieu']), PDO::PARAM_STR);
+        $stmt->bindValue(':description', safeInput($_POST['details']), PDO::PARAM_STR);
+        $stmt->bindValue(':type', $type, PDO::PARAM_INT);
+        $stmt->execute();
+        $id_evenement = $pdo->lastInsertId();
+
+        // Now handle image conversion after ID is generated
         $tmpPath = $_FILES['image']['tmp_name'];
-        $newName = uniqid() . '.webp';
         $uploadDir = '../../asset/img/';
+        $newName = "event_" . $id_evenement . ".webp";
         $uploadPath = $uploadDir . $newName;
 
         if (!is_dir($uploadDir)) {
@@ -83,15 +99,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conversionSuccess = convertToWebP($tmpPath, $uploadPath);
 
         if ($conversionSuccess) {
-            Evenement::ajouter(
-                safeInput($_POST['titre']),
-                safeInput($_POST['lieu']),
-                $_POST['date'],
-                $_POST['heure'],
-                safeInput($_POST['details']),
-                $newName,
-                $type
-            );
+            // Update event with image name
+            $stmt = $pdo->prepare("UPDATE evenement SET eve_image = :image WHERE id_eve = :id");
+            $stmt->bindValue(':image', $newName, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id_evenement, PDO::PARAM_INT);
+            $stmt->execute();
 
             header('Location: ../../public/index.php');
             exit;

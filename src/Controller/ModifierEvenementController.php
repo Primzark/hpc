@@ -18,19 +18,15 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 80)
 
     if ($mime == 'image/jpeg') {
         $image = imagecreatefromjpeg($sourcePath);
-        imagewebp($image, $destinationPath, $quality);
-        imagedestroy($image);
-        return true;
-    }
-
-    if ($mime == 'image/png') {
+    } elseif ($mime == 'image/png') {
         $image = imagecreatefrompng($sourcePath);
-        imagewebp($image, $destinationPath, $quality);
-        imagedestroy($image);
-        return true;
+    } else {
+        return false;
     }
 
-    return false;
+    $result = imagewebp($image, $destinationPath, $quality);
+    imagedestroy($image);
+    return $result;
 }
 
 // Redirection si non connecté
@@ -76,21 +72,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $imageToSave = $evenement['eve_image'];
 
-    if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-        $tmpPath = $_FILES['image']['tmp_name'];
-        $newFileName = uniqid() . '.webp';
-        $uploadDir = '../../asset/img/';
-        $destinationPath = $uploadDir . $newFileName;
+    if (empty($errors)) {
+        // Si une nouvelle image est uploadée
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+            $tmpPath = $_FILES['image']['tmp_name'];
+            $uploadDir = '../../asset/img/';
+            $newFileName = "event_" . $id_evenement . ".webp";
+            $destinationPath = $uploadDir . $newFileName;
 
-        if (!is_dir($uploadDir)) {
-            mkdir($uploadDir, 0777, true);
-        }
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
 
-        $conversionSuccess = convertToWebP($tmpPath, $destinationPath);
-        if ($conversionSuccess) {
-            $imageToSave = $newFileName;
-        } else {
-            $errors['image'] = "Format d'image non supporté (JPEG et PNG uniquement).";
+            $conversionSuccess = convertToWebP($tmpPath, $destinationPath);
+            if ($conversionSuccess) {
+                // Supprimer l'ancienne image si elle est différente
+                if (!empty($evenement['eve_image']) && $evenement['eve_image'] !== $newFileName) {
+                    $oldPath = $uploadDir . $evenement['eve_image'];
+                    if (file_exists($oldPath)) {
+                        unlink($oldPath);
+                    }
+                }
+                $imageToSave = $newFileName;
+            } else {
+                $errors['image'] = "Format d'image non supporté (JPEG et PNG uniquement).";
+            }
         }
     }
 
