@@ -22,13 +22,12 @@
                         <!-- Nom -->
                         <div class="mb-3">
                             <label for="nom" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
-                            <div class="form-text login-hint mb-1">
-                                Minimum 4 caractères. Lettres, chiffres, . _ - +
+                            <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . _ - +
                             </div>
                             <input type="text"
                                 class="form-control custom-bg <?= isset($errors['nom']) ? 'is-invalid' : '' ?>" id="nom"
                                 name="nom" placeholder="Entrez votre nom d'utilisateur"
-                                value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>" required>
+                                value="<?= isset($nom) ? htmlspecialchars($nom) : '' ?>">
                             <?php if (isset($errors['nom'])): ?>
                                 <div class="invalid-feedback"><?= $errors['nom'] ?></div>
                             <?php endif; ?>
@@ -37,13 +36,11 @@
                         <!-- Email -->
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
-                            <div class="form-text login-hint mb-1">
-                                Exemple : nom@domaine.com
-                            </div>
+                            <div class="form-text login-hint mb-1">Exemple : nom@domaine.com</div>
                             <input type="email"
                                 class="form-control custom-bg <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
                                 id="email" name="email" placeholder="Entrer votre mail"
-                                value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required>
+                                value="<?= isset($email) ? htmlspecialchars($email) : '' ?>">
                             <?php if (isset($errors['email'])): ?>
                                 <div class="invalid-feedback"><?= $errors['email'] ?></div>
                             <?php endif; ?>
@@ -52,12 +49,10 @@
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
-                            <div class="form-text login-hint mb-1">
-                                Minimum 4 caractères. Lettres, chiffres, . @ -
-                            </div>
+                            <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . @ -</div>
                             <input type="password"
                                 class="form-control custom-bg <?= isset($errors['password']) ? 'is-invalid' : '' ?>"
-                                id="password" name="password" placeholder="Entrer votre mot de passe" required>
+                                id="password" name="password" placeholder="Entrer votre mot de passe">
                             <?php if (isset($errors['password'])): ?>
                                 <div class="invalid-feedback"><?= $errors['password'] ?></div>
                             <?php endif; ?>
@@ -69,8 +64,7 @@
                                 passe</label>
                             <input type="password"
                                 class="form-control custom-bg <?= isset($errors['confirm_password']) ? 'is-invalid' : '' ?>"
-                                id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe"
-                                required>
+                                id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe">
                             <?php if (isset($errors['confirm_password'])): ?>
                                 <div class="invalid-feedback"><?= $errors['confirm_password'] ?></div>
                             <?php endif; ?>
@@ -88,6 +82,7 @@
                         </p>
                     </form>
                 </div>
+
             </div>
         </div>
 

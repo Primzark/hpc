@@ -2,27 +2,38 @@
 session_start();
 require_once '../../config/database.php';
 
+// Initialisation
 $errors = [];
 $email = '';
 $password = '';
 
+// Fonction de sécurisation
+function safeInput($string)
+{
+    return htmlspecialchars(trim($string));
+}
+
+// Vérifie la méthode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $email = htmlspecialchars(trim($_POST['email']));
-    $password = htmlspecialchars(trim($_POST['password']));
-
-    // Vérification des champs vides
-    if (empty($email)) {
+    // Validation Email
+    if (empty($_POST['email'])) {
         $errors['email'] = "Veuillez entrer votre email.";
+    } else {
+        $email = safeInput($_POST['email']);
     }
 
-    if (empty($password)) {
+    // Validation Password
+    if (empty($_POST['password'])) {
         $errors['password'] = "Veuillez entrer votre mot de passe.";
+    } else {
+        $password = $_POST['password'];
     }
 
-    // Si pas d'erreurs, on tente la connexion
+    // Si pas d'erreurs de validation de base
     if (empty($errors)) {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
+
+        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $stmt = $pdo->prepare("SELECT id_uti, uti_mdp FROM utilisateur WHERE uti_email = :email");
@@ -32,12 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['uti_mdp'])) {
             $_SESSION['user_id'] = $user['id_uti'];
-            header('Location: ../../public/index.php');
+            header("Location: ../../public/index.php");
             exit;
         } else {
-            $errors['general'] = "Identifiants incorrects.";
+            $errors['email'] = "Email ou mot de passe incorrect.";
+            $errors['password'] = "Email ou mot de passe incorrect.";
         }
     }
 }
 
-include_once('../View/view_connexion.php');
+// On appelle la vue en lui passant les variables
+require_once '../../src/View/view_connexion.php';
+?>

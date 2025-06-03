@@ -12,13 +12,12 @@
             <div class="form-error mb-3"><?= htmlspecialchars($errors['general']) ?></div>
           <?php endif; ?>
 
-
           <form action="/Poker_website/src/Controller/AjouterClassementController.php" method="post">
             <div class="mb-3">
               <label for="nom" class="form-label field-text">Nom du joueur</label>
               <input type="text" class="form-control custom-add <?= isset($errors['nomjoueur']) ? 'is-invalid' : '' ?>"
-                id="nom" name="cla_nomjoueur" placeholder="Ex: Jean Dupuis" required
-                value="<?= isset($_POST['cla_nomjoueur']) ? htmlspecialchars($_POST['cla_nomjoueur']) : '' ?>">
+                id="nom" name="cla_nomjoueur" placeholder="Ex: Jean Dupuis"
+                value="<?= isset($cla_nomjoueur) ? htmlspecialchars($cla_nomjoueur) : '' ?>">
               <?php if (isset($errors['nomjoueur'])): ?>
                 <div class="invalid-feedback"><?= htmlspecialchars($errors['nomjoueur']) ?></div>
               <?php endif; ?>
@@ -27,8 +26,8 @@
             <div class="mb-3">
               <label for="rang" class="form-label field-text">Rang</label>
               <input type="number" class="form-control custom-add <?= isset($errors['rang']) ? 'is-invalid' : '' ?>"
-                id="rang" name="cla_rang" placeholder="Ex: 1" min="1" required
-                value="<?= isset($_POST['cla_rang']) ? (int) $_POST['cla_rang'] : '' ?>">
+                id="rang" name="cla_rang" placeholder="Ex: 1" min="1"
+                value="<?= isset($cla_rang) ? (int) $cla_rang : '' ?>">
               <?php if (isset($errors['rang'])): ?>
                 <div class="invalid-feedback"><?= htmlspecialchars($errors['rang']) ?></div>
               <?php endif; ?>
@@ -37,13 +36,12 @@
             <div class="mb-3">
               <label for="points" class="form-label field-text">Points</label>
               <input type="number" class="form-control custom-add <?= isset($errors['points']) ? 'is-invalid' : '' ?>"
-                id="points" name="cla_points" placeholder="Ex: 1250" min="0" required
-                value="<?= isset($_POST['cla_points']) ? (int) $_POST['cla_points'] : '' ?>">
+                id="points" name="cla_points" placeholder="Ex: 1250" min="0"
+                value="<?= isset($cla_points) ? (int) $cla_points : '' ?>">
               <?php if (isset($errors['points'])): ?>
                 <div class="invalid-feedback"><?= htmlspecialchars($errors['points']) ?></div>
               <?php endif; ?>
             </div>
-
 
             <div class="text-end">
               <button type="submit" class="btn btn-warning">Ajouter</button>
