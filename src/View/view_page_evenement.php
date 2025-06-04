@@ -95,20 +95,22 @@
 
           <!-- Action Buttons -->
           <div class="row g-3 mt-4">
-            <?php if (isset($_SESSION['user_id'])): ?>
-              <div class="col-md-6">
-                <a href="/Poker_website/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
-                  class="btn btn-warning btn-rounded w-100 fw-semibold">
-                  <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
-                </a>
-              </div>
-            <?php else: ?>
-              <div class="col-md-6 d-flex align-items-center">
-                <p class="text-warning mb-0 fw-semibold">
-                  Vous devez vous <a href="/Poker_website/src/Controller/ConnexionController.php"
-                    class="text-warning text-decoration-underline">connecter</a> pour pouvoir rejoindre l'évènement.
-                </p>
-              </div>
+            <?php if ($evenement['id_type_eve'] == 2): ?>
+              <?php if (isset($_SESSION['user_id'])): ?>
+                <div class="col-md-6">
+                  <a href="/Poker_website/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
+                    class="btn btn-warning btn-rounded w-100 fw-semibold">
+                    <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
+                  </a>
+                </div>
+              <?php else: ?>
+                <div class="col-md-6 d-flex align-items-center">
+                  <p class="text-warning mb-0 fw-semibold">
+                    Vous devez vous <a href="/Poker_website/src/Controller/ConnexionController.php"
+                      class="text-warning text-decoration-underline">connecter</a> pour pouvoir rejoindre l'évènement.
+                  </p>
+                </div>
+              <?php endif; ?>
             <?php endif; ?>
 
             <div class="col-md-6">
