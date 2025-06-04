@@ -32,6 +32,9 @@
                 <li class="nav-item"><a class="nav-link text-white"
                         href="/Poker_website/src/Controller/PartenaireController.php">Partenaires</a></li>
 
+                <li class="nav-item"><a class="nav-link text-white"
+                        href="/Poker_website/src/Controller/TrombinoscopeController.php">Trombinoscope</a></li>
+
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item"><a class="nav-link text-white"
                             href="/Poker_website/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
