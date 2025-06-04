@@ -84,3 +84,17 @@
   transition: background-color 0.2s ease;
 }
 
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.dropdown-item:hover, 
+.dropdown-item:focus {
+    background-color: #393628 !important;
+    border-radius: 0.375rem !important;
+    color: #ffffff !important;
+    transition: background-color 0.2s ease;
+}
+
