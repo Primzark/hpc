@@ -123,10 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt->execute();
 
-        header("Location: ../../public/index.php?page=evenements");
+        header("Location: /Poker_website/src/Controller/PageEvenementController.php?id=" . $id_evenement);
         exit;
     }
 }
 
 // On charge la vue avec les variables préparées
-require_once '../../src/View/view_modifier_evenement.php';
+require_once '../View/view_modifier_evenement.php';

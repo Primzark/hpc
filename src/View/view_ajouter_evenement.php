@@ -19,10 +19,8 @@
                             <div class="col-12">
                                 <label for="image" class="form-label fw-semibold text-light">Image de
                                     l'évènement</label>
-                                <input type="file"
-                                    class="form-control custom-input custom-add <?php if (isset($errors['image']))
-                                        echo 'is-invalid'; ?>"
-                                    id="image" name="image" accept="image/*">
+                                <input type="file" class="form-control custom-input custom-add <?php if (isset($errors['image']))
+                                    echo 'is-invalid'; ?>" id="image" name="image" accept="image/*">
                                 <?php if (isset($errors['image'])): ?>
                                     <div class="invalid-feedback"><?= $errors['image']; ?></div>
                                 <?php endif; ?>
@@ -32,10 +30,8 @@
                             <div class="col-md-6">
                                 <label for="titre" class="form-label fw-semibold text-light">Titre de
                                     l’évènement</label>
-                                <select
-                                    class="form-select custom-select <?php if (isset($errors['titre']))
-                                        echo 'is-invalid'; ?>"
-                                    id="titre" name="titre">
+                                <select class="form-select custom-select <?php if (isset($errors['titre']))
+                                    echo 'is-invalid'; ?>" id="titre" name="titre">
                                     <option value="">Choisir un évènement</option>
                                     <option value="Tournois" <?= (isset($titre) && $titre == 'Tournois') ? 'selected' : '' ?>>Tournois</option>
                                     <option value="Actualité" <?= (isset($titre) && $titre == 'Actualité') ? 'selected' : '' ?>>Actualités</option>
@@ -48,10 +44,8 @@
                             <!-- Lieu -->
                             <div class="col-md-6">
                                 <label for="lieu" class="form-label fw-semibold text-light">Lieu</label>
-                                <input type="text"
-                                    class="form-control custom-add <?php if (isset($errors['lieu']))
-                                        echo 'is-invalid'; ?>"
-                                    id="lieu" name="lieu" placeholder="Lieu"
+                                <input type="text" class="form-control custom-add <?php if (isset($errors['lieu']))
+                                    echo 'is-invalid'; ?>" id="lieu" name="lieu" placeholder="Lieu"
                                     value="<?= isset($lieu) ? htmlspecialchars($lieu) : '' ?>">
                                 <?php if (isset($errors['lieu'])): ?>
                                     <div class="invalid-feedback"><?= $errors['lieu']; ?></div>
@@ -61,10 +55,9 @@
                             <!-- Date -->
                             <div class="col-md-6">
                                 <label for="date" class="form-label fw-semibold text-light">Date</label>
-                                <input type="date"
-                                    class="form-control custom-input custom-add <?php if (isset($errors['date']))
-                                        echo 'is-invalid'; ?>"
-                                    id="date" name="date" value="<?= isset($date) ? htmlspecialchars($date) : '' ?>">
+                                <input type="date" class="form-control custom-input custom-add <?php if (isset($errors['date']))
+                                    echo 'is-invalid'; ?>" id="date" name="date"
+                                    value="<?= isset($date) ? htmlspecialchars($date) : '' ?>">
                                 <?php if (isset($errors['date'])): ?>
                                     <div class="invalid-feedback"><?= $errors['date']; ?></div>
                                 <?php endif; ?>
@@ -73,10 +66,8 @@
                             <!-- Heure -->
                             <div class="col-md-6">
                                 <label for="heure" class="form-label fw-semibold text-light">Heure</label>
-                                <input type="time"
-                                    class="form-control custom-input custom-add <?php if (isset($errors['heure']))
-                                        echo 'is-invalid'; ?>"
-                                    id="heure" name="heure"
+                                <input type="time" class="form-control custom-input custom-add <?php if (isset($errors['heure']))
+                                    echo 'is-invalid'; ?>" id="heure" name="heure"
                                     value="<?= isset($heure) ? htmlspecialchars($heure) : '' ?>">
                                 <?php if (isset($errors['heure'])): ?>
                                     <div class="invalid-feedback"><?= $errors['heure']; ?></div>
@@ -87,10 +78,8 @@
                             <div class="col-12">
                                 <label for="details" class="form-label fw-semibold text-light">Détails de
                                     l'évènement</label>
-                                <textarea
-                                    class="form-control custom-input custom-add <?php if (isset($errors['details']))
-                                        echo 'is-invalid'; ?>"
-                                    id="details" name="details" rows="5"
+                                <textarea class="form-control custom-input custom-add <?php if (isset($errors['details']))
+                                    echo 'is-invalid'; ?>" id="details" name="details" rows="5"
                                     placeholder="Détails de l'évènement"><?= isset($details) ? htmlspecialchars($details) : '' ?></textarea>
                                 <?php if (isset($errors['details'])): ?>
                                     <div class="invalid-feedback"><?= $errors['details']; ?></div>

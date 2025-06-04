@@ -86,9 +86,9 @@
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer
                                 modification</button>
-                            <a href="/Poker_website/src/Controller/PageEvenementController.php"
+                            <a href="/Poker_website/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
-                                <span class="me-2">&#8592;</span> Retour
+                                <span class="me-2"></span> Retour
                             </a>
                         </div>
                     </form>
