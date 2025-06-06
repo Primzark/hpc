@@ -23,8 +23,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/Logo-POKERSTARS.png" alt="PokerStars"
-                        class="img-fluid partner-logo">
+                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">PokerStars</p>
@@ -39,8 +38,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/namur_casino.png" alt="Circus Casino Namur"
-                        class="img-fluid partner-logo">
+                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Circus Casino Namur</p>
@@ -56,8 +54,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
-                        class="img-fluid partner-logo">
+                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Pasino Le Havre</p>
@@ -73,7 +70,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
+                    <img src="/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Conforama</p>
@@ -84,13 +81,11 @@
             </div>
         </div>
 
-
         <!-- Partner 7 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville"
-                        class="img-fluid partner-logo">
+                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Auto-école d’Ingouville</p>
@@ -105,8 +100,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/caval_brod_logo.png" alt="Caval Brod"
-                        class="img-fluid partner-logo">
+                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Caval Brod</p>
@@ -121,7 +115,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
+                    <img src="/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">DFDS</p>

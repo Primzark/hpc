@@ -88,7 +88,7 @@
 
             <!-- Right Image Column -->
             <div class="col-md-6 text-center">
-              <img src="/Poker_website/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
+              <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
                 alt="Image de l'évènement" class="img-fluid rounded" style="max-height: 280px;">
             </div>
           </div>

@@ -7,8 +7,8 @@
 
                 <!-- HPC Logo -->
                 <div class="text-center mb-4">
-                    <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo"
-                        class="img-fluid" style="max-height: 100px;">
+                    <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
+                        style="max-height: 100px;">
                 </div>
 
                 <!-- Title -->
@@ -16,8 +16,7 @@
 
                 <!-- Form Container -->
                 <div class="form-section-bg p-4 rounded text-light">
-                    <form action="/src/Controller/UtilisateurInscriptionController.php" method="post"
-                        novalidate>
+                    <form action="/src/Controller/UtilisateurInscriptionController.php" method="post" novalidate>
 
                         <!-- Nom -->
                         <div class="mb-3">
@@ -77,8 +76,7 @@
 
                         <!-- Login Link -->
                         <p class="text-center login-hint small">
-                            Déjà un compte ? <a
-                                href="/src/Controller/ConnexionController.php">Connectez-vous ici</a>
+                            Déjà un compte ? <a href="/src/Controller/ConnexionController.php">Connectez-vous ici</a>
                         </p>
                     </form>
                 </div>
@@ -86,7 +84,8 @@
             </div>
         </div>
 
-        <?php include_once('../../templates/VisualFooter.php'); ?>
-        <?php include_once('../../templates/footer.php'); ?>
+
     </div>
+    <?php include_once('../../templates/VisualFooter.php'); ?>
+    <?php include_once('../../templates/footer.php'); ?>
 </div>
