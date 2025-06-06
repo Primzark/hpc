@@ -63,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id_uti'];
         $_SESSION['user_admin'] = $user['uti_admin'];
 
-        // Redirige vers l'accueil connecté
-        header('Location: ../Controller/IndexController.php');
+        // Redirige vers la page de confirmation d'inscription
+        header('Location: ../Controller/InscriptionConfirmController.php');
         exit;
     }
 
