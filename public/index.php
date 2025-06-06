@@ -6,21 +6,30 @@
         <!-- Hero Section -->
         <div class="row mb-5 justify-content-center">
             <div class="col-12 col-lg-10">
-                <div class="row align-items-center">
-                    <div class="col-md-7 text-center text-md-start mb-4 mb-md-0 pe-md-4 hero-text-bg">
-                        <div class="d-flex justify-content-center justify-content-md-start">
-                            <a href="/src/Controller/UtilisateurInscriptionController.php"
-                                class="btn btn-warning">Rejoindre le club</a>
+                <div class="row g-4 align-items-center">
+
+                    <!-- Image Section -->
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <img src="/asset/img/bandeau_du_club.png" alt="Bandeau du club"
+                                    class="img-fluid rounded shadow w-100"
+                                    style="max-height: 300px; object-fit: cover;">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-5 ps-md-4 border-start border-3 border-warning">
-                        <div class="p-3">
-                            <p class="mb-0 text-warning">
-                                Fondé en 2016, HPC est une communauté de passionnés de poker à Harfleur.
-                                Rejoignez-nous pour participer à des tournois amateurs dans une ambiance conviviale.
-                            </p>
-                        </div>
+
+                    <!-- Text + Button Section -->
+                    <div class="col-12 col-md-6 text-center text-md-start">
+                        <p class="mb-3 text-warning">
+                            Fondé en 2016, HPC est une communauté de passionnés de poker à Harfleur.
+                            Rejoignez-nous pour participer à des tournois amateurs.
+                        </p>
+                        <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
+                            Rejoindre le club
+                        </a>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -81,5 +90,4 @@
     </div>
     <?php include_once('../../templates/VisualFooter.php'); ?>
     <?php include_once('../../templates/footer.php'); ?>
-
 </div>

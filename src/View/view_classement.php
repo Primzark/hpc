@@ -14,31 +14,31 @@ include_once('../../templates/navbar.php');
         <?php endif; ?>
 
         <div class="form-section-bg p-4 rounded">
-            <div class="row g-0 text-light">
-                <div class="row border-bottom py-2">
-                    <div class="col-1 fw-bold">Rang</div>
-                    <div class="col-6 fw-bold">Joueur</div>
-                    <div class="col-3 fw-bold">Points</div>
-                    <div class="col-2 fw-bold text-center">Action</div>
-                </div>
-
-                <?php foreach ($classement as $entry): ?>
-                    <div class="row border-bottom py-2 custom-text align-items-center">
-                        <div class="col-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>
-                        <div class="col-6"><?= htmlspecialchars($entry['cla_nomjoueur']) ?></div>
-                        <div class="col-3"><?= htmlspecialchars($entry['cla_points']) ?></div>
-
-                        <div class="col-2 text-center">
-                            <?php if (isset($_SESSION['user_id'])): ?>
-                                <a href="/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
-                                    class="btn btn-warning">
-                                    Supprimer
-                                </a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
+            <!-- Header Row -->
+            <div class="row text-light fw-bold border-bottom py-2">
+                <div class="col-3 col-md-1">Rang</div>
+                <div class="col-3 col-md-6">Joueur</div>
+                <div class="col-3 col-md-3">Points</div>
+                <div class="col-3 col-md-2 text-center">Action</div>
             </div>
+
+            <!-- Data Rows -->
+            <?php foreach ($classement as $entry): ?>
+                <div class="row border-bottom py-2 custom-text align-items-center">
+                    <div class="col-3 col-md-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>
+                    <div class="col-3 col-md-6"><?= htmlspecialchars($entry['cla_nomjoueur']) ?></div>
+                    <div class="col-3 col-md-3"><?= htmlspecialchars($entry['cla_points']) ?></div>
+
+                    <div class="col-3 col-md-2 text-center">
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
+                                class="btn btn-warning btn-sm">
+                                Supprimer
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
 
         <?php include_once('../../templates/VisualFooter.php'); ?>
