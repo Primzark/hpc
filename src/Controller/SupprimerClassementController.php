@@ -1,16 +1,16 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
 // Vérifie si l'ID du classement est présent et valide
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('../Controller/ClassementController.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 

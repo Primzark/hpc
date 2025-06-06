@@ -8,7 +8,7 @@ include_once('../../templates/navbar.php');
         <p class="display-6 fw-bold text-light mb-4">Classement</p>
 
         <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="/Poker_website/src/Controller/AjouterClassementController.php" class="btn btn-warning mb-4">
+            <a href="/src/Controller/AjouterClassementController.php" class="btn btn-warning mb-4">
                 Ajouter un classement
             </a>
         <?php endif; ?>
@@ -30,7 +30,7 @@ include_once('../../templates/navbar.php');
 
                         <div class="col-2 text-center">
                             <?php if (isset($_SESSION['user_id'])): ?>
-                                <a href="/Poker_website/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
+                                <a href="/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
                                     class="btn btn-warning">
                                     Supprimer
                                 </a>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 require_once '../../src/Model/model-evenement.php';
 
 $errors = [];
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->bindValue(':id', $id_evenement, PDO::PARAM_INT);
             $stmt->execute();
 
-            header('Location: ../../public/index.php');
+            header('Location: ../../index.php');
             exit;
         } else {
             $errors['image'] = "Format d'image non supporté (JPEG et PNG uniquement).";

@@ -7,7 +7,7 @@
 
                 <!-- HPC Logo -->
                 <div class="text-center mb-4">
-                    <img src="/Poker_website/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo"
+                    <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo"
                         class="img-fluid" style="max-height: 100px;">
                 </div>
 
@@ -16,12 +16,12 @@
 
                 <!-- Form Container -->
                 <div class="form-section-bg p-4 rounded text-light">
-                    <form action="/Poker_website/src/Controller/UtilisateurInscriptionController.php" method="post"
+                    <form action="/src/Controller/UtilisateurInscriptionController.php" method="post"
                         novalidate>
 
                         <!-- Nom -->
                         <div class="mb-3">
-                            <label for="nom" class="form-label fw-semibold custom-text">Nom d'utilisateur</label>
+                            <label for="nom" class="form-label fw-semibold custom-text">Pseudo joueur</label>
                             <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . _ - +
                             </div>
                             <input type="text"
@@ -78,7 +78,7 @@
                         <!-- Login Link -->
                         <p class="text-center login-hint small">
                             Déjà un compte ? <a
-                                href="/Poker_website/src/Controller/ConnexionController.php">Connectez-vous ici</a>
+                                href="/src/Controller/ConnexionController.php">Connectez-vous ici</a>
                         </p>
                     </form>
                 </div>

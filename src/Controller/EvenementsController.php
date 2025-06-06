@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 
 // Redirection si l'utilisateur n'est pas connecté
 // if (!isset($_SESSION['user_id'])) {

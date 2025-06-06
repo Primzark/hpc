@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 require_once '../Model/model-evenement.php';
 require_once '../Model/model-inscription.php'; // ← AJOUT
 
 if (!isset($_GET['event']) || !is_numeric($_GET['event'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../../index.php');
     exit;
 }
 
@@ -13,7 +13,7 @@ $eventId = (int) $_GET['event'];
 $evenement = Evenement::getById($eventId); // updated method name
 
 if (!$evenement) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 

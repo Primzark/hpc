@@ -1,14 +1,14 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
@@ -25,7 +25,7 @@ $evenement = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Si aucun événement correspondant trouvé, on redirige
 if (!$evenement) {
-    header('Location: ../../public/index.php?page=evenements');
+    header('../Controller/IndexController.php');
     exit;
 }
 
@@ -47,6 +47,6 @@ $stmt = $pdo->prepare("DELETE FROM evenement WHERE id_eve = :id");
 $stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
 $stmt->execute();
 
-header('Location: ../../public/index.php?page=evenements');
+header('Location: ../Controller/IndexController.php');
 exit;
 ?>

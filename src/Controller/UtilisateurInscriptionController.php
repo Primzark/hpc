@@ -1,7 +1,7 @@
 <?php
 session_start(); // Démarre la session
 
-require_once '../../config/database.php'; // Charge la config base de données
+require_once '../../config.php'; // Charge la config base de données
 require_once '../../src/Model/model-utilisateur.php'; // Charge le modèle Utilisateur
 
 // Expressions régulières pour valider nom, email et mot de passe
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_admin'] = $user['uti_admin'];
 
         // Redirige vers l'accueil connecté
-        header('Location: ../../public/index.php');
+        header('Location: ../Controller/IndexController.php');
         exit;
     }
 

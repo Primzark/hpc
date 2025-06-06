@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 
 // Initialisation
 $errors = [];
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['uti_mdp'])) {
             $_SESSION['user_id'] = $user['id_uti'];
-            header("Location: ../../public/index.php");
+            header("Location: ../../index.php");
             exit;
         } else {
             $errors['email'] = "Email ou mot de passe incorrect.";

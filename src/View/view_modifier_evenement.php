@@ -10,7 +10,7 @@
 
                     <!-- Form -->
                     <form
-                        action="/Poker_website/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                        action="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                         method="post" enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
@@ -66,7 +66,7 @@
                             <!-- Image actuelle -->
                             <div class="col-12">
                                 <label class="form-label fw-semibold text-light">Image actuelle</label><br>
-                                <img src="/Poker_website/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
+                                <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
                                     alt="Image actuelle" class="img-thumbnail" style="max-height: 200px;">
                             </div>
 
@@ -86,7 +86,7 @@
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer
                                 modification</button>
-                            <a href="/Poker_website/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                            <a href="/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2"></span> Retour
                             </a>

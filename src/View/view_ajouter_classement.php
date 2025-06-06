@@ -12,7 +12,7 @@
             <div class="form-error mb-3"><?= htmlspecialchars($errors['general']) ?></div>
           <?php endif; ?>
 
-          <form action="/Poker_website/src/Controller/AjouterClassementController.php" method="post">
+          <form action="/src/Controller/AjouterClassementController.php" method="post">
             <div class="mb-3">
               <label for="nom" class="form-label field-text">Nom du joueur</label>
               <input type="text" class="form-control custom-add <?= isset($errors['nomjoueur']) ? 'is-invalid' : '' ?>"

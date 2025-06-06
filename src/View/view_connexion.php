@@ -7,7 +7,7 @@
 
         <!-- HPC Logo -->
         <div class="text-center mb-4">
-          <img src="/Poker_website/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
+          <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
             style="max-height: 100px;">
         </div>
 
@@ -53,7 +53,7 @@
 
             <div class="text-center login-hint mt-3">
               <small>Pas encore de compte ? <a
-                  href="/Poker_website/src/Controller/UtilisateurInscriptionController.php">S'inscrire</a></small>
+                  href="/src/Controller/UtilisateurInscriptionController.php">S'inscrire</a></small>
             </div>
           </form>
         </div>

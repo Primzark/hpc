@@ -13,7 +13,7 @@
           </div>
           <?php if (isset($_SESSION['user_id'])): ?>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
-              <a href="/Poker_website/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+              <a href="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                 class="btn btn-warning">Modifier</a>
 
               <!-- Trigger Button -->
@@ -98,7 +98,7 @@
             <?php if ($evenement['id_type_eve'] == 2): ?>
               <?php if (isset($_SESSION['user_id'])): ?>
                 <div class="col-md-6">
-                  <a href="/Poker_website/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
+                  <a href="/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
                     class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
                   </a>
@@ -106,7 +106,7 @@
               <?php else: ?>
                 <div class="col-md-6 d-flex align-items-center">
                   <p class="text-warning mb-0 fw-semibold">
-                    Vous devez vous <a href="/Poker_website/src/Controller/ConnexionController.php"
+                    Vous devez vous <a href="/src/Controller/ConnexionController.php"
                       class="text-warning text-decoration-underline">connecter</a> pour pouvoir rejoindre l'évènement.
                   </p>
                 </div>
@@ -114,7 +114,7 @@
             <?php endif; ?>
 
             <div class="col-md-6">
-              <a href="/Poker_website/public/index.php"
+              <a href="../../src/Controller/IndexController.php"
                 class="btn btn-outline-warning btn-rounded w-100 fw-semibold text-center">
                 <i class="bi bi-arrow-left me-2"></i> Retour
               </a>
@@ -138,7 +138,7 @@
       const button = event.relatedTarget;
       const eventId = button.getAttribute('data-event-id');
       const confirmBtn = document.getElementById('confirmDeleteBtn');
-      confirmBtn.href = '/Poker_website/src/Controller/SupprimerEvenementController.php?id=' + eventId;
+      confirmBtn.href = '/src/Controller/SupprimerEvenementController.php?id=' + eventId;
     });
   }
 </script>

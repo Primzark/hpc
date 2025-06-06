@@ -1,11 +1,11 @@
 <?php
 session_start();
-include_once "../../config/database.php";
+include_once "../../config.php";
 include_once "../Model/model-evenement.php";
 include_once "../Model/model-inscription.php";
 
 if (!isset($_GET['id'])) {
-    header("Location: ../../public/index.php");
+    header("Location: ../Controller/IndexController.php");
     exit;
 }
 

@@ -11,7 +11,7 @@
                     <p class="display-6 fw-bold text-light mb-4">Ajouter un nouvel évènement</p>
 
                     <!-- Form -->
-                    <form action="/Poker_website/src/Controller/AjouterEvenementController.php" method="post"
+                    <form action="/src/Controller/AjouterEvenementController.php" method="post"
                         enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
@@ -90,7 +90,7 @@
                         <!-- Buttons -->
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Ajouter</button>
-                            <a href="/Poker_website/src/Controller/EvenementsController.php"
+                            <a href="/src/Controller/EvenementsController.php"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2"></span> Retour
                             </a>

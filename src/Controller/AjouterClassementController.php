@@ -3,7 +3,7 @@
 session_start();
 
 // Inclusion du fichier de connexion à la base de données
-require_once '../../config/database.php';
+require_once '../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
 require_once '../Model/model-classement.php';
 
@@ -21,7 +21,7 @@ function safeInput($string)
 
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 

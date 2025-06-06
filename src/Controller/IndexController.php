@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
+
 // Connexion à la base de données
 $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -24,6 +25,6 @@ $stmtActus = $pdo->prepare($sqlActus);
 $stmtActus->execute();
 $actus = $stmtActus->fetchAll(PDO::FETCH_ASSOC);
 
-// Chargement de la vue
-include_once '../View/view_acceuil.php';
+// Chargement de l'index
+include_once('../../public/index.php');
 

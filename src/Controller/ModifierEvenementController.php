@@ -1,16 +1,16 @@
 <?php
 session_start();
-require_once '../../config/database.php';
+require_once '../../config.php';
 
 // Protection d'accès
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
 // Vérifie que l'identifiant est bien passé
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
@@ -33,7 +33,7 @@ $stmt->execute();
 $evenement = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$evenement) {
-    header('Location: ../../public/index.php');
+    header('Location: ../Controller/IndexController.php');
     exit;
 }
 
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt->execute();
 
-        header("Location: /Poker_website/src/Controller/PageEvenementController.php?id=" . $id_evenement);
+        header("Location: /src/Controller/PageEvenementController.php?id=" . $id_evenement);
         exit;
     }
 }

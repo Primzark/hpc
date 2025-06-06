@@ -22,7 +22,7 @@
                                     <p class="mb-0 text-light"><?= nl2br(htmlspecialchars($evenement['eve_description'])) ?></p>
                                 </div>
                                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                                    <a href="/Poker_website/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                                    <a href="/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                                         class="btn btn-warning btn-rounded fw-semibold">En savoir plus</a>
                                 </div>
                             </div>
@@ -32,7 +32,7 @@
 
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <div class="mt-4">
-                        <a href="/Poker_website/src/Controller/AjouterEvenementController.php"
+                        <a href="/src/Controller/AjouterEvenementController.php"
                             class="btn btn-warning btn-rounded w-100 fw-semibold">
                             <i class="bi bi-plus-lg me-2"></i> Ajouter un évènement
                         </a>

@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <a href="/Poker_website/src/Controller/PageEvenementController.php"
+                            <a href="/src/Controller/PageEvenementController.php"
                                 class="btn btn-outline-warning btn-rounded w-100 d-flex align-items-center justify-content-center fw-semibold py-2">
                                 <i class="bi bi-arrow-left me-2"></i>Retour
                             </a>

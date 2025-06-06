@@ -84,37 +84,6 @@
             </div>
         </div>
 
-        <!-- Partner 5 -->
-        <div class="form-section-bg p-4 rounded mb-4">
-            <div class="row align-items-center">
-                <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/Logo_Texapoker2021_COULEUR(1).png" alt="Texapoker"
-                        class="img-fluid partner-logo">
-                </div>
-                <div class="col-md-10">
-                    <p class="fw-bold text-light mb-1">Texapoker</p>
-                    <p class="custom-text mb-1">Texapoker est un organisateur de tournois de poker qui collabore avec
-                        nous pour offrir des compétitions de haut niveau à nos joueurs.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Partner 6 -->
-        <div class="form-section-bg p-4 rounded mb-4">
-            <div class="row align-items-center">
-                <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/Poker_website/asset/img/art_sport_poker_logo.png" alt="Art Sport Poker"
-                        class="img-fluid partner-logo">
-                </div>
-                <div class="col-md-10">
-                    <p class="fw-bold text-light mb-1">Art Sport Poker</p>
-                    <p class="custom-text mb-1">Art Sport Poker fournit des équipements et accessoires de poker,
-                        soutenant nos tournois avec des produits de qualité.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
-                </div>
-            </div>
-        </div>
 
         <!-- Partner 7 -->
         <div class="form-section-bg p-4 rounded mb-4">
