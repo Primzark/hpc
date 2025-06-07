@@ -11,6 +11,7 @@
 
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
                         <a class="nav-link text-warning fw-semibold text-nowrap"
@@ -28,8 +29,8 @@
                         href="../../src/Controller/IndexController.php">Accueil</a>
                 </li>
 
-                <!-- Admin dropdown -->
                 <?php if (isset($_SESSION['user_id'])): ?>
+                    <!-- Admin dropdown visible uniquement si connecté -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-warning text-nowrap" href="#" id="adminDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,12 +51,19 @@
                             </li>
                         </ul>
                     </li>
-                <?php endif; ?>
+                <?php else: ?>
+                    <!-- Classement visible uniquement si pas connecté -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-nowrap"
+                            href="/src/Controller/ClassementController.php">Classement</a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap"
-                        href="/src/Controller/ClassementController.php">Classement</a>
-                </li>
+                    <!-- Evènements visible uniquement si pas connecté -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-nowrap"
+                            href="/src/Controller/EvenementsController.php">Evènements</a>
+                    </li>
+                <?php endif; ?>
 
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap" href="/src/Controller/RegleController.php">Règles du
@@ -65,11 +73,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap"
                         href="/src/Controller/PartenaireController.php">Partenaires</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap"
-                        href="/src/Controller/EvenementsController.php">Evènements</a>
                 </li>
 
                 <li class="nav-item dropdown">
@@ -92,6 +95,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap" href="/src/Controller/ProposController.php">À propos</a>
                 </li>
+
             </ul>
         </div>
     </div>

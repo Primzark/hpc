@@ -9,7 +9,7 @@
                     <p class="fs-5 fw-semibold text-light mb-4">Êtes-vous sûr de vouloir vous déconnecter ?</p>
                     <div class="d-flex justify-content-center gap-3">
                         <a href="/src/Controller/DeconnexionController.php" class="btn btn-warning fw-semibold">Se déconnecter</a>
-                        <a href="/Poker_website/public/index.php" class="btn btn-outline-warning fw-semibold">Annuler</a>
+                        <a href="/src/Controller/IndexController.php" class="btn btn-outline-warning fw-semibold">Annuler</a>
                     </div>
                 </div>
             </div>

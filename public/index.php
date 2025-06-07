@@ -27,14 +27,18 @@
                         </p>
 
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <p class="btn btn-warning">
-                                Bienvenue (<?= htmlspecialchars($utiNom ?? '') ?>)
-                            </p>
+                            <div class="btn btn-warning fw-bold fs-4">
+                                Bienvenue <?= htmlspecialchars($utiNom ?? '') ?>
+                            </div>
                         <?php else: ?>
-                            <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
-                                S'inscrire
+                            <a href="/src/Controller/UtilisateurInscriptionController.php"
+                                class="btn btn-warning fw-bold fs-4">
+                                S'inscrire au club
                             </a>
                         <?php endif; ?>
+
+
+
                     </div>
 
 
