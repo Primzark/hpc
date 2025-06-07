@@ -25,10 +25,18 @@
                             Fondé en 2016, HPC est une communauté de passionnés de poker à Harfleur.
                             Rejoignez-nous pour participer à des tournois amateurs.
                         </p>
-                        <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
-                            Rejoindre le club
-                        </a>
+
+                        <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
+                                Rejoindre le club
+                            </a>
+                        <?php else: ?>
+                            <a href="/src/Controller/ProposController.php" class="btn btn-warning">
+                                Bienvenue
+                            </a>
+                        <?php endif; ?>
                     </div>
+
 
                 </div>
             </div>
