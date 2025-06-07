@@ -8,9 +8,12 @@ include_once('../../templates/navbar.php');
         <p class="display-6 fw-bold text-light mb-4">Classement</p>
 
         <?php if (isset($_SESSION['user_id'])): ?>
-            <a href="/src/Controller/AjouterClassementController.php" class="btn btn-warning mb-4">
-                Ajouter un classement
-            </a>
+            <div class="mt-4">
+                <a href="/src/Controller/AjouterClassementController.php"
+                    class="btn btn-warning btn-rounded w-100 fw-semibold">
+                    <i class="bi bi-plus-lg me-2"></i> Ajouter un classement
+                </a>
+            </div>
         <?php endif; ?>
 
         <div class="form-section-bg p-4 rounded">

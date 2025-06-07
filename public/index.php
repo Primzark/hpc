@@ -27,12 +27,12 @@
                         </p>
 
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/src/Controller/ProposController.php" class="btn btn-warning">
+                            <p class="btn btn-warning">
                                 Bienvenue (<?= htmlspecialchars($utiNom ?? '') ?>)
-                            </a>
+                            </p>
                         <?php else: ?>
-                            <a href="/src/Controller/ProposController.php" class="btn btn-warning">
-                                Bienvenue
+                            <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
+                                S'inscrire
                             </a>
                         <?php endif; ?>
                     </div>

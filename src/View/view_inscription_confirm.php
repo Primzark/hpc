@@ -1,5 +1,4 @@
 <?php include_once('../../templates/head.php'); ?>
-<?php include_once('../../templates/navbar.php'); ?>
 
 <div class="custom-bg min-vh-100 d-flex flex-column">
 
@@ -19,8 +18,6 @@
             </div>
         </div>
     </div>
-
-    <?php include_once('../../templates/VisualFooter.php'); ?>
     <?php include_once('../../templates/footer.php'); ?>
 
 </div>

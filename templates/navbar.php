@@ -51,7 +51,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap"
-                        href="/src/Controller/EvenementsController.php">Liste des évènements</a>
+                        href="/src/Controller/EvenementsController.php">Evènements</a>
                 </li>
 
                 <li class="nav-item dropdown">

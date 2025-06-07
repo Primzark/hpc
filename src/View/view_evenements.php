@@ -9,6 +9,15 @@
                 <!-- Page Title -->
                 <p class="display-6 fw-bold text-light mb-4">Évènements</p>
 
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <div class="mt-4">
+                        <a href="/src/Controller/AjouterEvenementController.php"
+                            class="btn btn-warning btn-rounded w-100 fw-semibold">
+                            <i class="bi bi-plus-lg me-2"></i> Ajouter un évènement
+                        </a>
+                    </div>
+                <?php endif; ?>
+
                 <?php if (empty($evenements)): ?>
                     <p class="text-light">Aucun évènement à afficher pour le moment.</p>
                 <?php else: ?>
@@ -28,15 +37,6 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                <?php endif; ?>
-
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <div class="mt-4">
-                        <a href="/src/Controller/AjouterEvenementController.php"
-                            class="btn btn-warning btn-rounded w-100 fw-semibold">
-                            <i class="bi bi-plus-lg me-2"></i> Ajouter un évènement
-                        </a>
-                    </div>
                 <?php endif; ?>
 
 

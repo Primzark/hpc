@@ -7,17 +7,18 @@ $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8',
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 // Récupérer les 3 prochains tournois
-$sqlTournois = "SELECT * FROM evenement 
+$sqlTournois = "SELECT id_eve, eve_titre, eve_date, eve_heure, eve_lieu, eve_description, eve_image 
+                FROM evenement 
                 WHERE id_type_eve = 2 
                 ORDER BY eve_date DESC 
                 LIMIT 3";
-
 $stmtTournois = $pdo->prepare($sqlTournois);
 $stmtTournois->execute();
 $tournois = $stmtTournois->fetchAll(PDO::FETCH_ASSOC);
 
 // Récupérer les 3 dernières actualités
-$sqlActus = "SELECT * FROM evenement 
+$sqlActus = "SELECT id_eve, eve_titre, eve_date, eve_heure, eve_lieu, eve_description, eve_image 
+             FROM evenement 
              WHERE id_type_eve = 1 
              ORDER BY eve_date DESC 
              LIMIT 3";
@@ -39,4 +40,3 @@ if (isset($_SESSION['user_id'])) {
 
 // Chargement de l'index
 include_once('../../public/index.php');
-
