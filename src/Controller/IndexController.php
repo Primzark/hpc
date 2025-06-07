@@ -25,6 +25,18 @@ $stmtActus = $pdo->prepare($sqlActus);
 $stmtActus->execute();
 $actus = $stmtActus->fetchAll(PDO::FETCH_ASSOC);
 
+// Nom de l'utilisateur connecté
+$utiNom = '';
+if (isset($_SESSION['user_id'])) {
+    $stmtNom = $pdo->prepare('SELECT uti_nom FROM utilisateur WHERE id_uti = :id');
+    $stmtNom->bindValue(':id', $_SESSION['user_id'], PDO::PARAM_INT);
+    $stmtNom->execute();
+    $user = $stmtNom->fetch(PDO::FETCH_ASSOC);
+    if ($user) {
+        $utiNom = $user['uti_nom'];
+    }
+}
+
 // Chargement de l'index
 include_once('../../public/index.php');
 

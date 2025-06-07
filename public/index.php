@@ -27,8 +27,8 @@
                         </p>
 
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/src/Controller/UtilisateurInscriptionController.php" class="btn btn-warning">
-                                Rejoindre le club
+                            <a href="/src/Controller/ProposController.php" class="btn btn-warning">
+                                Bienvenue (<?= htmlspecialchars($utiNom ?? '') ?>)
                             </a>
                         <?php else: ?>
                             <a href="/src/Controller/ProposController.php" class="btn btn-warning">
