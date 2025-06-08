@@ -11,7 +11,7 @@ document.getElementById('joinEventBtn').addEventListener('click', function () {
     .then(data => {
         if (data.status === 'success') {
             if (data.action === 'registered') {
-                btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Vous êtes inscrit';
+                btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous désinscrire';
                 btn.classList.remove('btn-warning');
                 btn.classList.add('btn-success');
             } else if (data.action === 'unregistered') {

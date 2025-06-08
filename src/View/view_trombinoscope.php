@@ -13,30 +13,27 @@
             <!-- Carte 1 -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
-                    <img src="/Poker_website/asset/img/dfds.png" class="mx-auto mb-3" alt="Nom du membre"
+                    <img src="/asset/img/cropped-pat-1.jpeg" class="mx-auto mb-3" alt="Nom du membre"
                         style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
-                    <p class="field-text mb-1">Ethan Carter</p>
-                    <p class="custom-text mb-0">ethan.carter@email.com</p>
+                    <p class="field-text mb-1">Patrick Piednoel</p>
                 </div>
             </div>
 
             <!-- Carte 2 -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
-                    <img src="/Poker_website/asset/img/dfds.png" class="mx-auto mb-3" alt="Nom du membre"
+                    <img src="/asset/img/cropped-papy.jpeg" class="mx-auto mb-3" alt="Nom du membre"
                         style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
-                    <p class="field-text mb-1">Olivia Bennett</p>
-                    <p class="custom-text mb-0">olivia.bennett@email.com</p>
+                    <p class="field-text mb-1">Papy</p>
                 </div>
             </div>
 
             <!-- Carte 3 -->
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
-                    <img src="/Poker_website/asset/img/dfds.png" class="mx-auto mb-3" alt="Nom du membre"
+                    <img src="/asset/img/cropped-ben.jpeg" class="mx-auto mb-3" alt="Nom du membre"
                         style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
-                    <p class="field-text mb-1">Noah Thompson</p>
-                    <p class="custom-text mb-0">noah.thompson@email.com</p>
+                    <p class="field-text mb-1">Ben</p>
                 </div>
             </div>
         </div>
