@@ -45,6 +45,19 @@
                             <?php endif; ?>
                         </div>
 
+                        <!-- Age -->
+                        <div class="mb-3">
+                            <label for="age" class="form-label fw-semibold custom-text">Âge</label>
+                            <div class="form-text login-hint mb-1">Vous devez avoir 18 ans ou plus</div>
+                            <input type="number"
+                                class="form-control custom-bg <?= isset($errors['age']) ? 'is-invalid' : '' ?>"
+                                id="age" name="age" min="0" placeholder="Entrez votre âge"
+                                value="<?= isset($age) ? htmlspecialchars($age) : '' ?>">
+                            <?php if (isset($errors['age'])): ?>
+                                <div class="invalid-feedback"><?= $errors['age'] ?></div>
+                            <?php endif; ?>
+                        </div>
+
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
