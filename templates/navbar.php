@@ -89,6 +89,9 @@
                             <a class="dropdown-item text-white py-3 px-4"
                                 href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
                         </li>
+                        <li>
+                            <a class="dropdown-item text-white py-3 px-4" href="/src/Controller/UtilisateursController.php">Membres inscrits</a>
+                        </li>
                     </ul>
                 </li>
 
