@@ -13,14 +13,17 @@
           <form action="/src/Controller/AjouterTrombinoscopeController.php" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="pseudo" class="form-label field-text">Pseudo</label>
-              <input type="text" class="form-control custom-add <?= isset($errors['pseudo']) ? 'is-invalid' : '' ?>" id="pseudo" name="pseudo" value="<?= isset($pseudo) ? htmlspecialchars($pseudo) : '' ?>">
+              <input type="text" class="form-control custom-add <?= isset($errors['pseudo']) ? 'is-invalid' : '' ?>"
+                id="pseudo" name="pseudo" value="<?= isset($pseudo) ? htmlspecialchars($pseudo) : '' ?>">
               <?php if (isset($errors['pseudo'])): ?>
                 <div class="invalid-feedback"><?= htmlspecialchars($errors['pseudo']) ?></div>
               <?php endif; ?>
             </div>
             <div class="mb-3">
               <label for="image" class="form-label field-text">Image</label>
-              <input type="file" class="form-control custom-input custom-add <?= isset($errors['image']) ? 'is-invalid' : '' ?>" id="image" name="image" accept="image/*">
+              <input type="file"
+                class="form-control custom-input custom-add <?= isset($errors['image']) ? 'is-invalid' : '' ?>"
+                id="image" name="image" accept="image/*">
               <?php if (isset($errors['image'])): ?>
                 <div class="invalid-feedback"><?= htmlspecialchars($errors['image']) ?></div>
               <?php endif; ?>
@@ -36,4 +39,3 @@
     <?php include_once('../../templates/footer.php'); ?>
   </div>
 </div>
-

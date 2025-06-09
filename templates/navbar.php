@@ -38,13 +38,6 @@
                         </a>
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="adminDropdown">
                             <li>
-                            <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-white py-3 px-4" href="/src/Controller/AjouterTrombinoscopeController.php">Ajouter trombinoscope</a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item text-white py-3 px-4"
                                     href="/src/Controller/EvenementsController.php">Evènements</a>
                             </li>
@@ -52,7 +45,12 @@
                                 <a class="dropdown-item text-white py-3 px-4"
                                     href="/src/Controller/ClassementController.php">Classement</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item text-white py-3 px-4"
+                                    href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
+                            </li>
                         </ul>
+
                     </li>
                 <?php else: ?>
                     <!-- Classement visible uniquement si pas connecté -->

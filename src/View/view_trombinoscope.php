@@ -11,7 +11,8 @@
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="mb-4">
-                <a href="/src/Controller/AjouterTrombinoscopeController.php" class="btn btn-warning btn-rounded fw-semibold">
+                <a href="/src/Controller/AjouterTrombinoscopeController.php"
+                    class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> Ajouter au trombinoscope
                 </a>
             </div>
@@ -21,7 +22,8 @@
             <?php foreach ($members as $member): ?>
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
-                        <img src="/asset/img/<?= htmlspecialchars($member['tro_image']) ?>" class="mx-auto mb-3" alt="<?= htmlspecialchars($member['tro_pseudo']) ?>"
+                        <img src="/asset/img/<?= htmlspecialchars($member['tro_image']) ?>" class="mx-auto mb-3"
+                            alt="<?= htmlspecialchars($member['tro_pseudo']) ?>"
                             style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
                         <p class="field-text mb-1"><?= htmlspecialchars($member['tro_pseudo']) ?></p>
                     </div>
