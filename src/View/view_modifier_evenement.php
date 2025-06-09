@@ -9,8 +9,7 @@
                     <p class="display-6 fw-bold text-light mb-4">Modifier</p>
 
                     <!-- Form -->
-                    <form
-                        action="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                    <form action="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                         method="post" enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 

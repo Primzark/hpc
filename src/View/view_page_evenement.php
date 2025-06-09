@@ -88,8 +88,8 @@
 
             <!-- Right Image Column -->
             <div class="col-md-6 text-center">
-              <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>"
-                alt="Image de l'évènement" class="img-fluid rounded" style="max-height: 280px;">
+              <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>" alt="Image de l'évènement"
+                class="img-fluid rounded" style="max-height: 280px;">
             </div>
           </div>
 
