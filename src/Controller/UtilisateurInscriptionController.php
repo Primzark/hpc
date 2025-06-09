@@ -9,6 +9,8 @@ $regex_nom = "/^[a-zA-Z0-9._%+-]{4,}$/";
 $regex_email = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 $regex_password = "/^[a-zA-Z0-9.@-]{4,}$/";
 
+$age = '';
+
 $errors = []; // Tableau des erreurs
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -36,6 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($userWithEmail !== false) {
             $errors['email'] = 'Cet email est déjà utilisé.';
         }
+    }
+
+    // Validation âge
+    if (empty($_POST['age'])) {
+        $errors['age'] = 'Champ obligatoire.';
+    } elseif (!is_numeric($_POST['age']) || intval($_POST['age']) < 18) {
+        $errors['age'] = 'Vous devez avoir au moins 18 ans pour vous inscrire.';
+    } else {
+        $age = intval($_POST['age']);
     }
 
     // Validation mot de passe
