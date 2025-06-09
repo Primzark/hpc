@@ -38,8 +38,11 @@
                         </a>
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="adminDropdown">
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
+                            <a class="dropdown-item text-white py-3 px-4"
                                     href="/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-white py-3 px-4" href="/src/Controller/AjouterTrombinoscopeController.php">Ajouter trombinoscope</a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
