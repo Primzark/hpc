@@ -39,10 +39,6 @@
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="adminDropdown">
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/AjouterEvenementController.php">Ajouter un évènement</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item text-white py-3 px-4"
                                     href="/src/Controller/EvenementsController.php">Evènements</a>
                             </li>
                             <li>
@@ -75,6 +71,12 @@
                         href="/src/Controller/PartenaireController.php">Partenaires</a>
                 </li>
 
+                <!-- Membres inscrits déplacé ici -->
+                <li class="nav-item">
+                    <a class="nav-link text-white text-nowrap" href="/src/Controller/UtilisateursController.php">Membres
+                        inscrits</a>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white text-nowrap" href="#" id="contactDropdown"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,9 +90,6 @@
                         <li>
                             <a class="dropdown-item text-white py-3 px-4"
                                 href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-white py-3 px-4" href="/src/Controller/UtilisateursController.php">Membres inscrits</a>
                         </li>
                     </ul>
                 </li>
