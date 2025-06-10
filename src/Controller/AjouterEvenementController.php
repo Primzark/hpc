@@ -6,6 +6,12 @@ require_once '../../src/Model/model-evenement.php';
 $errors = [];
 $regex = "/^[^#%^&*\\][;}{=+\\|><`~]*$/";
 
+$titre = '';
+$lieu = '';
+$date = '';
+$heure = '';
+$details = '';
+
 function safeInput($string)
 {
     return htmlspecialchars(trim($string));
@@ -35,6 +41,12 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $titre = $_POST['titre'] ?? '';
+    $lieu = $_POST['lieu'] ?? '';
+    $date = $_POST['date'] ?? '';
+    $heure = $_POST['heure'] ?? '';
+    $details = $_POST['details'] ?? '';
 
     if ($_FILES['image']['error'] === 4) {
         $errors['image'] = "Veuillez ajouter une image.";
