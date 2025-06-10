@@ -4,6 +4,7 @@ require_once '../../config.php';
 require_once '../Model/model-trombinoscope.php';
 
 $errors = [];
+$pseudo = '';
 
 function safeInput($string)
 {
@@ -34,6 +35,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $pseudo = $_POST['pseudo'] ?? '';
     if ($_FILES['image']['error'] === 4) {
         $errors['image'] = "Veuillez ajouter une image.";
     }

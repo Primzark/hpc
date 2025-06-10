@@ -9,6 +9,9 @@ require_once '../Model/model-classement.php';
 
 // Initialisation du tableau des erreurs
 $errors = [];
+$cla_nomjoueur = '';
+$cla_rang = '';
+$cla_points = '';
 
 // Expression régulière pour valider le nom du joueur (lettres, espaces, tirets, apostrophes, points autorisés)
 $regex = "/^[a-zA-ZÀ-ÖØ-öø-ÿ\s\-'\.]+$/u";
@@ -27,6 +30,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Si le formulaire a été soumis en méthode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $cla_nomjoueur = $_POST['cla_nomjoueur'] ?? '';
+    $cla_rang = $_POST['cla_rang'] ?? '';
+    $cla_points = $_POST['cla_points'] ?? '';
 
     // Vérification du champ nom du joueur
     if (!isset($_POST['cla_nomjoueur']) || trim($_POST['cla_nomjoueur']) === '') {
