@@ -9,11 +9,17 @@ $regex_nom = "/^[a-zA-Z0-9._%+-]{4,}$/";
 $regex_email = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
 $regex_password = "/^[a-zA-Z0-9.@-]{4,}$/";
 
+$nom = '';
+$email = '';
 $age = '';
 
 $errors = []; // Tableau des erreurs
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Conserve les valeurs saisies
+    $nom = $_POST['nom'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $age = $_POST['age'] ?? '';
     // Validation nom
     if (empty($_POST['nom'])) {
         $errors['nom'] = 'Champ obligatoire.';
