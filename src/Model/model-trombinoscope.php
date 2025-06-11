@@ -8,13 +8,24 @@ class Trombinoscope
         return $pdo;
     }
 
-    public static function ajouter($pseudo, $image)
+    public static function ajouter($pseudo, $image = null)
     {
         $pdo = self::getPDO();
         $sql = "INSERT INTO trombinoscope (tro_pseudo, tro_image) VALUES (:pseudo, :image)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':pseudo', $pseudo);
         $stmt->bindValue(':image', $image);
+        $stmt->execute();
+        return $pdo->lastInsertId();
+    }
+
+    public static function updateImage($id, $image)
+    {
+        $pdo = self::getPDO();
+        $sql = "UPDATE trombinoscope SET tro_image = :image WHERE id_tro = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':image', $image);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
     }
 
