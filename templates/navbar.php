@@ -50,7 +50,12 @@
                                     href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
                             </li>
                         </ul>
+                    </li>
 
+                    <!-- Lien direct vers Liste des membres -->
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-nowrap" href="/src/Controller/UtilisateursController.php">Liste
+                            des membres</a>
                     </li>
                 <?php else: ?>
                     <!-- Classement visible uniquement si pas connecté -->
@@ -64,6 +69,24 @@
                         <a class="nav-link text-white text-nowrap"
                             href="/src/Controller/EvenementsController.php">Evènements</a>
                     </li>
+
+                    <!-- Membres inscrits avec trombinoscope en dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white text-nowrap" href="#" id="membresDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Membres inscrits
+                        </a>
+                        <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="membresDropdown">
+                            <li>
+                                <a class="dropdown-item text-white py-3 px-4"
+                                    href="/src/Controller/UtilisateursController.php">Liste des membres</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-white py-3 px-4"
+                                    href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
+                            </li>
+                        </ul>
+                    </li>
                 <?php endif; ?>
 
                 <li class="nav-item">
@@ -76,27 +99,9 @@
                         href="/src/Controller/PartenaireController.php">Partenaires</a>
                 </li>
 
-                <!-- Membres inscrits déplacé ici -->
+                <!-- Lien direct vers Contact -->
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap" href="/src/Controller/UtilisateursController.php">Membres
-                        inscrits</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white text-nowrap" href="#" id="contactDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Nous contacter
-                    </a>
-                    <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="contactDropdown">
-                        <li>
-                            <a class="dropdown-item text-white py-3 px-4"
-                                href="/src/Controller/ContactController.php">Contact</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item text-white py-3 px-4"
-                                href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
-                        </li>
-                    </ul>
+                    <a class="nav-link text-white text-nowrap" href="/src/Controller/ContactController.php">Contact</a>
                 </li>
 
                 <li class="nav-item">
