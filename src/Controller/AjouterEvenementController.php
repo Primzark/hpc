@@ -79,43 +79,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
         $type = ($_POST['titre'] === 'Tournois') ? 2 : 1;
 
-        // Insert event first (without image for now)
-        $pdo = new PDO(
-            'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8',
-            DB_USER,
-            DB_PASS
-        );
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->prepare("INSERT INTO evenement (eve_titre, eve_date, eve_heure, eve_lieu, eve_description, id_type_eve) 
-                                VALUES (:titre, :date, :heure, :lieu, :description, :type)");
-        $stmt->bindValue(':titre', safeInput($_POST['titre']), PDO::PARAM_STR);
-        $stmt->bindValue(':date', $_POST['date'], PDO::PARAM_STR);
-        $stmt->bindValue(':heure', $_POST['heure'], PDO::PARAM_STR);
-        $stmt->bindValue(':lieu', safeInput($_POST['lieu']), PDO::PARAM_STR);
-        $stmt->bindValue(':description', safeInput($_POST['details']), PDO::PARAM_STR);
-        $stmt->bindValue(':type', $type, PDO::PARAM_INT);
-        $stmt->execute();
-        $id_evenement = $pdo->lastInsertId();
-
-        // Now handle image conversion after ID is generated
         $tmpPath = $_FILES['image']['tmp_name'];
         $uploadDir = '../../asset/img/';
-        $newName = "event_" . $id_evenement . ".webp";
-        $uploadPath = $uploadDir . $newName;
-
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
 
+        $newName = uniqid('event_', true) . '.webp';
+        $uploadPath = $uploadDir . $newName;
         $conversionSuccess = convertToWebP($tmpPath, $uploadPath);
 
         if ($conversionSuccess) {
-            // Update event with image name
-            $stmt = $pdo->prepare("UPDATE evenement SET eve_image = :image WHERE id_eve = :id");
-            $stmt->bindValue(':image', $newName, PDO::PARAM_STR);
-            $stmt->bindValue(':id', $id_evenement, PDO::PARAM_INT);
-            $stmt->execute();
+            Evenement::ajouter(
+                safeInput($_POST['titre']),
+                safeInput($_POST['lieu']),
+                $_POST['date'],
+                $_POST['heure'],
+                safeInput($_POST['details']),
+                $newName,
+                $type
+            );
 
             header('Location: ../../index.php');
             exit;
