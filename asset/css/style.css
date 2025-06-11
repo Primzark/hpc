@@ -84,18 +84,3 @@
   color: #ffffff !important;
   transition: background-color 0.2s ease;
 }
-
-/* Partner logos in the visual footer */
-.partner-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-@media (min-width: 768px) {
-  .partner-circle {
-    width: 100px;
-    height: 100px;
-  }
-}
