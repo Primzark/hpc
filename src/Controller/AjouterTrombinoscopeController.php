@@ -45,9 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $tmpPath = $_FILES['image']['tmp_name'];
         $uploadDir = '../../asset/img/';
-        $newName = 'trombi_' . time() . '.webp';
+        $tmpPath = $_FILES['image']['tmp_name'];
+
+        // Insert pseudo first to retrieve its ID
+        $id = Trombinoscope::ajouter(safeInput($_POST['pseudo']));
+        $newName = 'trombi_' . $id . '.webp';
         $uploadPath = $uploadDir . $newName;
 
         if (!is_dir($uploadDir)) {
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $conversionSuccess = convertToWebP($tmpPath, $uploadPath);
 
         if ($conversionSuccess) {
-            $result = Trombinoscope::ajouter(safeInput($_POST['pseudo']), $newName);
+            $result = Trombinoscope::updateImage($id, $newName);
             if ($result) {
                 header('Location: ../Controller/TrombinoscopeController.php');
                 exit;
