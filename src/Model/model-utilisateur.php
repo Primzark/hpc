@@ -1,11 +1,19 @@
 <?php
 class Utilisateur
 {
-
-    public static function ajouter($nom, $email, $mdp)
+    /**
+     * Return a PDO connection configured for this application.
+     */
+    private static function getPDO()
     {
         $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $pdo;
+    }
+
+    public static function ajouter($nom, $email, $mdp)
+    {
+        $pdo = self::getPDO();
 
         $sql = "INSERT INTO utilisateur (uti_nom, uti_email, uti_mdp) 
             VALUES (:nom, :email, :mdp)";
@@ -19,8 +27,7 @@ class Utilisateur
 
     public static function getByEmail($email)
     {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = self::getPDO();
 
         $sql = "SELECT * FROM utilisateur WHERE uti_email = :email";
         $stmt = $pdo->prepare($sql);
@@ -31,8 +38,7 @@ class Utilisateur
 
     public static function getById($id_uti)
     {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = self::getPDO();
 
         $sql = "SELECT * FROM utilisateur WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
@@ -43,8 +49,7 @@ class Utilisateur
 
     public static function getByNom($nom)
     {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = self::getPDO();
 
         $sql = "SELECT * FROM utilisateur WHERE uti_nom = :nom";
         $stmt = $pdo->prepare($sql);
@@ -55,8 +60,7 @@ class Utilisateur
 
     public static function getAll()
     {
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = self::getPDO();
 
         $sql = "SELECT uti_nom FROM utilisateur ORDER BY uti_nom ASC";
         $stmt = $pdo->query($sql);
