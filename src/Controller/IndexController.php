@@ -15,5 +15,8 @@ if (isset($_SESSION['user_id'])) {
     }
 }
 
+// Afficher les partenaires dans le pied de page
+$showPartners = true;
+
 // Chargement de l'index
 include_once('../../public/index.php');
