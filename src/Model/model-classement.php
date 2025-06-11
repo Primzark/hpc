@@ -56,4 +56,16 @@ class Classement
         $stmt->bindValue(':points', $data['points'], PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    /**
+     * Remove a classement entry.
+     */
+    public static function delete($id_cla)
+    {
+        $pdo = self::getPDO();
+
+        $stmt = $pdo->prepare("DELETE FROM classement WHERE id_cla = :id");
+        $stmt->bindValue(':id', $id_cla, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
