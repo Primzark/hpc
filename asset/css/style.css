@@ -85,3 +85,8 @@
   color: #ffffff !important;
   transition: background-color 0.2s ease;
 }
+
+.partner-logo {
+  max-height: 70px;
+  object-fit: contain;
+}
