@@ -67,5 +67,39 @@ class Evenement
         return $stmt->execute();
     }
 
+    /**
+     * Delete an event and its registrations.
+     */
+    public static function delete($id_eve)
+    {
+        $pdo = self::getPDO();
 
+        $stmt = $pdo->prepare("DELETE FROM s_inscrit_a WHERE id_eve = :id");
+        $stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $stmt = $pdo->prepare("DELETE FROM evenement WHERE id_eve = :id");
+        $stmt->bindValue(':id', $id_eve, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    /**
+     * Retrieve the latest events for the specified type.
+     */
+    public static function getLatestByType($type, $limit)
+    {
+        $pdo = self::getPDO();
+
+        $sql = "SELECT id_eve, eve_titre, eve_date, eve_heure, eve_lieu, eve_description, eve_image
+                FROM evenement
+                WHERE id_type_eve = :type
+                ORDER BY eve_date DESC
+                LIMIT :lim";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':type', $type, PDO::PARAM_INT);
+        $stmt->bindValue(':lim', (int) $limit, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

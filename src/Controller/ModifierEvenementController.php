@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../../config.php';
+require_once '../Model/model-evenement.php';
 
 // Protection d'accès
 if (!isset($_SESSION['user_id'])) {
@@ -22,15 +23,8 @@ function safeInput($string)
     return htmlspecialchars(trim($string));
 }
 
-// Connexion à la BDD
-$pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS);
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-// On récupère l'évènement à modifier
-$stmt = $pdo->prepare("SELECT * FROM evenement WHERE id_eve = :id");
-$stmt->bindValue(':id', $id_evenement, PDO::PARAM_INT);
-$stmt->execute();
-$evenement = $stmt->fetch(PDO::FETCH_ASSOC);
+// Récupération de l'évènement
+$evenement = Evenement::getById($id_evenement);
 
 if (!$evenement) {
     header('Location: ../Controller/IndexController.php');
@@ -112,16 +106,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Si pas d'erreurs, on met à jour
     if (empty($errors)) {
-        $stmt = $pdo->prepare("UPDATE evenement SET eve_lieu = :lieu, eve_date = :date, eve_heure = :heure, eve_description = :description, eve_image = :image WHERE id_eve = :id");
-
-        $stmt->bindValue(':lieu', $lieu, PDO::PARAM_STR);
-        $stmt->bindValue(':date', $date, PDO::PARAM_STR);
-        $stmt->bindValue(':heure', $heure, PDO::PARAM_STR);
-        $stmt->bindValue(':description', $details, PDO::PARAM_STR);
-        $stmt->bindValue(':image', $evenement['eve_image'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $id_evenement, PDO::PARAM_INT);
-
-        $stmt->execute();
+        Evenement::updateEvenement($id_evenement, [
+            'lieu' => $lieu,
+            'date' => $date,
+            'heure' => $heure,
+            'description' => $details,
+            'image' => $evenement['eve_image']
+        ]);
 
         header("Location: /src/Controller/PageEvenementController.php?id=" . $id_evenement);
         exit;

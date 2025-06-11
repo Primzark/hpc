@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once '../../config.php';
+require_once '../Model/model-utilisateur.php';
 
 // Initialisation
 $errors = [];
@@ -33,13 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Si pas d'erreurs de validation de base
     if (empty($errors)) {
 
-        $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4', DB_USER, DB_PASS);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->prepare("SELECT id_uti, uti_mdp FROM utilisateur WHERE uti_email = :email");
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user = Utilisateur::getByEmail($email);
 
         if ($user && password_verify($password, $user['uti_mdp'])) {
             $_SESSION['user_id'] = $user['id_uti'];
