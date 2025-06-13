@@ -114,7 +114,7 @@
             <?php endif; ?>
 
             <div class="col-md-6">
-              <a href="../../src/Controller/IndexController.php"
+              <a href="/src/Controller/EvenementsController.php"
                 class="btn btn-outline-warning btn-rounded w-100 fw-semibold text-center">
                 <i class="bi bi-arrow-left me-2"></i> Retour
               </a>
