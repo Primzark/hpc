@@ -106,6 +106,7 @@
             <p class="text-center text-warning fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
+
                     <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
