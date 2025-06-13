@@ -91,7 +91,7 @@
                         <p class="text-light fw-semibold small mb-1"><?= htmlspecialchars($actu['eve_titre']) ?></p>
                         <p class="custom-text small mb-2">
                             <?= date('d/m/Y', strtotime($actu['eve_date'])) ?> –
-                            <?= substr(htmlspecialchars($actu['eve_description']), 0, 50) ?>…
+                            <?= substr(htmlspecialchars($actu['eve_description']), 0, 20) ?>…
                         </p>
                         <a href="/src/Controller/PageEvenementController.php?id=<?= $actu['id_eve'] ?>"
                             class="btn btn-sm btn-outline-warning w-100">Lire</a>
@@ -103,28 +103,28 @@
 
     <div class="py-4">
         <div class="container">
-            <p class="text-center text-warning fw-semibold mb-3">Nos partenaires</p>
+            <p class="text-center text-warning display-6 fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/confo.png" alt="Conforama" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/confo.png" alt="Conforama" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/dfds.png" alt="DFDS" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/dfds.png" alt="DFDS" style="width: 120px; height: 120px; border-radius: 20%; object-fit: cover;">
                 </div>
             </div>
         </div>
