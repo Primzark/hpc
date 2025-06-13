@@ -106,25 +106,25 @@
             <p class="text-center text-warning fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/confo.png" alt="Conforama" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/confo.png" alt="Conforama" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/dfds.png" alt="DFDS" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+                    <img src="/asset/img/dfds.png" alt="DFDS" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
                 </div>
             </div>
         </div>
