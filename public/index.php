@@ -106,25 +106,26 @@
             <p class="text-center text-warning fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+
+                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/confo.png" alt="Conforama" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/dfds.png" alt="DFDS" class="img-fluid" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+                    <img src="/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
                 </div>
             </div>
         </div>
