@@ -26,7 +26,8 @@ class Classement
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM classement ORDER BY cla_rang ASC";
+        $sql = "SELECT id_cla, cla_nomjoueur, cla_rang, cla_points, id_uti
+                FROM classement ORDER BY cla_rang ASC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -35,7 +36,8 @@ class Classement
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM classement WHERE id_cla = :id";
+        $sql = "SELECT id_cla, cla_nomjoueur, cla_rang, cla_points, id_uti
+                FROM classement WHERE id_cla = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_cla, PDO::PARAM_INT);
         $stmt->execute();

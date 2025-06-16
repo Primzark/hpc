@@ -15,7 +15,7 @@ class Inscription
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM s_inscrit_a WHERE id_eve = :id_eve AND id_uti = :id_uti";
+        $sql = "SELECT id_uti, id_eve FROM s_inscrit_a WHERE id_eve = :id_eve AND id_uti = :id_uti";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id_eve', $id_eve, PDO::PARAM_INT);
         $stmt->bindValue(':id_uti', $id_uti, PDO::PARAM_INT);
