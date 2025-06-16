@@ -34,7 +34,8 @@ class Evenement
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM evenement ORDER BY eve_date DESC";
+        $sql = "SELECT id_eve, eve_titre, eve_lieu, eve_date, eve_heure, eve_description, eve_image, id_type_eve
+                FROM evenement ORDER BY eve_date DESC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -43,7 +44,8 @@ class Evenement
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM evenement WHERE id_eve = :id";
+        $sql = "SELECT id_eve, eve_titre, eve_lieu, eve_date, eve_heure, eve_description, eve_image, id_type_eve
+                FROM evenement WHERE id_eve = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_eve);
         $stmt->execute();

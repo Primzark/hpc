@@ -29,7 +29,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM utilisateur WHERE uti_email = :email";
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+                FROM utilisateur WHERE uti_email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':email', $email);
         $stmt->execute();
@@ -40,7 +41,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM utilisateur WHERE id_uti = :id";
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+                FROM utilisateur WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_uti);
         $stmt->execute();
@@ -51,7 +53,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT * FROM utilisateur WHERE uti_nom = :nom";
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+                FROM utilisateur WHERE uti_nom = :nom";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':nom', $nom);
         $stmt->execute();

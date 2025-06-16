@@ -32,7 +32,7 @@ class Trombinoscope
     public static function getAll()
     {
         $pdo = self::getPDO();
-        $sql = "SELECT * FROM trombinoscope ORDER BY id_tro DESC";
+        $sql = "SELECT id_tro, tro_pseudo, tro_image FROM trombinoscope ORDER BY id_tro DESC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
