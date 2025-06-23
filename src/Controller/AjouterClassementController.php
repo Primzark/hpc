@@ -3,7 +3,7 @@
 session_start();
 
 // Inclusion du fichier de connexion à la base de données
-require_once '../../config.php';
+require_once __DIR__ . '/../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
 require_once '../Model/model-classement.php';
 

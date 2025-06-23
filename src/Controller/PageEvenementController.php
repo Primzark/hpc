@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once "../../config.php";
+include_once __DIR__ . "/../../config.php";
 include_once "../Model/model-evenement.php";
 include_once "../Model/model-inscription.php";
 
