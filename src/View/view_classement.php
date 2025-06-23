@@ -34,10 +34,10 @@ include_once('../../templates/navbar.php');
 
                     <div class="col-3 col-md-2 text-center">
                         <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="/src/Controller/ModifierClassementController.php?id=<?php echo $entry['id_cla']; ?>"
+                                class="btn btn-warning btn-sm mb-1">Modifier</a>
                             <a href="/src/Controller/SupprimerClassementController.php?id=<?php echo $entry['id_cla']; ?>"
-                                class="btn btn-warning btn-sm">
-                                Supprimer
-                            </a>
+                                class="btn btn-warning btn-sm">Supprimer</a>
                         <?php endif; ?>
                     </div>
                 </div>
