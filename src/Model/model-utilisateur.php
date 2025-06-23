@@ -65,8 +65,24 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT uti_nom FROM utilisateur ORDER BY uti_nom ASC";
+        $sql = "SELECT id_uti, uti_nom FROM utilisateur ORDER BY uti_nom ASC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Delete a user and its registrations.
+     */
+    public static function delete($id_uti)
+    {
+        $pdo = self::getPDO();
+
+        $stmt = $pdo->prepare("DELETE FROM s_inscrit_a WHERE id_uti = :id");
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        $stmt->execute();
+
+        $stmt = $pdo->prepare("DELETE FROM utilisateur WHERE id_uti = :id");
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 }
