@@ -29,7 +29,6 @@
                     <p class="fw-bold text-light mb-1">PokerStars</p>
                     <p class="custom-text mb-1">PokerStars, leader mondial du poker en ligne, est un partenaire clé qui
                         soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -45,7 +44,6 @@
                     <p class="custom-text mb-1">Circus Casino Namur soutient nos évènements en offrant des espaces
                         prestigieux pour nos tournois et en participant à l’organisation de compétitions d’envergure.
                     </p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -61,7 +59,6 @@
                     <p class="custom-text mb-1">Pasino Le Havre est un partenaire local qui accueille nos tournois en
                         présentiel, offrant une expérience de jeu exceptionnelle à nos membres dans un cadre moderne.
                     </p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -76,7 +73,6 @@
                     <p class="fw-bold text-light mb-1">Conforama</p>
                     <p class="custom-text mb-1">Conforama, enseigne d’ameublement bien connue, soutient notre club en
                         tant que sponsor local, contribuant à nos évènements et à notre visibilité.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -91,7 +87,6 @@
                     <p class="fw-bold text-light mb-1">Auto-école d’Ingouville</p>
                     <p class="custom-text mb-1">L’Auto-école d’Ingouville, située à proximité, est un partenaire local
                         qui soutient nos initiatives communautaires et nos évènements.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -106,7 +101,6 @@
                     <p class="fw-bold text-light mb-1">Caval Brod</p>
                     <p class="custom-text mb-1">Caval Brod, entreprise locale, contribue à nos activités en tant que
                         sponsor, renforçant notre présence dans la région.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
@@ -121,7 +115,6 @@
                     <p class="fw-bold text-light mb-1">DFDS</p>
                     <p class="custom-text mb-1">DFDS, opérateur de ferries, soutient notre club en facilitant les
                         déplacements pour nos tournois régionaux et internationaux.</p>
-                    <a href="#" class="text-warning fw-semibold text-decoration-none">Visiter le site</a>
                 </div>
             </div>
         </div>
