@@ -53,7 +53,7 @@
 
             <div class="text-center login-hint mt-3">
               <small>Pas encore de compte ? <a
-                  href="/src/Controller/UtilisateurInscriptionController.php">S'inscrire</a></small>
+                  href="/utilisateur/inscription">S'inscrire</a></small>
             </div>
           </form>
         </div>

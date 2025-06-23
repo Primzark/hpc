@@ -9,7 +9,7 @@
                     <p class="display-6 fw-bold text-light mb-4">Modifier</p>
 
                     <!-- Formulaire -->
-                    <form action="/src/Controller/ModifierEvenementController.php?id=<?php echo $evenement['id_eve']; ?>"
+                    <form action="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>"
                         method="post" enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
@@ -85,7 +85,7 @@
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer
                                 modification</button>
-                            <a href="/src/Controller/PageEvenementController.php?id=<?php echo $evenement['id_eve']; ?>"
+                            <a href="/page-evenement?id=<?php echo $evenement['id_eve']; ?>"
                                 class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2"></span> Retour
                             </a>

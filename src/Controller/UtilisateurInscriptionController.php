@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['user_admin'] = $user['uti_admin'];
 
         // Redirige vers la page de confirmation d'inscription
-        header('Location: ../Controller/InscriptionConfirmController.php');
+        header('Location: /inscription/confirm');
         exit;
     }
 

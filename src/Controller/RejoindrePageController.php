@@ -5,7 +5,7 @@ require_once __DIR__ . '/../Model/model-evenement.php';
 require_once __DIR__ . '/../Model/model-inscription.php'; // ← AJOUT
 
 if (!isset($_GET['event']) || !is_numeric($_GET['event'])) {
-    header('Location: ../../index.php');
+    header('Location: /');
     exit;
 }
 
@@ -13,7 +13,7 @@ $eventId = (int) $_GET['event'];
 $evenement = Evenement::getById($eventId); // updated method name
 
 if (!$evenement) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 

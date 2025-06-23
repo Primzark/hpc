@@ -5,13 +5,13 @@ require_once __DIR__ . '/../Model/model-evenement.php';
 
 // Protection d'accès
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
 // Vérifie que l'identifiant est bien passé
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -27,7 +27,7 @@ function safeInput($string)
 $evenement = Evenement::getById($id_evenement);
 
 if (!$evenement) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'image' => $evenement['eve_image']
         ]);
 
-        header("Location: /src/Controller/PageEvenementController.php?id=" . $id_evenement);
+        header("Location: /page-evenement?id=" . $id_evenement);
         exit;
     }
 }

@@ -5,7 +5,7 @@ include_once __DIR__ . '/../Model/model-evenement.php';
 include_once __DIR__ . '/../Model/model-inscription.php';
 
 if (!isset($_GET['id'])) {
-    header("Location: ../Controller/IndexController.php");
+    header("Location: /");
     exit;
 }
 
