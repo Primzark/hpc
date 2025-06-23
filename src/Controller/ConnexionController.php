@@ -48,5 +48,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // On appelle la vue en lui passant les variables
-require_once '../../src/View/view_connexion.php';
+require_once __DIR__ . '/../View/view_connexion.php';
 ?>
