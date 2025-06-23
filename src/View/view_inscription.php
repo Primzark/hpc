@@ -93,13 +93,9 @@
                         </p>
 
                         <!-- Captcha -->
-                        <div class="mb-3 mt-4">
-                            <label for="captcha" class="form-label fw-semibold custom-text">
-                                Combien font <?php echo $_SESSION['captcha_num1']; ?> + <?php echo $_SESSION['captcha_num2']; ?> ?
-                            </label>
-                            <input type="text"
-                                class="form-control custom-bg <?php echo isset($errors['captcha']) ? 'is-invalid' : ''; ?>"
-                                id="captcha" name="captcha" placeholder="Réponse">
+                        <div class="form-check mb-3 mt-4">
+                            <input class="form-check-input <?php echo isset($errors['captcha']) ? 'is-invalid' : ''; ?>" type="checkbox" id="captcha" name="captcha" value="1">
+                            <label class="form-check-label fw-semibold custom-text" for="captcha">Je ne suis pas un robot</label>
                             <?php if (isset($errors['captcha'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['captcha']; ?></div>
                             <?php endif; ?>
