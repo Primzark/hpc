@@ -91,6 +91,20 @@
                         <p class="text-center login-hint small">
                             Déjà un compte ? <a href="/connexion">Connectez-vous ici</a>
                         </p>
+
+                        <!-- Captcha -->
+                        <div class="mb-3 mt-4">
+                            <label for="captcha" class="form-label fw-semibold custom-text">
+                                Combien font <?php echo $_SESSION['captcha_num1']; ?> + <?php echo $_SESSION['captcha_num2']; ?> ?
+                            </label>
+                            <input type="text"
+                                class="form-control custom-bg <?php echo isset($errors['captcha']) ? 'is-invalid' : ''; ?>"
+                                id="captcha" name="captcha" placeholder="Réponse">
+                            <?php if (isset($errors['captcha'])): ?>
+                                <div class="invalid-feedback"><?php echo $errors['captcha']; ?></div>
+                            <?php endif; ?>
+                        </div>
+
                     </form>
                 </div>
 
