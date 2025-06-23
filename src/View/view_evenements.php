@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
-                <!-- Page Title -->
+                <!-- Titre de la page -->
                 <p class="display-6 fw-bold text-light mb-4">Évènements</p>
 
                 <?php if (isset($_SESSION['user_id'])): ?>

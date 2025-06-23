@@ -8,7 +8,7 @@
                 <div class="pitch-black p-5 rounded-4">
                     <p class="display-6 fw-bold text-light mb-4">Modifier</p>
 
-                    <!-- Form -->
+                    <!-- Formulaire -->
                     <form action="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                         method="post" enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
 
-                        <!-- Buttons -->
+                        <!-- Boutons -->
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer
                                 modification</button>

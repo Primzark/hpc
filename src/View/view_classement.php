@@ -17,7 +17,7 @@ include_once('../../templates/navbar.php');
         <?php endif; ?>
 
         <div class="form-section-bg p-4 rounded">
-            <!-- Header Row -->
+            <!-- Ligne d'en-tête -->
             <div class="row text-light fw-bold border-bottom py-2">
                 <div class="col-3 col-md-1">Rang</div>
                 <div class="col-3 col-md-6">Joueur</div>
@@ -25,7 +25,7 @@ include_once('../../templates/navbar.php');
                 <div class="col-3 col-md-2 text-center">Action</div>
             </div>
 
-            <!-- Data Rows -->
+            <!-- Lignes de données -->
             <?php foreach ($classement as $entry): ?>
                 <div class="row border-bottom py-2 custom-text align-items-center">
                     <div class="col-3 col-md-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>

@@ -7,10 +7,10 @@
             <div class="col-12 col-lg-10">
 
 
-                <!-- Page Title -->
+                <!-- Titre de la page -->
                 <p class="display-6 fw-bold text-light mb-4">Nous Contacter</p>
 
-                <!-- Contact Info Section -->
+                <!-- Section des informations de contact -->
                 <div class="form-section-bg p-4 rounded text-light mb-4">
 
                     <p class="fw-semibold text-light mb-3">
@@ -43,7 +43,7 @@
                     </div>
                 </div>
 
-                <!-- Map Section -->
+                <!-- Section de la carte -->
                 <div class="form-section-bg p-4 rounded text-light">
                     <p class="fw-semibold text-light mb-3">
                         <i class="bi bi-geo-fill text-warning me-2"></i>Notre Localisation

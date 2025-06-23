@@ -4,7 +4,7 @@
 <div class="custom-bg min-vh-100 py-5">
     <div class="container">
 
-        <!-- Intro -->
+        <!-- Introduction -->
         <div class="row justify-content-center mb-4">
             <div class="col-12 col-lg-10">
                 <p class="text-light">
@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <!-- Partner 1 -->
+        <!-- Partenaire 1 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <!-- Partner 2 -->
+        <!-- Partenaire 2 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -50,7 +50,7 @@
             </div>
         </div>
 
-        <!-- Partner 3 -->
+        <!-- Partenaire 3 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -66,7 +66,7 @@
             </div>
         </div>
 
-        <!-- Partner 4 -->
+        <!-- Partenaire 4 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        <!-- Partner 7 -->
+        <!-- Partenaire 7 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <!-- Partner 8 -->
+        <!-- Partenaire 8 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
@@ -111,7 +111,7 @@
             </div>
         </div>
 
-        <!-- Partner 9 -->
+        <!-- Partenaire 9 -->
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">

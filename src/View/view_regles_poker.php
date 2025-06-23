@@ -7,10 +7,10 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
-                <!-- Page Title -->
+                <!-- Titre de la page -->
                 <p class="display-6 fw-bold text-light mb-4">Règles du poker</p>
 
-                <!-- Content Section -->
+                <!-- Section de contenu -->
                 <div class="form-section-bg p-4 rounded text-light">
 
                     <!-- Texas Hold'em -->
@@ -33,7 +33,7 @@
                         Parfois, on joue à une version où celui qui a les cartes les plus faibles peut aussi gagner.
                     </p>
 
-                    <!-- Combinations -->
+                    <!-- Combinaisons -->
                     <p class="fw-bold mb-2">Voici les meilleures combinaisons de cartes, de la plus forte à la moins
                         forte :</p>
                     <ul class="custom-text mb-4">
@@ -42,7 +42,7 @@
                         <li>Carré : 4 cartes identiques (par exemple, quatre 7).</li>
                     </ul>
 
-                    <!-- Important Terms -->
+                    <!-- Termes importants -->
                     <p class="fw-bold mb-2">Quelques mots importants à connaître :</p>
                     <ul class="custom-text mb-0">
                         <li>Blinds : Ce sont des mises que certains joueurs doivent mettre avant de commencer, pour
