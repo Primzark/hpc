@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../../src/Model/model-evenement.php';
+require_once __DIR__ . '/../Model/model-evenement.php';
 
 $errors = [];
 $regex = "/^[^#%^&*\\][;}{=+\\|><`~]*$/";
@@ -108,5 +108,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-include_once '../View/view_ajouter_evenement.php';
+include_once __DIR__ . '/../View/view_ajouter_evenement.php';
 ?>

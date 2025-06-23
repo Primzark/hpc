@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-evenement.php';
+require_once __DIR__ . '/../Model/model-evenement.php';
 
 // Redirection si l'utilisateur n'est pas connecté
 // if (!isset($_SESSION['user_id'])) {
@@ -12,4 +12,4 @@ require_once '../Model/model-evenement.php';
 
 $evenements = Evenement::getAll();
 
-include_once '../View/view_evenements.php';
+include_once __DIR__ . '/../View/view_evenements.php';

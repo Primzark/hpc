@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-evenement.php';
-require_once '../Model/model-utilisateur.php';
+require_once __DIR__ . '/../Model/model-evenement.php';
+require_once __DIR__ . '/../Model/model-utilisateur.php';
 
 $tournois = Evenement::getLatestByType(2, 3);
 $actus = Evenement::getLatestByType(1, 3);
@@ -16,4 +16,4 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Chargement de l'index
-include_once('../../public/index.php');
+include_once(__DIR__ . '/../../public/index.php');

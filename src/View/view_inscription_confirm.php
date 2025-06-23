@@ -1,4 +1,4 @@
-<?php include_once('../../templates/head.php'); ?>
+<?php include_once(__DIR__ . '/../../templates/head.php'); ?>
 
 <div class="custom-bg min-vh-100 d-flex flex-column">
 
@@ -18,6 +18,6 @@
             </div>
         </div>
     </div>
-    <?php include_once('../../templates/footer.php'); ?>
+    <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
 
 </div>

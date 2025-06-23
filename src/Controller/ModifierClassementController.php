@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-classement.php';
+require_once __DIR__ . '/../Model/model-classement.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../Controller/IndexController.php');
@@ -68,4 +68,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require_once '../View/view_modifier_classement.php';
+require_once __DIR__ . '/../View/view_modifier_classement.php';

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-trombinoscope.php';
+require_once __DIR__ . '/../Model/model-trombinoscope.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../Controller/IndexController.php');

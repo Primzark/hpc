@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-evenement.php';
+require_once __DIR__ . '/../Model/model-evenement.php';
 
 // Protection d'accès
 if (!isset($_SESSION['user_id'])) {
@@ -120,4 +120,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // On charge la vue avec les variables préparées
-require_once '../View/view_modifier_evenement.php';
+require_once __DIR__ . '/../View/view_modifier_evenement.php';
