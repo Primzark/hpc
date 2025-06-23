@@ -10,12 +10,12 @@
                 <div class="pitch-black p-5 rounded-4">
                     <p class="display-6 fw-bold text-light mb-4">Ajouter un nouvel évènement</p>
 
-                    <!-- Form -->
+                    <!-- Formulaire -->
                     <form action="/src/Controller/AjouterEvenementController.php" method="post"
                         enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
-                            <!-- Image Upload -->
+                            <!-- Téléversement d'image -->
                             <div class="col-12">
                                 <label for="image" class="form-label fw-semibold text-light">Image de
                                     l'évènement</label>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
 
-                        <!-- Buttons -->
+                        <!-- Boutons -->
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Ajouter</button>
                             <a href="/src/Controller/EvenementsController.php"

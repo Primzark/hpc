@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-10">
 
-        <!-- Title + Modifier + Supprimer -->
+        <!-- Titre + Modifier + Supprimer -->
         <div class="row align-items-center mb-4">
           <div class="col-md-6">
             <p class="display-6 fw-bold text-light mb-0">Info évènement</p>
@@ -16,13 +16,13 @@
               <a href="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
                 class="btn btn-warning">Modifier</a>
 
-              <!-- Trigger Button -->
+              <!-- Bouton de déclenchement -->
               <button class="btn btn-sm custom-add text-light px-3 py-2" data-bs-toggle="modal"
                 data-bs-target="#confirmDeleteModal" data-event-id="<?= $evenement['id_eve'] ?>">
                 Supprimer
               </button>
 
-              <!-- Delete Confirmation Modal -->
+              <!-- Fenêtre de confirmation de suppression -->
               <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -46,10 +46,10 @@
           <?php endif; ?>
         </div>
 
-        <!-- Main Card -->
+        <!-- Carte principale -->
         <div class="form-section-bg p-4 rounded text-light">
 
-          <!-- Event Title -->
+          <!-- Titre de l'évènement -->
           <div class="row mb-4">
             <div class="col-12">
               <h2 class="fw-bold mb-0 text-light"><?= htmlspecialchars($evenement['eve_titre']) ?></h2>
@@ -57,7 +57,7 @@
           </div>
 
           <div class="row g-4 mb-4">
-            <!-- Info Columns -->
+            <!-- Colonnes d'informations -->
             <div class="col-md-6">
 
               <div class="row mb-3">
@@ -86,14 +86,14 @@
 
             </div>
 
-            <!-- Right Image Column -->
+            <!-- Colonne de l'image droite -->
             <div class="col-md-6 text-center">
               <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>" alt="Image de l'évènement"
                 class="img-fluid rounded" style="max-height: 280px;">
             </div>
           </div>
 
-          <!-- Action Buttons -->
+          <!-- Boutons d'action -->
           <div class="row g-3 mt-4">
             <?php if ($evenement['id_type_eve'] == 2): ?>
               <?php if (isset($_SESSION['user_id'])): ?>

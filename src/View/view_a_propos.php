@@ -7,10 +7,10 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
-                <!-- Page Title -->
+                <!-- Titre de la page -->
                 <p class="display-6 fw-bold text-light mb-4">À propos</p>
 
-                <!-- Content Section -->
+                <!-- Section de contenu -->
                 <div class="form-section-bg p-4 rounded text-light">
 
                     <!-- Notre histoire -->

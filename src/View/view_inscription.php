@@ -5,16 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
 
-                <!-- HPC Logo -->
+                <!-- Logo HPC -->
                 <div class="text-center mb-4">
                     <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
                         style="max-height: 100px;">
                 </div>
 
-                <!-- Title -->
+                <!-- Titre -->
                 <p class="display-6 fw-bold text-center mb-4 text-light">Créer un compte</p>
 
-                <!-- Form Container -->
+                <!-- Conteneur du formulaire -->
                 <div class="form-section-bg p-4 rounded text-light">
                     <form action="/src/Controller/UtilisateurInscriptionController.php" method="post" novalidate>
 
@@ -32,7 +32,7 @@
                             <?php endif; ?>
                         </div>
 
-                        <!-- Email -->
+                        <!-- E-mail -->
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
                             <div class="form-text login-hint mb-1">Exemple : nom@domaine.com</div>
@@ -45,7 +45,7 @@
                             <?php endif; ?>
                         </div>
 
-                        <!-- Age -->
+                        <!-- Âge -->
                         <div class="mb-3">
                             <label for="age" class="form-label fw-semibold custom-text">Âge</label>
                             <div class="form-text login-hint mb-1">Vous devez avoir 18 ans ou plus</div>
@@ -82,12 +82,12 @@
                             <?php endif; ?>
                         </div>
 
-                        <!-- Submit Button -->
+                        <!-- Bouton de validation -->
                         <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-warning">S'inscrire</button>
                         </div>
 
-                        <!-- Login Link -->
+                        <!-- Lien de connexion -->
                         <p class="text-center login-hint small">
                             Déjà un compte ? <a href="/src/Controller/ConnexionController.php">Connectez-vous ici</a>
                         </p>

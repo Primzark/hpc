@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
 
-        <!-- HPC Logo -->
+        <!-- Logo HPC -->
         <div class="text-center mb-4">
           <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
             style="max-height: 100px;">
@@ -15,7 +15,7 @@
           <form method="POST" action="">
             <p class="fs-4 fw-bold text-white mb-4 text-center">Connexion</p>
 
-            <!-- Email -->
+            <!-- E-mail -->
             <div class="mb-3">
               <label for="email" class="form-label field-text">Email</label>
               <input type="email" class="form-control custom-add <?php if (!empty($errors['email']))
