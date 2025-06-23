@@ -15,7 +15,7 @@ $age = '';
 
 $errors = []; // Tableau des erreurs
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Conserve les valeurs saisies
     $nom = $_POST['nom'] ?? '';
     $email = $_POST['email'] ?? '';
