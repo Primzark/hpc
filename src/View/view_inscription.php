@@ -92,12 +92,11 @@
                             Déjà un compte ? <a href="/connexion">Connectez-vous ici</a>
                         </p>
 
-                        <!-- Captcha -->
-                        <div class="form-check mb-3 mt-4">
-                            <input class="form-check-input <?php echo isset($errors['captcha']) ? 'is-invalid' : ''; ?>" type="checkbox" id="captcha" name="captcha" value="1">
-                            <label class="form-check-label fw-semibold custom-text" for="captcha">Je ne suis pas un robot</label>
+                        <!-- reCAPTCHA -->
+                        <div class="mb-3 mt-4">
+                            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
                             <?php if (isset($errors['captcha'])): ?>
-                                <div class="invalid-feedback"><?php echo $errors['captcha']; ?></div>
+                                <div class="invalid-feedback d-block"><?php echo $errors['captcha']; ?></div>
                             <?php endif; ?>
                         </div>
 
