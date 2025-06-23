@@ -15,7 +15,7 @@
             <ul class="list-group">
                 <?php foreach ($utilisateurs as $utilisateur): ?>
                     <li class="list-group-item form-section-bg text-light">
-                        <?= htmlspecialchars($utilisateur['uti_nom']) ?>
+                        <?php echo htmlspecialchars($utilisateur['uti_nom']); ?>
                     </li>
                 <?php endforeach; ?>
             </ul>

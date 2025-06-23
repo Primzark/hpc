@@ -13,12 +13,12 @@
           </div>
           <?php if (isset($_SESSION['user_id'])): ?>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
-              <a href="/src/Controller/ModifierEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+              <a href="/src/Controller/ModifierEvenementController.php?id=<?php echo $evenement['id_eve']; ?>"
                 class="btn btn-warning">Modifier</a>
 
               <!-- Bouton de déclenchement -->
               <button class="btn btn-sm custom-add text-light px-3 py-2" data-bs-toggle="modal"
-                data-bs-target="#confirmDeleteModal" data-event-id="<?= $evenement['id_eve'] ?>">
+                data-bs-target="#confirmDeleteModal" data-event-id="<?php echo $evenement['id_eve']; ?>">
                 Supprimer
               </button>
 
@@ -52,7 +52,7 @@
           <!-- Titre de l'évènement -->
           <div class="row mb-4">
             <div class="col-12">
-              <h2 class="fw-bold mb-0 text-light"><?= htmlspecialchars($evenement['eve_titre']) ?></h2>
+              <h2 class="fw-bold mb-0 text-light"><?php echo htmlspecialchars($evenement['eve_titre']); ?></h2>
             </div>
           </div>
 
@@ -65,14 +65,14 @@
                   <i class="bi bi-calendar-event text-warning me-2"></i>
                   <span class="fw-semibold text-warning">Date et heure</span><br>
                   <span class="custom-text">
-                    <?= date('d/m/Y', strtotime($evenement['eve_date'])) ?>,
-                    <?= date('H:i', strtotime($evenement['eve_heure'])) ?>
+                    <?php echo date('d/m/Y', strtotime($evenement['eve_date'])); ?>,
+                    <?php echo date('H:i', strtotime($evenement['eve_heure'])); ?>
                   </span>
                 </div>
                 <div class="col-6">
                   <i class="bi bi-geo-alt-fill text-warning me-2"></i>
                   <span class="fw-semibold text-warning">Lieu</span><br>
-                  <span class="custom-text"><?= htmlspecialchars($evenement['eve_lieu']) ?></span>
+                  <span class="custom-text"><?php echo htmlspecialchars($evenement['eve_lieu']); ?></span>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@
                 <div class="col-12">
                   <i class="bi bi-info-circle text-warning me-2"></i>
                   <span class="fw-semibold text-warning">Description</span><br>
-                  <span class="custom-text"><?= nl2br(htmlspecialchars($evenement['eve_description'])) ?></span>
+                  <span class="custom-text"><?php echo nl2br(htmlspecialchars($evenement['eve_description'])); ?></span>
                 </div>
               </div>
 
@@ -88,7 +88,7 @@
 
             <!-- Colonne de l'image droite -->
             <div class="col-md-6 text-center">
-              <img src="/asset/img/<?= htmlspecialchars($evenement['eve_image']) ?>" alt="Image de l'évènement"
+              <img src="/asset/img/<?php echo htmlspecialchars($evenement['eve_image']); ?>" alt="Image de l'évènement"
                 class="img-fluid rounded" style="max-height: 280px;">
             </div>
           </div>
@@ -98,7 +98,7 @@
             <?php if ($evenement['id_type_eve'] == 2): ?>
               <?php if (isset($_SESSION['user_id'])): ?>
                 <div class="col-md-6">
-                  <a href="/src/Controller/RejoindrePageController.php?event=<?= $evenement['id_eve'] ?>"
+                  <a href="/src/Controller/RejoindrePageController.php?event=<?php echo $evenement['id_eve']; ?>"
                     class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> S’inscrire à l’évènement
                   </a>

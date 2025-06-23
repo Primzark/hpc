@@ -24,11 +24,11 @@
                             <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . _ - +
                             </div>
                             <input type="text"
-                                class="form-control custom-bg <?= isset($errors['nom']) ? 'is-invalid' : '' ?>" id="nom"
+                                class="form-control custom-bg <?php echo isset($errors['nom']) ? 'is-invalid' : ''; ?>" id="nom"
                                 name="nom" placeholder="Entrez votre nom d'utilisateur"
-                                value="<?= isset($nom) ? htmlspecialchars($nom) : '' ?>">
+                                value="<?php echo isset($nom) ? htmlspecialchars($nom) : ''; ?>">
                             <?php if (isset($errors['nom'])): ?>
-                                <div class="invalid-feedback"><?= $errors['nom'] ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['nom']; ?></div>
                             <?php endif; ?>
                         </div>
 
@@ -37,11 +37,11 @@
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
                             <div class="form-text login-hint mb-1">Exemple : nom@domaine.com</div>
                             <input type="email"
-                                class="form-control custom-bg <?= isset($errors['email']) ? 'is-invalid' : '' ?>"
+                                class="form-control custom-bg <?php echo isset($errors['email']) ? 'is-invalid' : ''; ?>"
                                 id="email" name="email" placeholder="Entrer votre mail"
-                                value="<?= isset($email) ? htmlspecialchars($email) : '' ?>">
+                                value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>">
                             <?php if (isset($errors['email'])): ?>
-                                <div class="invalid-feedback"><?= $errors['email'] ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['email']; ?></div>
                             <?php endif; ?>
                         </div>
 
@@ -50,11 +50,11 @@
                             <label for="age" class="form-label fw-semibold custom-text">Âge</label>
                             <div class="form-text login-hint mb-1">Vous devez avoir 18 ans ou plus</div>
                             <input type="number"
-                                class="form-control custom-bg <?= isset($errors['age']) ? 'is-invalid' : '' ?>" id="age"
+                                class="form-control custom-bg <?php echo isset($errors['age']) ? 'is-invalid' : ''; ?>" id="age"
                                 name="age" min="0" placeholder="Entrez votre âge"
-                                value="<?= isset($age) ? htmlspecialchars($age) : '' ?>">
+                                value="<?php echo isset($age) ? htmlspecialchars($age) : ''; ?>">
                             <?php if (isset($errors['age'])): ?>
-                                <div class="invalid-feedback"><?= $errors['age'] ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['age']; ?></div>
                             <?php endif; ?>
                         </div>
 
@@ -63,10 +63,10 @@
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
                             <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . @ -</div>
                             <input type="password"
-                                class="form-control custom-bg <?= isset($errors['password']) ? 'is-invalid' : '' ?>"
+                                class="form-control custom-bg <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>"
                                 id="password" name="password" placeholder="Entrer votre mot de passe">
                             <?php if (isset($errors['password'])): ?>
-                                <div class="invalid-feedback"><?= $errors['password'] ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
                             <?php endif; ?>
                         </div>
 
@@ -75,10 +75,10 @@
                             <label for="confirm_password" class="form-label fw-semibold custom-text">Confirmer le mot de
                                 passe</label>
                             <input type="password"
-                                class="form-control custom-bg <?= isset($errors['confirm_password']) ? 'is-invalid' : '' ?>"
+                                class="form-control custom-bg <?php echo isset($errors['confirm_password']) ? 'is-invalid' : ''; ?>"
                                 id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe">
                             <?php if (isset($errors['confirm_password'])): ?>
-                                <div class="invalid-feedback"><?= $errors['confirm_password'] ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['confirm_password']; ?></div>
                             <?php endif; ?>
                         </div>
 

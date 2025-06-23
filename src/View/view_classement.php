@@ -28,13 +28,13 @@ include_once('../../templates/navbar.php');
             <!-- Lignes de données -->
             <?php foreach ($classement as $entry): ?>
                 <div class="row border-bottom py-2 custom-text align-items-center">
-                    <div class="col-3 col-md-1"><?= htmlspecialchars($entry['cla_rang']) ?></div>
-                    <div class="col-3 col-md-6"><?= htmlspecialchars($entry['cla_nomjoueur']) ?></div>
-                    <div class="col-3 col-md-3"><?= htmlspecialchars($entry['cla_points']) ?></div>
+                    <div class="col-3 col-md-1"><?php echo htmlspecialchars($entry['cla_rang']); ?></div>
+                    <div class="col-3 col-md-6"><?php echo htmlspecialchars($entry['cla_nomjoueur']); ?></div>
+                    <div class="col-3 col-md-3"><?php echo htmlspecialchars($entry['cla_points']); ?></div>
 
                     <div class="col-3 col-md-2 text-center">
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/src/Controller/SupprimerClassementController.php?id=<?= $entry['id_cla'] ?>"
+                            <a href="/src/Controller/SupprimerClassementController.php?id=<?php echo $entry['id_cla']; ?>"
                                 class="btn btn-warning btn-sm">
                                 Supprimer
                             </a>
