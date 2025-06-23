@@ -36,5 +36,29 @@ class Trombinoscope
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Retrieve a trombinoscope entry by its id.
+     */
+    public static function getById($id_tro)
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT id_tro, tro_pseudo, tro_image FROM trombinoscope WHERE id_tro = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id', $id_tro, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Delete a trombinoscope entry.
+     */
+    public static function delete($id_tro)
+    {
+        $pdo = self::getPDO();
+        $stmt = $pdo->prepare("DELETE FROM trombinoscope WHERE id_tro = :id");
+        $stmt->bindValue(':id', $id_tro, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
 ?>
