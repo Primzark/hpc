@@ -14,8 +14,8 @@
 
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
-                        <a class="nav-link text-warning fw-semibold text-nowrap"
-                            href="/deconnexion/confirm">Se déconnecter</a>
+                        <a class="nav-link text-warning fw-semibold text-nowrap" href="/deconnexion/confirm">Se
+                            déconnecter</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
@@ -37,16 +37,13 @@
                         </a>
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="adminDropdown">
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
-                                    href="/evenements">Evènements</a>
+                                <a class="dropdown-item text-white py-3 px-4" href="/evenements">Evènements</a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
-                                    href="/classement">Classement</a>
+                                <a class="dropdown-item text-white py-3 px-4" href="/classement">Classement</a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
-                                    href="/trombinoscope">Trombinoscope</a>
+                                <a class="dropdown-item text-white py-3 px-4" href="/trombinoscope">Trombinoscope</a>
                             </li>
                         </ul>
                     </li>
@@ -59,14 +56,12 @@
                 <?php else: ?>
                     <!-- Classement visible uniquement si pas connecté -->
                     <li class="nav-item">
-                        <a class="nav-link text-white text-nowrap"
-                            href="/classement">Classement</a>
+                        <a class="nav-link text-white text-nowrap" href="/classement">Classement</a>
                     </li>
 
                     <!-- Evènements visible uniquement si pas connecté -->
                     <li class="nav-item">
-                        <a class="nav-link text-white text-nowrap"
-                            href="/evenements">Evènements</a>
+                        <a class="nav-link text-white text-nowrap" href="/evenements">Evènements</a>
                     </li>
 
                     <!-- Membres inscrits avec trombinoscope en dropdown -->
@@ -77,12 +72,10 @@
                         </a>
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="membresDropdown">
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
-                                    href="/utilisateurs">Liste des membres</a>
+                                <a class="dropdown-item text-white py-3 px-4" href="/utilisateurs">Liste des membres</a>
                             </li>
                             <li>
-                                <a class="dropdown-item text-white py-3 px-4"
-                                    href="/trombinoscope">Trombinoscope</a>
+                                <a class="dropdown-item text-white py-3 px-4" href="/trombinoscope">Trombinoscope</a>
                             </li>
                         </ul>
                     </li>
@@ -94,8 +87,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap"
-                        href="/partenaires">Partenaires</a>
+                    <a class="nav-link text-white text-nowrap" href="/partenaires">Partenaires</a>
                 </li>
 
                 <!-- Lien direct vers Contact -->

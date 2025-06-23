@@ -17,7 +17,8 @@
                     <li class="list-group-item form-section-bg text-light d-flex justify-content-between align-items-center">
                         <?php echo htmlspecialchars($utilisateur['uti_nom']); ?>
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" data-user-id="<?php echo $utilisateur['id_uti']; ?>">Supprimer</button>
+                            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"
+                                data-user-id="<?php echo $utilisateur['id_uti']; ?>">Supprimer</button>
                         <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
@@ -26,12 +27,14 @@
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <!-- Modal de confirmation -->
-            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content custom-bg text-light">
                         <div class="modal-header border-0">
                             <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmer la suppression</h5>
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="Fermer"></button>
                         </div>
                         <div class="modal-body">
                             Êtes-vous sûr de vouloir supprimer ce membre ?

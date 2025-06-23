@@ -13,8 +13,7 @@
           </div>
           <?php if (isset($_SESSION['user_id'])): ?>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
-              <a href="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>"
-                class="btn btn-warning">Modifier</a>
+              <a href="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>" class="btn btn-warning">Modifier</a>
 
               <!-- Bouton de déclenchement -->
               <button class="btn btn-sm custom-add text-light px-3 py-2" data-bs-toggle="modal"
@@ -106,16 +105,15 @@
               <?php else: ?>
                 <div class="col-md-6 d-flex align-items-center">
                   <p class="text-warning mb-0 fw-semibold">
-                    Vous devez vous <a href="/connexion"
-                      class="text-warning text-decoration-underline">connecter</a> pour pouvoir rejoindre l'évènement.
+                    Vous devez vous <a href="/connexion" class="text-warning text-decoration-underline">connecter</a> pour
+                    pouvoir rejoindre l'évènement.
                   </p>
                 </div>
               <?php endif; ?>
             <?php endif; ?>
 
             <div class="col-md-6">
-              <a href="/evenements"
-                class="btn btn-outline-warning btn-rounded w-100 fw-semibold text-center">
+              <a href="/evenements" class="btn btn-outline-warning btn-rounded w-100 fw-semibold text-center">
                 <i class="bi bi-arrow-left me-2"></i> Retour
               </a>
             </div>

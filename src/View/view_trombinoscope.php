@@ -11,8 +11,7 @@
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="mb-4">
-                <a href="/ajouter-trombinoscope"
-                    class="btn btn-warning btn-rounded w-100 fw-semibold">
+                <a href="/ajouter-trombinoscope" class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> Ajouter au trombinoscope
                 </a>
             </div>

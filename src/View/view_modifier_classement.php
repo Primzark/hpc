@@ -16,7 +16,7 @@
                                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['nomjoueur']); ?></div>
                             <?php endif; ?>
                         </div>
-
+                        
                         <div class="mb-3">
                             <label for="rang" class="form-label field-text">Rang</label>
                             <input type="number" class="form-control custom-add <?php echo isset($errors['rang']) ? 'is-invalid' : ''; ?>" id="rang" name="cla_rang" min="1" value="<?php echo htmlspecialchars($cla_rang); ?>">

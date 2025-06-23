@@ -24,7 +24,8 @@
                             $btnClass = $isRegistered ? 'btn-success' : 'btn-warning';
                             $btnText = $isRegistered ? 'Vous êtes inscrit' : 'Confirmer l’inscription';
                             ?>
-                            <button type="button" id="joinEventBtn" data-event-id="<?php echo htmlspecialchars($event_id); ?>"
+                            <button type="button" id="joinEventBtn"
+                                data-event-id="<?php echo htmlspecialchars($event_id); ?>"
                                 class="btn <?php echo $btnClass; ?> btn-rounded w-100 fw-semibold py-2">
                                 <i class="bi bi-check2-circle me-2"></i><?php echo $btnText; ?>
                             </button>

@@ -9,8 +9,8 @@
                     <p class="display-6 fw-bold text-light mb-4">Modifier</p>
 
                     <!-- Formulaire -->
-                    <form action="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>"
-                        method="post" enctype="multipart/form-data">
+                    <form action="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>" method="post"
+                        enctype="multipart/form-data">
                         <div class="row g-4 mb-4">
 
                             <!-- Lieu -->
