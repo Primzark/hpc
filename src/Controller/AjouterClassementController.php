@@ -5,7 +5,7 @@ session_start();
 // Inclusion du fichier de connexion à la base de données
 require_once __DIR__ . '/../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
-require_once '../Model/model-classement.php';
+require_once __DIR__ . '/../Model/model-classement.php';
 
 // Initialisation du tableau des erreurs
 $errors = [];
@@ -80,5 +80,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // Si le formulaire n'a pas été soumis ou s'il y a des erreurs, on affiche le formulaire avec les erreurs
-include_once '../View/view_ajouter_classement.php';
+include_once __DIR__ . '/../View/view_ajouter_classement.php';
 ?>

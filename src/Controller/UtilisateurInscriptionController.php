@@ -2,7 +2,7 @@
 session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
-require_once '../../src/Model/model-utilisateur.php'; // Charge le modèle Utilisateur
+require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
 
 // Expressions régulières pour valider nom, email et mot de passe
 $regex_nom = "/^[a-zA-Z0-9._%+-]{4,}$/";
@@ -87,4 +87,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 
-include_once '../View/view_inscription.php'; // Affiche le formulaire
+include_once __DIR__ . '/../View/view_inscription.php'; // Affiche le formulaire

@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once __DIR__ . '/../../config.php';
-require_once '../Model/model-trombinoscope.php';
+require_once __DIR__ . '/../Model/model-trombinoscope.php';
 
 $errors = [];
 $pseudo = '';
@@ -73,5 +73,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-include_once '../View/view_ajouter_trombinoscope.php';
+include_once __DIR__ . '/../View/view_ajouter_trombinoscope.php';
 ?>

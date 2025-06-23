@@ -1,5 +1,5 @@
-<?php include_once('../../templates/head.php'); ?>
-<?php include_once('../../templates/navbar.php'); ?>
+<?php include_once(__DIR__ . '/../../templates/head.php'); ?>
+<?php include_once(__DIR__ . '/../../templates/navbar.php'); ?>
 
 
 <div class="custom-bg min-vh-100 py-5">
@@ -54,6 +54,6 @@
             </div>
         </div>
     </div>
-    <?php include_once('../../templates/VisualFooter.php'); ?>
-    <?php include_once('../../templates/footer.php'); ?>
+    <?php include_once(__DIR__ . '/../../templates/VisualFooter.php'); ?>
+    <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
 </div>
