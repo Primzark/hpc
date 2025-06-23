@@ -1,7 +1,7 @@
 <?php
 session_start(); // Démarre la session
 
-require_once '../../config.php'; // Charge la config base de données
+require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once '../../src/Model/model-utilisateur.php'; // Charge le modèle Utilisateur
 
 // Expressions régulières pour valider nom, email et mot de passe
