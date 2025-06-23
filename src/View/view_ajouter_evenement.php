@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
 
-                <!-- Title -->
+                <!-- Titre -->
                 <div class="pitch-black p-5 rounded-4">
                     <p class="display-6 fw-bold text-light mb-4">Ajouter un nouvel évènement</p>
 
