@@ -15,11 +15,6 @@ $age = '';
 
 $errors = []; // Tableau des erreurs
 
-// Génère un captcha pour la première visite
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $_SESSION['captcha_num1'] = rand(1, 9);
-    $_SESSION['captcha_num2'] = rand(1, 9);
-}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Conserve les valeurs saisies
@@ -75,12 +70,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['confirm_password'] = 'Les mots de passe ne correspondent pas.';
     }
 
-    // Validation du captcha
-    $expectedCaptcha = ($_SESSION['captcha_num1'] ?? 0) + ($_SESSION['captcha_num2'] ?? 0);
+    // Validation du captcha (case à cocher)
     if (empty($_POST['captcha'])) {
-        $errors['captcha'] = 'Champ obligatoire.';
-    } elseif (intval($_POST['captcha']) !== $expectedCaptcha) {
-        $errors['captcha'] = 'Captcha incorrect.';
+        $errors['captcha'] = "Veuillez confirmer que vous n'êtes pas un robot.";
     }
 
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
@@ -98,12 +90,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header('Location: /inscription/confirm');
         exit;
     }
-}
-
-// Régénère un nouveau captcha si nécessaire
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($errors)) {
-    $_SESSION['captcha_num1'] = rand(1, 9);
-    $_SESSION['captcha_num2'] = rand(1, 9);
 }
 
 include_once __DIR__ . '/../View/view_inscription.php'; // Affiche le formulaire
