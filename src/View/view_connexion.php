@@ -20,10 +20,10 @@
               <label for="email" class="form-label field-text">Email</label>
               <input type="email" class="form-control custom-add <?php if (!empty($errors['email']))
                 echo 'is-invalid'; ?>" id="email" name="email"
-                value="<?= isset($email) ? htmlspecialchars($email) : '' ?>" placeholder="Entrez votre email">
+                value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>" placeholder="Entrez votre email">
               <?php if (!empty($errors['email'])): ?>
                 <div class="invalid-feedback">
-                  <?= $errors['email']; ?>
+                  <?php echo $errors['email']; ?>
                 </div>
               <?php endif; ?>
             </div>
@@ -35,7 +35,7 @@
                 echo 'is-invalid'; ?>" id="password" name="password" placeholder="Entrez votre mot de passe">
               <?php if (!empty($errors['password'])): ?>
                 <div class="invalid-feedback">
-                  <?= $errors['password']; ?>
+                  <?php echo $errors['password']; ?>
                 </div>
               <?php endif; ?>
             </div>
@@ -43,7 +43,7 @@
             <!-- Erreur générale -->
             <?php if (!empty($errors['general'])): ?>
               <div class="alert alert-danger">
-                <?= $errors['general']; ?>
+                <?php echo $errors['general']; ?>
               </div>
             <?php endif; ?>
 

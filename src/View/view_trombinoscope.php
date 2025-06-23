@@ -22,10 +22,10 @@
             <?php foreach ($members as $member): ?>
                 <div class="col-12 col-sm-6 col-md-4">
                     <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
-                        <img src="/asset/img/<?= htmlspecialchars($member['tro_image']) ?>" class="mx-auto mb-3"
-                            alt="<?= htmlspecialchars($member['tro_pseudo']) ?>"
+                        <img src="/asset/img/<?php echo htmlspecialchars($member['tro_image']); ?>" class="mx-auto mb-3"
+                            alt="<?php echo htmlspecialchars($member['tro_pseudo']); ?>"
                             style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
-                        <p class="field-text mb-1"><?= htmlspecialchars($member['tro_pseudo']) ?></p>
+                        <p class="field-text mb-1"><?php echo htmlspecialchars($member['tro_pseudo']); ?></p>
                     </div>
                 </div>
             <?php endforeach; ?>

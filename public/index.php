@@ -28,7 +28,7 @@
 
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <div class="btn btn-warning fw-bold fs-4">
-                                Bienvenue <?= htmlspecialchars($utiNom ?? '') ?>
+                                Bienvenue <?php echo htmlspecialchars($utiNom ?? ''); ?>
                             </div>
                         <?php else: ?>
                             <a href="/src/Controller/UtilisateurInscriptionController.php"
@@ -63,15 +63,15 @@
                     <div class="col-12 col-md-4">
                         <div class="p-2 custom-bg rounded h-100">
                             <div class="ratio ratio-16x9 mb-2 rounded overflow-hidden">
-                                <img src="/asset/img/<?= htmlspecialchars($tournoi['eve_image']) ?>"
+                                <img src="/asset/img/<?php echo htmlspecialchars($tournoi['eve_image']); ?>"
                                     class="w-100 h-100 object-fit-cover" alt="Image du tournoi">
                             </div>
-                            <p class="text-light fw-semibold small mb-1"><?= htmlspecialchars($tournoi['eve_titre']) ?></p>
+                            <p class="text-light fw-semibold small mb-1"><?php echo htmlspecialchars($tournoi['eve_titre']); ?></p>
                             <p class="custom-text small mb-2">
-                                <?= date('d/m/Y', strtotime($tournoi['eve_date'])) ?> -
-                                <?= htmlspecialchars($tournoi['eve_lieu']) ?>
+                                <?php echo date('d/m/Y', strtotime($tournoi['eve_date'])); ?> -
+                                <?php echo htmlspecialchars($tournoi['eve_lieu']); ?>
                             </p>
-                            <a href="/src/Controller/PageEvenementController.php?id=<?= $tournoi['id_eve'] ?>"
+                            <a href="/src/Controller/PageEvenementController.php?id=<?php echo $tournoi['id_eve']; ?>"
                                 class="btn btn-sm btn-outline-warning w-100">Détails</a>
                         </div>
                     </div>
@@ -96,15 +96,15 @@
                     <div class="col-12 col-md-4">
                         <div class="p-2 custom-bg rounded h-100">
                             <div class="ratio ratio-16x9 mb-2 rounded overflow-hidden">
-                                <img src="/asset/img/<?= htmlspecialchars($actu['eve_image']) ?>"
+                                <img src="/asset/img/<?php echo htmlspecialchars($actu['eve_image']); ?>"
                                     class="w-100 h-100 object-fit-cover" alt="Image de l’actualité">
                             </div>
-                            <p class="text-light fw-semibold small mb-1"><?= htmlspecialchars($actu['eve_titre']) ?></p>
+                            <p class="text-light fw-semibold small mb-1"><?php echo htmlspecialchars($actu['eve_titre']); ?></p>
                             <p class="custom-text small mb-2">
-                                <?= date('d/m/Y', strtotime($actu['eve_date'])) ?> –
-                                <?= substr(htmlspecialchars($actu['eve_description']), 0, 20) ?>…
+                                <?php echo date('d/m/Y', strtotime($actu['eve_date'])); ?> –
+                                <?php echo substr(htmlspecialchars($actu['eve_description']), 0, 20); ?>…
                             </p>
-                            <a href="/src/Controller/PageEvenementController.php?id=<?= $actu['id_eve'] ?>"
+                            <a href="/src/Controller/PageEvenementController.php?id=<?php echo $actu['id_eve']; ?>"
                                 class="btn btn-sm btn-outline-warning w-100">Lire</a>
                         </div>
                     </div>

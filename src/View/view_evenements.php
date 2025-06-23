@@ -25,13 +25,13 @@
                         <div class="form-section-bg p-3 rounded text-light mb-4">
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p class="mb-1 custom-text small"><?= date('d/m/Y', strtotime($evenement['eve_date'])) ?>
+                                    <p class="mb-1 custom-text small"><?php echo date('d/m/Y', strtotime($evenement['eve_date'])); ?>
                                     </p>
-                                    <p class="mb-1 fw-bold"><?= htmlspecialchars($evenement['eve_titre']) ?></p>
-                                    <p class="mb-0 text-light"><?= nl2br(htmlspecialchars($evenement['eve_description'])) ?></p>
+                                    <p class="mb-1 fw-bold"><?php echo htmlspecialchars($evenement['eve_titre']); ?></p>
+                                    <p class="mb-0 text-light"><?php echo nl2br(htmlspecialchars($evenement['eve_description'])); ?></p>
                                 </div>
                                 <div class="col-md-2 d-flex align-items-center justify-content-end">
-                                    <a href="/src/Controller/PageEvenementController.php?id=<?= $evenement['id_eve'] ?>"
+                                    <a href="/src/Controller/PageEvenementController.php?id=<?php echo $evenement['id_eve']; ?>"
                                         class="btn btn-warning btn-rounded fw-semibold">En savoir plus</a>
                                 </div>
                             </div>

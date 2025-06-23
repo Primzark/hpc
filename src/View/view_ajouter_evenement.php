@@ -22,7 +22,7 @@
                                 <input type="file" class="form-control custom-input custom-add <?php if (isset($errors['image']))
                                     echo 'is-invalid'; ?>" id="image" name="image" accept="image/*">
                                 <?php if (isset($errors['image'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['image']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['image']; ?></div>
                                 <?php endif; ?>
                             </div>
 
@@ -33,11 +33,11 @@
                                 <select class="form-select custom-select <?php if (isset($errors['titre']))
                                     echo 'is-invalid'; ?>" id="titre" name="titre">
                                     <option value="">Choisir un évènement</option>
-                                    <option value="Tournois" <?= (isset($titre) && $titre == 'Tournois') ? 'selected' : '' ?>>Tournois</option>
-                                    <option value="Actualité" <?= (isset($titre) && $titre == 'Actualité') ? 'selected' : '' ?>>Actualités</option>
+                                    <option value="Tournois" <?php echo (isset($titre) && $titre == 'Tournois') ? 'selected' : ''; ?>>Tournois</option>
+                                    <option value="Actualité" <?php echo (isset($titre) && $titre == 'Actualité') ? 'selected' : ''; ?>>Actualités</option>
                                 </select>
                                 <?php if (isset($errors['titre'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['titre']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['titre']; ?></div>
                                 <?php endif; ?>
                             </div>
 
@@ -46,9 +46,9 @@
                                 <label for="lieu" class="form-label fw-semibold text-light">Lieu</label>
                                 <input type="text" class="form-control custom-add <?php if (isset($errors['lieu']))
                                     echo 'is-invalid'; ?>" id="lieu" name="lieu" placeholder="Lieu"
-                                    value="<?= isset($lieu) ? htmlspecialchars($lieu) : '' ?>">
+                                    value="<?php echo isset($lieu) ? htmlspecialchars($lieu) : ''; ?>">
                                 <?php if (isset($errors['lieu'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['lieu']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['lieu']; ?></div>
                                 <?php endif; ?>
                             </div>
 
@@ -57,9 +57,9 @@
                                 <label for="date" class="form-label fw-semibold text-light">Date</label>
                                 <input type="date" class="form-control custom-input custom-add <?php if (isset($errors['date']))
                                     echo 'is-invalid'; ?>" id="date" name="date"
-                                    value="<?= isset($date) ? htmlspecialchars($date) : '' ?>">
+                                    value="<?php echo isset($date) ? htmlspecialchars($date) : ''; ?>">
                                 <?php if (isset($errors['date'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['date']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['date']; ?></div>
                                 <?php endif; ?>
                             </div>
 
@@ -68,9 +68,9 @@
                                 <label for="heure" class="form-label fw-semibold text-light">Heure</label>
                                 <input type="time" class="form-control custom-input custom-add <?php if (isset($errors['heure']))
                                     echo 'is-invalid'; ?>" id="heure" name="heure"
-                                    value="<?= isset($heure) ? htmlspecialchars($heure) : '' ?>">
+                                    value="<?php echo isset($heure) ? htmlspecialchars($heure) : ''; ?>">
                                 <?php if (isset($errors['heure'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['heure']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['heure']; ?></div>
                                 <?php endif; ?>
                             </div>
 
@@ -80,9 +80,9 @@
                                     l'évènement</label>
                                 <textarea class="form-control custom-input custom-add <?php if (isset($errors['details']))
                                     echo 'is-invalid'; ?>" id="details" name="details" rows="5"
-                                    placeholder="Détails de l'évènement"><?= isset($details) ? htmlspecialchars($details) : '' ?></textarea>
+                                    placeholder="Détails de l'évènement"><?php echo isset($details) ? htmlspecialchars($details) : ''; ?></textarea>
                                 <?php if (isset($errors['details'])): ?>
-                                    <div class="invalid-feedback"><?= $errors['details']; ?></div>
+                                    <div class="invalid-feedback"><?php echo $errors['details']; ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
