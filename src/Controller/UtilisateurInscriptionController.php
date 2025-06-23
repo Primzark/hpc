@@ -70,9 +70,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['confirm_password'] = 'Les mots de passe ne correspondent pas.';
     }
 
-    // Validation du captcha (case à cocher)
-    if (empty($_POST['captcha'])) {
+    // Validation du reCAPTCHA v2
+    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    if (empty($recaptchaResponse)) {
         $errors['captcha'] = "Veuillez confirmer que vous n'êtes pas un robot.";
+    } else {
+        $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+        $data = http_build_query([
+            'secret' => RECAPTCHA_SECRET_KEY,
+            'response' => $recaptchaResponse,
+            'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+        ]);
+
+        $options = [
+            'http' => [
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method' => 'POST',
+                'content' => $data,
+            ]
+        ];
+
+        $context = stream_context_create($options);
+        $result = file_get_contents($verifyUrl, false, $context);
+        $resultData = json_decode($result ?: '', true);
+        if (empty($resultData['success'])) {
+            $errors['captcha'] = "La vérification reCAPTCHA a échoué.";
+        }
     }
 
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
