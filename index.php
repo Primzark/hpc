@@ -1,3 +1,37 @@
 <?php
-header('Location: ../../src/Controller/IndexController.php');
-exit;
+require_once 'src/Router.php';
+
+// Front controller: map routes to controllers and dispatch
+// Example of adding a route:
+// $router->add('/contact', 'src/Controller/ContactController.php');
+
+$router = new Router();
+
+$router->add('/', 'src/Controller/IndexController.php');
+$router->add('/connexion', 'src/Controller/ConnexionController.php');
+$router->add('/deconnexion', 'src/Controller/DeconnexionController.php');
+$router->add('/deconnexion/confirm', 'src/Controller/DeconnexionConfirmController.php');
+$router->add('/evenements', 'src/Controller/EvenementsController.php');
+$router->add('/ajouter-evenement', 'src/Controller/AjouterEvenementController.php');
+$router->add('/modifier-evenement', 'src/Controller/ModifierEvenementController.php');
+$router->add('/supprimer-evenement', 'src/Controller/SupprimerEvenementController.php');
+$router->add('/page-evenement', 'src/Controller/PageEvenementController.php');
+$router->add('/rejoindre-page', 'src/Controller/RejoindrePageController.php');
+$router->add('/utilisateurs', 'src/Controller/UtilisateursController.php');
+$router->add('/utilisateur/inscription', 'src/Controller/UtilisateurInscriptionController.php');
+$router->add('/inscription/confirm', 'src/Controller/InscriptionConfirmController.php');
+$router->add('/supprimer-utilisateur', 'src/Controller/SupprimerUtilisateurController.php');
+$router->add('/classement', 'src/Controller/ClassementController.php');
+$router->add('/ajouter-classement', 'src/Controller/AjouterClassementController.php');
+$router->add('/modifier-classement', 'src/Controller/ModifierClassementController.php');
+$router->add('/supprimer-classement', 'src/Controller/SupprimerClassementController.php');
+$router->add('/trombinoscope', 'src/Controller/TrombinoscopeController.php');
+$router->add('/ajouter-trombinoscope', 'src/Controller/AjouterTrombinoscopeController.php');
+$router->add('/supprimer-trombinoscope', 'src/Controller/SupprimerTrombinoscopeController.php');
+$router->add('/partenaires', 'src/Controller/PartenaireController.php');
+$router->add('/regles', 'src/Controller/RegleController.php');
+$router->add('/contact', 'src/Controller/ContactController.php');
+$router->add('/propos', 'src/Controller/ProposController.php');
+$router->add('/ajax/rejoindre-evenement', 'src/Controller/ajax_rejoindre_evenement.php');
+
+$router->dispatch();
