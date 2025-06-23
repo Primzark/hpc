@@ -16,7 +16,7 @@
 
                 <!-- Conteneur du formulaire -->
                 <div class="form-section-bg p-4 rounded text-light">
-                    <form action="/src/Controller/UtilisateurInscriptionController.php" method="post" novalidate>
+                    <form action="/utilisateur/inscription" method="post" novalidate>
 
                         <!-- Nom -->
                         <div class="mb-3">
@@ -89,7 +89,7 @@
 
                         <!-- Lien de connexion -->
                         <p class="text-center login-hint small">
-                            Déjà un compte ? <a href="/src/Controller/ConnexionController.php">Connectez-vous ici</a>
+                            Déjà un compte ? <a href="/connexion">Connectez-vous ici</a>
                         </p>
                     </form>
                 </div>

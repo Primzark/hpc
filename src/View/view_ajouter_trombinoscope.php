@@ -10,7 +10,7 @@
           <?php if (!empty($errors['general'])): ?>
             <div class="form-error mb-3"><?php echo htmlspecialchars($errors['general']); ?></div>
           <?php endif; ?>
-          <form action="/src/Controller/AjouterTrombinoscopeController.php" method="post" enctype="multipart/form-data">
+          <form action="/ajouter-trombinoscope" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="pseudo" class="form-label field-text">Pseudo</label>
               <input type="text" class="form-control custom-add <?php echo isset($errors['pseudo']) ? 'is-invalid' : ''; ?>"

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark custom-bg px-4 py-3 sticky-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="../../src/Controller/IndexController.php">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
             <span class="fw-bold text-white">Harfleur Poker Club</span>
         </a>
 
@@ -15,18 +15,17 @@
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
                         <a class="nav-link text-warning fw-semibold text-nowrap"
-                            href="/src/Controller/DeconnexionConfirmController.php">Se déconnecter</a>
+                            href="/deconnexion/confirm">Se déconnecter</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link text-warning fw-semibold" href="/src/Controller/ConnexionController.php">Se
+                        <a class="nav-link text-warning fw-semibold" href="/connexion">Se
                             connecter</a>
                     </li>
                 <?php endif; ?>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap"
-                        href="../../src/Controller/IndexController.php">Accueil</a>
+                    <a class="nav-link text-white text-nowrap" href="/">Accueil</a>
                 </li>
 
                 <?php if (isset($_SESSION['user_id'])): ?>
@@ -39,35 +38,35 @@
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="adminDropdown">
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/EvenementsController.php">Evènements</a>
+                                    href="/evenements">Evènements</a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/ClassementController.php">Classement</a>
+                                    href="/classement">Classement</a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
+                                    href="/trombinoscope">Trombinoscope</a>
                             </li>
                         </ul>
                     </li>
 
                     <!-- Lien direct vers Liste des membres -->
                     <li class="nav-item">
-                        <a class="nav-link text-white text-nowrap" href="/src/Controller/UtilisateursController.php">Liste
+                        <a class="nav-link text-white text-nowrap" href="/utilisateurs">Liste
                             des membres</a>
                     </li>
                 <?php else: ?>
                     <!-- Classement visible uniquement si pas connecté -->
                     <li class="nav-item">
                         <a class="nav-link text-white text-nowrap"
-                            href="/src/Controller/ClassementController.php">Classement</a>
+                            href="/classement">Classement</a>
                     </li>
 
                     <!-- Evènements visible uniquement si pas connecté -->
                     <li class="nav-item">
                         <a class="nav-link text-white text-nowrap"
-                            href="/src/Controller/EvenementsController.php">Evènements</a>
+                            href="/evenements">Evènements</a>
                     </li>
 
                     <!-- Membres inscrits avec trombinoscope en dropdown -->
@@ -79,33 +78,33 @@
                         <ul class="dropdown-menu custom-bg border-0 m-0 p-0" aria-labelledby="membresDropdown">
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/UtilisateursController.php">Liste des membres</a>
+                                    href="/utilisateurs">Liste des membres</a>
                             </li>
                             <li>
                                 <a class="dropdown-item text-white py-3 px-4"
-                                    href="/src/Controller/TrombinoscopeController.php">Trombinoscope</a>
+                                    href="/trombinoscope">Trombinoscope</a>
                             </li>
                         </ul>
                     </li>
                 <?php endif; ?>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap" href="/src/Controller/RegleController.php">Règles du
+                    <a class="nav-link text-white text-nowrap" href="/regles">Règles du
                         poker</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap"
-                        href="/src/Controller/PartenaireController.php">Partenaires</a>
+                        href="/partenaires">Partenaires</a>
                 </li>
 
                 <!-- Lien direct vers Contact -->
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap" href="/src/Controller/ContactController.php">Contact</a>
+                    <a class="nav-link text-white text-nowrap" href="/contact">Contact</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white text-nowrap" href="/src/Controller/ProposController.php">À propos</a>
+                    <a class="nav-link text-white text-nowrap" href="/propos">À propos</a>
                 </li>
 
             </ul>

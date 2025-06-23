@@ -30,7 +30,7 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 75)
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($conversionSuccess) {
             $result = Trombinoscope::updateImage($id, $newName);
             if ($result) {
-                header('Location: ../Controller/TrombinoscopeController.php');
+                header('Location: /trombinoscope');
                 exit;
             } else {
                 $errors['general'] = "Erreur lors de l'ajout.";

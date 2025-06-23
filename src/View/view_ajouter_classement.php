@@ -12,7 +12,7 @@
             <div class="form-error mb-3"><?php echo htmlspecialchars($errors['general']); ?></div>
           <?php endif; ?>
 
-          <form action="/src/Controller/AjouterClassementController.php" method="post">
+          <form action="/ajouter-classement" method="post">
             <div class="mb-3">
               <label for="nom" class="form-label field-text">Nom du joueur</label>
               <input type="text" class="form-control custom-add <?php echo isset($errors['nomjoueur']) ? 'is-invalid' : ''; ?>"

@@ -31,7 +31,7 @@
                                 Bienvenue <?php echo htmlspecialchars($utiNom ?? ''); ?>
                             </div>
                         <?php else: ?>
-                            <a href="/src/Controller/UtilisateurInscriptionController.php"
+                            <a href="/utilisateur/inscription"
                                 class="btn btn-warning fw-bold fs-4">
                                 S'inscrire au club
                             </a>
@@ -71,7 +71,7 @@
                                 <?php echo date('d/m/Y', strtotime($tournoi['eve_date'])); ?> -
                                 <?php echo htmlspecialchars($tournoi['eve_lieu']); ?>
                             </p>
-                            <a href="/src/Controller/PageEvenementController.php?id=<?php echo $tournoi['id_eve']; ?>"
+                            <a href="/page-evenement?id=<?php echo $tournoi['id_eve']; ?>"
                                 class="btn btn-sm btn-outline-warning w-100">Détails</a>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                                 <?php echo date('d/m/Y', strtotime($actu['eve_date'])); ?> –
                                 <?php echo substr(htmlspecialchars($actu['eve_description']), 0, 20); ?>…
                             </p>
-                            <a href="/src/Controller/PageEvenementController.php?id=<?php echo $actu['id_eve']; ?>"
+                            <a href="/page-evenement?id=<?php echo $actu['id_eve']; ?>"
                                 class="btn btn-sm btn-outline-warning w-100">Lire</a>
                         </div>
                     </div>

@@ -4,12 +4,12 @@ require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-classement.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -17,7 +17,7 @@ $id_cla = intval($_GET['id']);
 $classement = Classement::getById($id_cla);
 
 if (!$classement) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'points' => (int) $_POST['cla_points']
         ]);
 
-        header('Location: ../Controller/ClassementController.php');
+        header('Location: /classement');
         exit;
     }
 }

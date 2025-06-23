@@ -2,7 +2,7 @@ document.getElementById('joinEventBtn').addEventListener('click', function () {
     const btn = this;
     const eventId = btn.getAttribute('data-event-id');
 
-    fetch('/src/Controller/ajax_rejoindre_evenement.php', {
+    fetch('/ajax/rejoindre-evenement', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'event=' + encodeURIComponent(eventId)

@@ -36,7 +36,7 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 75)
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../../public/index.php');
+    header('Location: /');
     exit;
 }
 
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $type
             );
 
-            header('Location: ../../index.php');
+            header('Location: /');
             exit;
         } else {
             $errors['image'] = "Format d'image non supporté (JPEG et PNG uniquement).";

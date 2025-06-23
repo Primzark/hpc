@@ -8,7 +8,7 @@
                 <p class="display-6 fw-bold text-light mb-4">Modifier classement</p>
 
                 <div class="form-section-bg p-4 rounded">
-                    <form action="/src/Controller/ModifierClassementController.php?id=<?php echo $classement['id_cla']; ?>" method="post">
+                    <form action="/modifier-classement?id=<?php echo $classement['id_cla']; ?>" method="post">
                         <div class="mb-3">
                             <label for="nom" class="form-label field-text">Nom du joueur</label>
                             <input type="text" class="form-control custom-add <?php echo isset($errors['nomjoueur']) ? 'is-invalid' : ''; ?>" id="nom" name="cla_nomjoueur" value="<?php echo htmlspecialchars($cla_nomjoueur); ?>">
@@ -35,7 +35,7 @@
 
                         <div class="d-flex flex-column flex-md-row gap-3">
                             <button type="submit" class="btn btn-warning btn-rounded px-4">Confirmer modification</button>
-                            <a href="/src/Controller/ClassementController.php" class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
+                            <a href="/classement" class="btn btn-outline-warning btn-rounded px-4 d-flex align-items-center justify-content-center">
                                 <span class="me-2"></span> Retour
                             </a>
                         </div>

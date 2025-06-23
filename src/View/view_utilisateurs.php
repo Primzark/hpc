@@ -56,7 +56,7 @@
                     const button = event.relatedTarget;
                     const userId = button.getAttribute('data-user-id');
                     const confirmBtn = document.getElementById('confirmDeleteBtn');
-                    confirmBtn.href = '/src/Controller/SupprimerUtilisateurController.php?id=' + userId;
+                    confirmBtn.href = '/supprimer-utilisateur?id=' + userId;
                 });
             }
         </script>

@@ -9,7 +9,7 @@ include_once(__DIR__ . '/../../templates/navbar.php');
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="mt-4">
-                <a href="/src/Controller/AjouterClassementController.php"
+                <a href="/ajouter-classement"
                     class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> Ajouter un classement
                 </a>
@@ -34,9 +34,9 @@ include_once(__DIR__ . '/../../templates/navbar.php');
 
                     <div class="col-3 col-md-2 text-center">
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/src/Controller/ModifierClassementController.php?id=<?php echo $entry['id_cla']; ?>"
+                            <a href="/modifier-classement?id=<?php echo $entry['id_cla']; ?>"
                                 class="btn btn-warning btn-sm mb-1">Modifier</a>
-                            <a href="/src/Controller/SupprimerClassementController.php?id=<?php echo $entry['id_cla']; ?>"
+                            <a href="/supprimer-classement?id=<?php echo $entry['id_cla']; ?>"
                                 class="btn btn-warning btn-sm">Supprimer</a>
                         <?php endif; ?>
                     </div>

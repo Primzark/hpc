@@ -12,7 +12,7 @@
                     </div>
                     <p class="fs-4 fw-bold mb-2">Bienvenue au Harfleur Poker Club !</p>
                     <p class="mb-4">Votre inscription a été confirmée avec succès.</p>
-                    <a href="/src/Controller/IndexController.php" class="btn btn-warning fw-semibold">Accéder au
+                    <a href="/" class="btn btn-warning fw-semibold">Accéder au
                         site</a>
                 </div>
             </div>

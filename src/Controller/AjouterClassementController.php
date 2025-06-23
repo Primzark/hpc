@@ -24,7 +24,7 @@ function safeInput($string)
 
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ../Controller/IndexController.php');
+    header('Location: /');
     exit;
 }
 
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Si l'ajout réussit, on redirige vers la page de classement
         if ($result) {
-            header('Location: ../Controller/ClassementController.php');
+            header('Location: /classement');
             exit;
         } else {
             // En cas d'échec de l'insertion

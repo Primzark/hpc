@@ -11,7 +11,7 @@
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <div class="mb-4">
-                <a href="/src/Controller/AjouterTrombinoscopeController.php"
+                <a href="/ajouter-trombinoscope"
                     class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> Ajouter au trombinoscope
                 </a>
@@ -27,7 +27,7 @@
                             style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
                         <p class="field-text mb-1"><?php echo htmlspecialchars($member['tro_pseudo']); ?></p>
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <a href="/src/Controller/SupprimerTrombinoscopeController.php?id=<?php echo $member['id_tro']; ?>"
+                            <a href="/supprimer-trombinoscope?id=<?php echo $member['id_tro']; ?>"
                                 class="btn btn-warning btn-sm mt-2">Supprimer</a>
                         <?php endif; ?>
                     </div>
