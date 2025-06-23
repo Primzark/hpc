@@ -1,1 +1,5 @@
 aZ3@tM9
+
+<?php
+header('Location: ../../src/Controller/IndexController.php');
+exit;
