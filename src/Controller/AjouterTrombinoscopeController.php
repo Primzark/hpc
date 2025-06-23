@@ -34,9 +34,9 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pseudo = $_POST['pseudo'] ?? '';
-    if ($_FILES['image']['error'] === 4) {
+    if ($_FILES['image']['error'] == 4) {
         $errors['image'] = "Veuillez ajouter une image.";
     }
 

@@ -15,7 +15,7 @@ function safeInput($string)
 }
 
 // Vérifie la méthode POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validation Email
     if (empty($_POST['email'])) {

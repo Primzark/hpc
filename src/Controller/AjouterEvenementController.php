@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $titre = $_POST['titre'] ?? '';
     $lieu = $_POST['lieu'] ?? '';
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $heure = $_POST['heure'] ?? '';
     $details = $_POST['details'] ?? '';
 
-    if ($_FILES['image']['error'] === 4) {
+    if ($_FILES['image']['error'] == 4) {
         $errors['image'] = "Veuillez ajouter une image.";
     }
 
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $type = ($_POST['titre'] === 'Tournois') ? 2 : 1;
+        $type = ($_POST['titre'] == 'Tournois') ? 2 : 1;
 
         $tmpPath = $_FILES['image']['tmp_name'];
         $uploadDir = '../../asset/img/';

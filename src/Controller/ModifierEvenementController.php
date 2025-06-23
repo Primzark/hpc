@@ -38,7 +38,7 @@ $heure = $evenement['eve_heure'];
 $details = $evenement['eve_description'];
 
 // Traitement du formulaire
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Validation Lieu
     if (empty($_POST['lieu'])) {
