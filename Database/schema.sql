@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql3.cluster1.easy-hebergement.net
--- Generation Time: Jun 09, 2025 at 11:11 PM
+-- Generation Time: Jun 24, 2025 at 04:00 PM
 -- Server version: 10.3.8-MariaDB-1:10.3.8+maria~wheezy-log
 -- PHP Version: 8.1.31
 
@@ -75,16 +75,6 @@ CREATE TABLE `trombinoscope` (
   `tro_image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `trombinoscope`
---
-
-INSERT INTO `trombinoscope` (`id_tro`, `tro_pseudo`, `tro_image`) VALUES
-(1, 'Nico', 'trombi_1749497240.webp'),
-(2, 'Nico', 'trombi_1749497891.webp'),
-(3, 'Xx', 'trombi_1749499135.webp'),
-(4, 'Anne', 'trombi_1749499184.webp');
-
 -- --------------------------------------------------------
 
 --
@@ -117,17 +107,6 @@ CREATE TABLE `utilisateur` (
   `uti_mdp` varchar(255) NOT NULL,
   `uti_admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `utilisateur`
---
-
-INSERT INTO `utilisateur` (`id_uti`, `uti_nom`, `uti_email`, `uti_mdp`, `uti_admin`) VALUES
-(1, 'kpop', 'kpop@orange.fr', '$2y$12$nGdrajj9XuouXYFRsJd.Kuu06CSZNcbWQ5xdzye/QQkAVrap6y4zq', 0),
-(2, 'kakao', 'kakao@orange.fr', '$2y$12$XfCUmKaxe.2ROG6Q5yKV1uY01PtT0Irg2mt2gjxe9uIeOrmgh1LOK', 0),
-(3, 'Google', 'google@orange.fr', '$2y$12$Nlex60akia90ps6.7/rvt.Zy8akQEalDGsjmQ0N/BYuypUX6..oay', 0),
-(4, 'jison', 'jison@orange.fr', '$2y$12$8TSsEeK29PxmTolIZKATu.gejiuUDBzkMHJsdpBAPcXsQBnIzc2WK', 0),
-(5, 'test', 'test@orange.fr', '$2y$12$owlwbhnjmdKBk8JJK6JBFurG3WVe3XuUpaqGN5YxqFjTxCYitG6QW', 0);
 
 --
 -- Indexes for dumped tables
@@ -165,25 +144,25 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT for table `classement`
 --
 ALTER TABLE `classement`
-  MODIFY `id_cla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_cla` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `evenement`
 --
 ALTER TABLE `evenement`
-  MODIFY `id_eve` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_eve` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `trombinoscope`
 --
 ALTER TABLE `trombinoscope`
-  MODIFY `id_tro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_uti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_uti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
