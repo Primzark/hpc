@@ -10,7 +10,7 @@ define('RECAPTCHA_SITE_KEY', '6LfHSWsrAAAAAM2CWcvUV2W4psnR2B7Ct8cP9rhE');
 define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
 
 // SMTP configuration for PHPMailer
-define('SMTP_HOST', 'smtp.example.com');
+define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
 define('SMTP_USER', 'starlod7696@gmail.com');
 define('SMTP_PASS', 'besc oeum rrol rzsx');
