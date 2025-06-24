@@ -16,7 +16,7 @@
                 <?php foreach ($utilisateurs as $utilisateur): ?>
                     <li class="list-group-item form-section-bg text-light d-flex justify-content-between align-items-center">
                         <?php echo htmlspecialchars($utilisateur['uti_nom']); ?>
-                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                             <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"
                                 data-user-id="<?php echo $utilisateur['id_uti']; ?>">Supprimer</button>
                         <?php endif; ?>
@@ -25,7 +25,7 @@
             </ul>
         <?php endif; ?>
 
-        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
             <!-- Modal de confirmation -->
             <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel"
                 aria-hidden="true">
@@ -51,7 +51,7 @@
     </div>
     <?php include_once(__DIR__ . '/../../templates/VisualFooter.php'); ?>
     <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
-    <?php if (isset($_SESSION['user_id'])): ?>
+    <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
         <script>
             const deleteModal = document.getElementById('confirmDeleteModal');
             if (deleteModal) {
