@@ -10,7 +10,7 @@ if (!$id || !is_numeric($id)) {
     exit;
 }
 
-$user = Utilisateur::getById((int)$id);
+$user = Utilisateur::getById((int) $id);
 if (!$user || $user['uti_approval_token'] !== $token) {
     echo 'Lien invalide';
     exit;
