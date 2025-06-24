@@ -3,19 +3,7 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
-// Charge PHPMailer depuis le dossier vendor. Utiliser un chemin relatif
-// permet d'eviter les problemes si ROOT_PATH pointe vers un dossier sans
-// le repertoire vendor (par exemple lors d'une mise en production sans
-// composer install). On remonte donc deux niveaux depuis ce fichier pour
-// atteindre la racine du projet puis on charge l'autoloader.
-// Build the path to Composer's autoloader
-$autoloadPath = dirname(__DIR__, 2) . '/vendor/autoload.php';
-// Provide a helpful error message if dependencies are missing
-if (!file_exists($autoloadPath)) {
-    throw new RuntimeException('Composer autoloader not found. ' .
-        'Run "composer install" to install project dependencies.');
-}
-require_once $autoloadPath;
+require_once __DIR__ . '/../../vendor/autoload.php'; // Charge PHPMailer
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

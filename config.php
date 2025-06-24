@@ -12,6 +12,3 @@ define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
 // Base path for building absolute URLs
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 define('BASE_PATH', $base === '/' ? '' : $base);
-
-// Absolute path to the project root
-define('ROOT_PATH', __DIR__);
