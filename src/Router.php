@@ -20,8 +20,11 @@ class Router {
         }
 
         if (isset($this->routes[$uri])) {
-            require $this->routes[$uri];
-            return;
+            $file = dirname(__DIR__) . '/' . ltrim($this->routes[$uri], '/');
+            if (file_exists($file)) {
+                require $file;
+                return;
+            }
         }
 
         http_response_code(404);
