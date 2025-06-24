@@ -37,10 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = Utilisateur::getByEmail($email);
 
         if ($user && password_verify($password, $user['uti_mdp'])) {
+            if (!$user['uti_approved']) {
+                $errors['email'] = "Votre inscription n'a pas encore été approuvée.";
+                $errors['password'] = "Votre inscription n'a pas encore été approuvée.";
+            } else {
             $_SESSION['user_id'] = $user['id_uti'];
             $_SESSION['user_admin'] = $user['uti_admin'];
             header("Location: /");
             exit;
+            }
         } else {
             $errors['email'] = "Email ou mot de passe incorrect.";
             $errors['password'] = "Email ou mot de passe incorrect.";

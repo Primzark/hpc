@@ -11,16 +11,17 @@ class Utilisateur
         return $pdo;
     }
 
-    public static function ajouter($nom, $email, $mdp)
+    public static function ajouter($nom, $email, $mdp, $token)
     {
         $pdo = self::getPDO();
 
-        $sql = "INSERT INTO utilisateur (uti_nom, uti_email, uti_mdp) 
-            VALUES (:nom, :email, :mdp)";
+        $sql = "INSERT INTO utilisateur (uti_nom, uti_email, uti_mdp, uti_approval_token)
+            VALUES (:nom, :email, :mdp, :token)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':nom', $nom);
         $stmt->bindValue(':email', $email);
         $stmt->bindValue(':mdp', password_hash($mdp, PASSWORD_DEFAULT));
+        $stmt->bindValue(':token', $token);
         $stmt->execute();
     }
 
@@ -29,7 +30,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
                 FROM utilisateur WHERE uti_email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':email', $email);
@@ -41,7 +42,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
                 FROM utilisateur WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_uti);
@@ -53,7 +54,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
                 FROM utilisateur WHERE uti_nom = :nom";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':nom', $nom);
@@ -68,6 +69,26 @@ class Utilisateur
         $sql = "SELECT id_uti, uti_nom FROM utilisateur ORDER BY uti_nom ASC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function setApproved($id_uti, $approved)
+    {
+        $pdo = self::getPDO();
+        $sql = "UPDATE utilisateur SET uti_approved = :approved, uti_approval_token = NULL WHERE id_uti = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':approved', $approved, PDO::PARAM_INT);
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public static function updateToken($id_uti, $token)
+    {
+        $pdo = self::getPDO();
+        $sql = "UPDATE utilisateur SET uti_approval_token = :token WHERE id_uti = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':token', $token);
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
     /**

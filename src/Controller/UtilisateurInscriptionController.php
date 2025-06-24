@@ -100,16 +100,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
     if (empty($errors)) {
-        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password']);
+        $token = bin2hex(random_bytes(16));
+        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password'], $token);
 
-        // Récupère l'utilisateur fraîchement créé
         $user = Utilisateur::getByEmail($_POST['email']);
 
-        // Démarre la session utilisateur
-        $_SESSION['user_id'] = $user['id_uti'];
-        $_SESSION['user_admin'] = $user['uti_admin'];
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $approveUrl = "http://{$host}/approve-registration?id={$user['id_uti']}&token={$token}";
+        $rejectUrl = "http://{$host}/reject-registration?id={$user['id_uti']}&token={$token}";
 
-        // Redirige vers la page de confirmation d'inscription
+        $message = "Nouvelle inscription:\n" .
+            "Nom: {$user['uti_nom']}\n" .
+            "Email: {$user['uti_email']}\n\n" .
+            "Accepter: {$approveUrl}\n" .
+            "Refuser: {$rejectUrl}";
+        @mail('primzark@gmail.com', 'Nouvelle inscription', $message);
+
         header('Location: /inscription/confirm');
         exit;
     }

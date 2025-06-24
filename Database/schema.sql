@@ -105,7 +105,9 @@ CREATE TABLE `utilisateur` (
   `uti_nom` varchar(100) NOT NULL,
   `uti_email` varchar(100) DEFAULT NULL,
   `uti_mdp` varchar(255) NOT NULL,
-  `uti_admin` tinyint(1) NOT NULL DEFAULT 0
+  `uti_admin` tinyint(1) NOT NULL DEFAULT 0,
+  `uti_approved` tinyint(1) NOT NULL DEFAULT 0,
+  `uti_approval_token` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
