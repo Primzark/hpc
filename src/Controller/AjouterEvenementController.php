@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $type = ($_POST['titre'] == 'Tournois') ? 2 : 1;
 
         $tmpPath = $_FILES['image']['tmp_name'];
-        $uploadDir = '../../asset/img/';
+        $uploadDir = dirname(__DIR__, 2) . '/asset/img/';
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
