@@ -3,7 +3,7 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
-require_once __DIR__ . '/../../vendor/autoload.php'; // Charge PHPMailer
+require_once ROOT_PATH . '/vendor/autoload.php'; // Charge PHPMailer
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
