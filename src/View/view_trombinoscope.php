@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
             <div class="mb-4">
                 <a href="/ajouter-trombinoscope" class="btn btn-warning btn-rounded w-100 fw-semibold">
                     <i class="bi bi-plus-lg me-2"></i> Ajouter au trombinoscope
@@ -25,7 +25,7 @@
                             alt="<?php echo htmlspecialchars($member['tro_pseudo']); ?>"
                             style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
                         <p class="field-text mb-1"><?php echo htmlspecialchars($member['tro_pseudo']); ?></p>
-                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                             <a href="/supprimer-trombinoscope?id=<?php echo $member['id_tro']; ?>"
                                 class="btn btn-warning btn-sm mt-2">Supprimer</a>
                         <?php endif; ?>

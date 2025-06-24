@@ -28,8 +28,8 @@
                     <a class="nav-link text-white text-nowrap" href="/">Accueil</a>
                 </li>
 
-                <?php if (isset($_SESSION['user_id'])): ?>
-                    <!-- Admin dropdown visible uniquement si connecté -->
+                <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
+                    <!-- Admin dropdown visible uniquement pour l'admin -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-warning text-nowrap" href="#" id="adminDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">

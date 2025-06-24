@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($user && password_verify($password, $user['uti_mdp'])) {
             $_SESSION['user_id'] = $user['id_uti'];
+            $_SESSION['user_admin'] = $user['uti_admin'];
             header("Location: /");
             exit;
         } else {

@@ -7,7 +7,7 @@ include_once(__DIR__ . '/../../templates/navbar.php');
     <div class="container">
         <p class="display-6 fw-bold text-light mb-4">Classement</p>
 
-        <?php if (isset($_SESSION['user_id'])): ?>
+        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
             <div class="mt-4">
                 <a href="/ajouter-classement"
                     class="btn btn-warning btn-rounded w-100 fw-semibold">
@@ -33,7 +33,7 @@ include_once(__DIR__ . '/../../templates/navbar.php');
                     <div class="col-3 col-md-3"><?php echo htmlspecialchars($entry['cla_points']); ?></div>
 
                     <div class="col-3 col-md-2 text-center">
-                        <?php if (isset($_SESSION['user_id'])): ?>
+                        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                             <a href="/modifier-classement?id=<?php echo $entry['id_cla']; ?>"
                                 class="btn btn-warning btn-sm mb-1">Modifier</a>
                             <a href="/supprimer-classement?id=<?php echo $entry['id_cla']; ?>"
