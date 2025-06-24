@@ -55,6 +55,9 @@
               <small>Pas encore de compte ? <a
                   href="/utilisateur/inscription">S'inscrire</a></small>
             </div>
+            <div class="text-center login-hint mt-1">
+              <small><a href="/forgot-password">Mot de passe oubli&eacute; ?</a></small>
+            </div>
           </form>
         </div>
 
