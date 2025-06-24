@@ -8,7 +8,14 @@ require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle U
 // le repertoire vendor (par exemple lors d'une mise en production sans
 // composer install). On remonte donc deux niveaux depuis ce fichier pour
 // atteindre la racine du projet puis on charge l'autoloader.
-require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
+// Build the path to Composer's autoloader
+$autoloadPath = dirname(__DIR__, 2) . '/vendor/autoload.php';
+// Provide a helpful error message if dependencies are missing
+if (!file_exists($autoloadPath)) {
+    throw new RuntimeException('Composer autoloader not found. ' .
+        'Run "composer install" to install project dependencies.');
+}
+require_once $autoloadPath;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
