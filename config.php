@@ -12,8 +12,8 @@ define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
 // SMTP configuration for PHPMailer
 define('SMTP_HOST', 'smtp.example.com');
 define('SMTP_PORT', 587);
-define('SMTP_USER', 'username@example.com');
-define('SMTP_PASS', 'yourpassword');
+define('SMTP_USER', 'starlod7696@gmail.com');
+define('SMTP_PASS', 'besc oeum rrol rzsx');
 
 // Base path for building absolute URLs
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');

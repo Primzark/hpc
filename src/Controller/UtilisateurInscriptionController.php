@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
             $mail->setFrom('noreply@' . $host, 'Inscription');
-            $mail->addAddress('primzark@gmail.com');
+            $mail->addAddress('starlod7696@gmail.com');
             $mail->Subject = 'Nouvelle inscription';
             $mail->Body    = $message;
             $mail->send();
