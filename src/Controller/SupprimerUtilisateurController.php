@@ -17,6 +17,6 @@ $id_uti = intval($_GET['id']);
 
 Utilisateur::delete($id_uti);
 
-header('Location: /utilisateurs');
+header('Location: ' . BASE_PATH . '/utilisateurs');
 exit;
 ?>

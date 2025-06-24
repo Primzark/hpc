@@ -59,7 +59,7 @@
                     const button = event.relatedTarget;
                     const userId = button.getAttribute('data-user-id');
                     const confirmBtn = document.getElementById('confirmDeleteBtn');
-                    confirmBtn.href = '/supprimer-utilisateur?id=' + userId;
+                    confirmBtn.href = '<?php echo BASE_PATH; ?>/supprimer-utilisateur?id=' + userId;
                 });
             }
         </script>

@@ -8,3 +8,7 @@ define('DB_PASS', 'wC7t4O3s4c3ytIpPYkIA');
 // Replace these placeholder keys with your own site and secret keys
 define('RECAPTCHA_SITE_KEY', '6LfHSWsrAAAAAM2CWcvUV2W4psnR2B7Ct8cP9rhE');
 define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
+
+// Base path for building absolute URLs
+$base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
+define('BASE_PATH', $base === '/' ? '' : $base);
