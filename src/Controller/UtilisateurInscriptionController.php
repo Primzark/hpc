@@ -121,7 +121,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $mail = new PHPMailer(true);
         try {
-            $mail->isMail();
+            $mail->isSMTP();
+            $mail->Host       = SMTP_HOST;
+            $mail->Port       = SMTP_PORT;
+            $mail->SMTPAuth   = true;
+            $mail->Username   = SMTP_USER;
+            $mail->Password   = SMTP_PASS;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+
             $mail->setFrom('noreply@' . $host, 'Inscription');
             $mail->addAddress('primzark@gmail.com');
             $mail->Subject = 'Nouvelle inscription';
