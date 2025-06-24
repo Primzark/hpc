@@ -11,9 +11,8 @@
                             style="max-height: 100px;">
                     </div>
                     <p class="fs-4 fw-bold mb-2">Bienvenue au Harfleur Poker Club !</p>
-                    <p class="mb-4">Votre inscription a été confirmée avec succès.</p>
-                    <a href="/" class="btn btn-warning fw-semibold">Accéder au
-                        site</a>
+                    <p class="mb-4">Votre inscription a été enregistrée et doit être validée par l'administrateur.</p>
+                    <a href="/" class="btn btn-warning fw-semibold">Retour à l'accueil</a>
                 </div>
             </div>
         </div>
