@@ -69,7 +69,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom FROM utilisateur ORDER BY uti_nom ASC";
+        $sql = "SELECT id_uti, uti_nom FROM utilisateur WHERE uti_admin = 0 ORDER BY uti_nom ASC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
