@@ -7,6 +7,9 @@
         <div class="form-section-bg rounded p-4 shadow">
           <?php if ($success): ?>
             <p class="text-light">Votre mot de passe a été réinitialisé.</p>
+            <div class="d-grid mt-3">
+              <a href="/" class="btn btn-warning fw-semibold">Retour à l'accueil</a>
+            </div>
           <?php else: ?>
             <form method="POST" action="">
               <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
