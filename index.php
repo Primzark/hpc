@@ -35,5 +35,7 @@ $router->add('/propos', 'src/Controller/ProposController.php');
 $router->add('/ajax/rejoindre-evenement', 'src/Controller/ajax_rejoindre_evenement.php');
 $router->add('/approve-registration', 'src/Controller/ApproveRegistrationController.php');
 $router->add('/reject-registration', 'src/Controller/RejectRegistrationController.php');
+$router->add('/forgot-password', 'src/Controller/ForgotPasswordController.php');
+$router->add('/reset-password', 'src/Controller/ResetPasswordController.php');
 
 $router->dispatch();

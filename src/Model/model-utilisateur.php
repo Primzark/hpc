@@ -30,7 +30,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+                uti_reset_token, uti_reset_expires
                 FROM utilisateur WHERE uti_email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':email', $email);
@@ -42,7 +43,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+                uti_reset_token, uti_reset_expires
                 FROM utilisateur WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':id', $id_uti);
@@ -54,7 +56,8 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+                uti_reset_token, uti_reset_expires
                 FROM utilisateur WHERE uti_nom = :nom";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':nom', $nom);
@@ -87,6 +90,41 @@ class Utilisateur
         $sql = "UPDATE utilisateur SET uti_approval_token = :token WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':token', $token);
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public static function setResetToken($email, $token, $expires)
+    {
+        $pdo = self::getPDO();
+        $sql = "UPDATE utilisateur SET uti_reset_token = :token, uti_reset_expires = :expires WHERE uti_email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':token', $token);
+        $stmt->bindValue(':expires', $expires);
+        $stmt->bindValue(':email', $email);
+        return $stmt->execute();
+    }
+
+    public static function getByResetToken($token)
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT id_uti, uti_email, uti_reset_token, uti_reset_expires FROM utilisateur WHERE uti_reset_token = :token";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':token', $token);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($user && $user['uti_reset_expires'] && strtotime($user['uti_reset_expires']) >= time()) {
+            return $user;
+        }
+        return false;
+    }
+
+    public static function updatePassword($id_uti, $password)
+    {
+        $pdo = self::getPDO();
+        $sql = "UPDATE utilisateur SET uti_mdp = :mdp, uti_reset_token = NULL, uti_reset_expires = NULL WHERE id_uti = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':mdp', password_hash($password, PASSWORD_DEFAULT));
         $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
         return $stmt->execute();
     }
