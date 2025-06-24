@@ -3,6 +3,10 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
+require_once __DIR__ . '/../../vendor/autoload.php'; // Charge PHPMailer
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 // Expressions régulières pour valider nom, email et mot de passe
 $regex_nom = "/^[a-zA-Z0-9._%+-]{4,}$/";
@@ -114,7 +118,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "Email: {$user['uti_email']}\n\n" .
             "Accepter: {$approveUrl}\n" .
             "Refuser: {$rejectUrl}";
-        @mail('primzark@gmail.com', 'Nouvelle inscription', $message);
+
+        $mail = new PHPMailer(true);
+        try {
+            $mail->isMail();
+            $mail->setFrom('noreply@' . $host, 'Inscription');
+            $mail->addAddress('primzark@gmail.com');
+            $mail->Subject = 'Nouvelle inscription';
+            $mail->Body    = $message;
+            $mail->send();
+        } catch (Exception $e) {
+            // Unable to send email; silently fail
+        }
 
         header('Location: /inscription/confirm');
         exit;
