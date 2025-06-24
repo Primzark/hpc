@@ -11,7 +11,7 @@
           <div class="col-md-6">
             <p class="display-6 fw-bold text-light mb-0">Info évènement</p>
           </div>
-          <?php if (isset($_SESSION['user_id'])): ?>
+          <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
             <div class="col-md-6 text-md-end mt-3 mt-md-0">
               <a href="/modifier-evenement?id=<?php echo $evenement['id_eve']; ?>" class="btn btn-warning">Modifier</a>
 

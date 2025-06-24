@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-trombinoscope.php';
+require_once __DIR__ . '/admin_required.php';
 
 $errors = [];
 $pseudo = '';
@@ -29,10 +30,7 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 75)
     return $result;
 }
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /');
-    exit;
-}
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $pseudo = $_POST['pseudo'] ?? '';

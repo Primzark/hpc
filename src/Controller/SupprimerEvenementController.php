@@ -2,11 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-evenement.php';
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /');
-    exit;
-}
+require_once __DIR__ . '/admin_required.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     header('Location: /');

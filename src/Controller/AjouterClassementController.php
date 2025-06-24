@@ -6,6 +6,7 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
 require_once __DIR__ . '/../Model/model-classement.php';
+require_once __DIR__ . '/admin_required.php';
 
 // Initialisation du tableau des erreurs
 $errors = [];
@@ -22,11 +23,7 @@ function safeInput($string)
     return htmlspecialchars(trim($string));
 }
 
-// Vérifie si l'utilisateur est connecté
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /');
-    exit;
-}
+
 
 // Si le formulaire a été soumis en méthode POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
