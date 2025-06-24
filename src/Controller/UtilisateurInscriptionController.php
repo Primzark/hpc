@@ -3,7 +3,12 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
-require_once ROOT_PATH . '/vendor/autoload.php'; // Charge PHPMailer
+// Charge PHPMailer depuis le dossier vendor. Utiliser un chemin relatif
+// permet d'eviter les problemes si ROOT_PATH pointe vers un dossier sans
+// le repertoire vendor (par exemple lors d'une mise en production sans
+// composer install). On remonte donc deux niveaux depuis ce fichier pour
+// atteindre la racine du projet puis on charge l'autoloader.
+require_once dirname(__DIR__, 2) . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
