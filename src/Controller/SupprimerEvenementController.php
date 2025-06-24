@@ -25,7 +25,7 @@ if (!$evenement) {
 
 // Suppression physique du fichier image
 if (!empty($evenement['eve_image'])) {
-    $imagePath = '../../asset/img/' . $evenement['eve_image'];
+    $imagePath = dirname(__DIR__, 2) . '/asset/img/' . $evenement['eve_image'];
     if (file_exists($imagePath)) {
         unlink($imagePath);
     }

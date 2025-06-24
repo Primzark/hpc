@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             // Générer un nom unique en WebP
             $newFileName = uniqid('event_', true) . '.webp';
-            $destinationPath = '../../asset/img/' . $newFileName;
+            $destinationPath = dirname(__DIR__, 2) . '/asset/img/' . $newFileName;
 
             // Conversion en WebP
             $image = null;
@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($image && imagewebp($image, $destinationPath, 80)) {
                 imagedestroy($image);
                 // Suppression de l'ancienne image si nouveau fichier
-                unlink('../../asset/img/' . $evenement['eve_image']);
+                unlink(dirname(__DIR__, 2) . '/asset/img/' . $evenement['eve_image']);
                 $evenement['eve_image'] = $newFileName;
             } else {
                 $errors['image'] = "Erreur lors de la conversion de l’image.";

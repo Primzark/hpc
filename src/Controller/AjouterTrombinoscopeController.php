@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($errors)) {
-        $uploadDir = '../../asset/img/';
+        $uploadDir = dirname(__DIR__, 2) . '/asset/img/';
         $tmpPath = $_FILES['image']['tmp_name'];
 
         // Insert pseudo first to retrieve its ID
