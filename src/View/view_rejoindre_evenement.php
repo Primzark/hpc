@@ -15,6 +15,9 @@
                     <div class="text-center mb-4">
                         <h2 class="fw-bold custom-text">Confirmation d’inscription</h2>
                         <p class="fs-5 field-text">Veuillez confirmer votre inscription en cliquant ci-dessous :</p>
+                        <p class="mb-0 field-text">Participants inscrits :
+                            <span id="participantsCount"><?php echo $participantCount; ?></span>
+                        </p>
                     </div>
 
                     <!-- Boutons -->

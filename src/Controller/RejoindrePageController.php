@@ -11,6 +11,7 @@ if (!isset($_GET['event']) || !is_numeric($_GET['event'])) {
 
 $eventId = (int) $_GET['event'];
 $evenement = Evenement::getById($eventId); // updated method name
+$participantCount = Inscription::countByEvent($eventId);
 
 if (!$evenement) {
     header('Location: /');

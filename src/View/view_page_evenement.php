@@ -92,6 +92,14 @@
             </div>
           </div>
 
+          <div class="row mb-3">
+            <div class="col-12">
+              <p class="text-warning fw-semibold mb-0">Participants inscrits :
+                <span id="participantsCount"><?php echo $nombreInscrits; ?></span>
+              </p>
+            </div>
+          </div>
+
           <!-- Boutons d'action -->
           <div class="row g-3 mt-4">
             <?php if ($evenement['id_type_eve'] == 2): ?>
