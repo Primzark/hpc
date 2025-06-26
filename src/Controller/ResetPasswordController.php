@@ -11,7 +11,7 @@ if (!$token) {
 
 $user = Utilisateur::getByResetToken($token);
 if (!$user) {
-    echo 'Lien expir\xC3\xA9 ou invalide';
+    echo 'Lien expiré ou invalide';
     exit;
 }
 
