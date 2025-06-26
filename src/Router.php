@@ -5,7 +5,7 @@ class Router {
     public function add(string $path, string $file): void
     {
         $path = rtrim($path, '/');
-        if ($path === '') {
+        if ($path == '') {
             $path = '/';
         }
         $this->routes[$path] = $file;
@@ -15,7 +15,7 @@ class Router {
     {
         $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $uri = rtrim($uri, '/');
-        if ($uri === '') {
+        if ($uri == '') {
             $uri = '/';
         }
 

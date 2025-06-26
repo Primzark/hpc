@@ -11,7 +11,7 @@ $errors = [];
 $email = '';
 $sent = false;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['email'])) {
         $errors['email'] = "Veuillez entrer votre email.";
     } else {

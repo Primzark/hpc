@@ -17,4 +17,4 @@ define('SMTP_PASS', 'besc oeum rrol rzsx');
 
 // Base path for building absolute URLs
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-define('BASE_PATH', $base === '/' ? '' : $base);
+define('BASE_PATH', $base == '/' ? '' : $base);
