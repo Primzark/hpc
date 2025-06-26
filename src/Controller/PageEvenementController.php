@@ -10,6 +10,7 @@ if (!isset($_GET['id'])) {
 }
 
 $evenement = Evenement::getById(id_eve: $_GET['id']);
+$nombreInscrits = Inscription::countByEvent($_GET['id']);
 $estInscrit = false;
 
 if (isset($_SESSION['user_id'])) {

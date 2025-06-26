@@ -20,8 +20,11 @@ $id_evenement = intval($_POST['event']);
 
 if (Inscription::dejaInscrit($id_evenement, $id_utilisateur)) {
     Inscription::desinscrire($id_evenement, $id_utilisateur);
-    echo json_encode(['status' => 'success', 'action' => 'unregistered']);
+    $action = 'unregistered';
 } else {
     Inscription::inscrire($id_evenement, $id_utilisateur);
-    echo json_encode(['status' => 'success', 'action' => 'registered']);
+    $action = 'registered';
 }
+
+$count = Inscription::countByEvent($id_evenement);
+echo json_encode(['status' => 'success', 'action' => $action, 'count' => $count]);

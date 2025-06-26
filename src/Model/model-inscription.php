@@ -43,4 +43,19 @@ class Inscription
         $stmt->bindValue(':id_eve', $id_eve, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    /**
+     * Count how many users are registered for a given event.
+     */
+    public static function countByEvent($id_eve)
+    {
+        $pdo = self::getPDO();
+
+        $sql = "SELECT COUNT(*) FROM s_inscrit_a WHERE id_eve = :id_eve";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id_eve', $id_eve, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return (int) $stmt->fetchColumn();
+    }
 }
