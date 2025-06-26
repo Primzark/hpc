@@ -15,7 +15,7 @@ if (!$user) {
     exit;
 }
 
-$errors = []
+$errors = [];
 $success = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
