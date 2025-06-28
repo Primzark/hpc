@@ -21,7 +21,7 @@
             </div>
             <div class="mb-3">
               <label for="image" class="form-label field-text">Image</label>
-              <input type="file"
+              <input type="file" lang="fr"
                 class="form-control custom-input custom-add <?php echo isset($errors['image']) ? 'is-invalid' : ''; ?>"
                 id="image" name="image" accept="image/*">
               <?php if (isset($errors['image'])): ?>
