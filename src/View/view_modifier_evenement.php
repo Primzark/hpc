@@ -28,7 +28,7 @@
                             <!-- Date -->
                             <div class="col-md-6">
                                 <label for="date" class="form-label fw-semibold text-light">Date</label>
-                                <input type="date"
+                                <input type="date" lang="fr"
                                     class="form-control custom-input custom-add <?php echo isset($errors['date']) ? 'is-invalid' : ''; ?>"
                                     id="date" name="date"
                                     value="<?php echo isset($date) ? htmlspecialchars($date) : $evenement['eve_date']; ?>">
@@ -72,7 +72,7 @@
                             <!-- Nouvelle image -->
                             <div class="col-12">
                                 <label for="image" class="form-label fw-semibold text-light">Changer l’image</label>
-                                <input type="file"
+                                <input type="file" lang="fr"
                                     class="form-control custom-add <?php echo isset($errors['image']) ? 'is-invalid' : ''; ?>"
                                     id="image" name="image" accept="image/*">
                                 <?php if (isset($errors['image'])): ?>

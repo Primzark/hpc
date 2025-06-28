@@ -19,7 +19,7 @@
                             <div class="col-12">
                                 <label for="image" class="form-label fw-semibold text-light">Image de
                                     l'évènement</label>
-                                <input type="file" class="form-control custom-input custom-add <?php if (isset($errors['image']))
+                                <input type="file" lang="fr" class="form-control custom-input custom-add <?php if (isset($errors['image']))
                                     echo 'is-invalid'; ?>" id="image" name="image" accept="image/*">
                                 <?php if (isset($errors['image'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['image']; ?></div>
@@ -55,7 +55,7 @@
                             <!-- Date -->
                             <div class="col-md-6">
                                 <label for="date" class="form-label fw-semibold text-light">Date</label>
-                                <input type="date" class="form-control custom-input custom-add <?php if (isset($errors['date']))
+                                <input type="date" lang="fr" class="form-control custom-input custom-add <?php if (isset($errors['date']))
                                     echo 'is-invalid'; ?>" id="date" name="date"
                                     value="<?php echo isset($date) ? htmlspecialchars($date) : ''; ?>">
                                 <?php if (isset($errors['date'])): ?>
