@@ -19,7 +19,7 @@
                         </div>
                     </div>
 
-                    <!-- Text + Button Section -->
+                    <!-- Text + bouton section -->
                     <div class="col-12 col-md-6 text-center text-md-start">
                         <p class="mb-3 text-warning">
                             Fondé en 2016, HPC est une communauté de passionnés de poker à Harfleur.
@@ -46,7 +46,7 @@
             </div>
         </div>
 
-        <!-- Tournaments Section -->
+        <!-- Section des tournois -->
         <div class="row mb-4">
             <div class="col-12 text-center">
                 <p class="display-6 fw-semibold">Tournois à venir</p>
@@ -79,7 +79,7 @@
             <?php endif; ?>
         </div>
 
-        <!-- News Section -->
+        <!-- Section des actualités -->
         <div class="row mb-4">
             <div class="col-12 text-center">
                 <p class="display-6 fw-semibold">Actualités</p>
