@@ -38,7 +38,7 @@ class Trombinoscope
     }
 
     /**
-     * Retrieve a trombinoscope entry by its id.
+     * Récupère une entrée du trombinoscope par son identifiant.
      */
     public static function getById($id_tro)
     {
@@ -51,7 +51,7 @@ class Trombinoscope
     }
 
     /**
-     * Delete a trombinoscope entry.
+     * Supprime une entrée du trombinoscope.
      */
     public static function delete($id_tro)
     {

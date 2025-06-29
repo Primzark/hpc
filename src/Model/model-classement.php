@@ -60,7 +60,7 @@ class Classement
     }
 
     /**
-     * Remove a classement entry.
+     * Supprime une entrée de classement.
      */
     public static function delete($id_cla)
     {

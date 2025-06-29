@@ -2,7 +2,7 @@
 class Utilisateur
 {
     /**
-     * Return a PDO connection configured for this application.
+     * Retourne une connexion PDO configurée pour cette application.
      */
     private static function getPDO()
     {
@@ -130,7 +130,7 @@ class Utilisateur
     }
 
     /**
-     * Delete a user and its registrations.
+     * Supprime un utilisateur ainsi que ses inscriptions.
      */
     public static function delete($id_uti)
     {

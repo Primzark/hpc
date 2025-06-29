@@ -1,4 +1,4 @@
-name: FTP Deploy
+name: Déploiement FTP
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3  
+      - name: Récupérer le code
+        uses: actions/checkout@v3
 
-      - name: FTP Deploy
+      - name: Déploiement FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4  # Déploiement FTP
         with:
           server: ${{ secrets.FTP_SERVER }}
