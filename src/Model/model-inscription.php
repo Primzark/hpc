@@ -2,7 +2,7 @@
 class Inscription
 {
     /**
-     * Get a PDO connection for database operations.
+     * Obtient une connexion PDO pour les opérations en base de données.
      */
     private static function getPDO()
     {
@@ -45,7 +45,7 @@ class Inscription
     }
 
     /**
-     * Count how many users are registered for a given event.
+     * Compte combien d'utilisateurs sont inscrits pour un événement donné.
      */
     public static function countByEvent($id_eve)
     {

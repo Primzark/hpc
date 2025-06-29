@@ -1,8 +1,8 @@
 <?php
 require_once 'src/Router.php';
 
-// Front controller: map routes to controllers and dispatch
-// Example of adding a route:
+// Front controller : associe les routes aux contrôleurs et les exécute
+// Exemple d'ajout de route :
 // $router->add('/contact', 'src/Controller/ContactController.php');
 
 $router = new Router();

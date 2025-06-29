@@ -2,7 +2,7 @@
 class Evenement
 {
     /**
-     * Returns a configured PDO instance.
+     * Retourne une instance PDO configurée.
      */
     private static function getPDO()
     {
@@ -70,7 +70,7 @@ class Evenement
     }
 
     /**
-     * Delete an event and its registrations.
+     * Supprime un événement et ses inscriptions.
      */
     public static function delete($id_eve)
     {
@@ -86,7 +86,7 @@ class Evenement
     }
 
     /**
-     * Retrieve the latest events for the specified type.
+     * Récupère les derniers événements pour le type spécifié.
      */
     public static function getLatestByType($type, $limit)
     {
