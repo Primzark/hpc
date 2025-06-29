@@ -13,12 +13,12 @@ if (joinBtn) {
     })
         .then(response => response.json())
         .then(data => {
-            if (data.status == 'success') {
-                if (data.action == 'registered') {
+            if (data.status == 'succès') {
+                if (data.action == 'inscrit') {
                     btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous désinscrire';
                     btn.classList.remove('btn-warning');
                     btn.classList.add('btn-success');
-                } else if (data.action == 'unregistered') {
+                } else if (data.action == 'desinscrit') {
                     btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Confirmer l’inscription';
                     btn.classList.remove('btn-success');
                     btn.classList.add('btn-warning');

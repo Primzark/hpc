@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->Body    = "Pour r\xC3\xA9initialiser votre mot de passe, cliquez sur ce lien : {$resetUrl}";
                 $mail->send();
             } catch (Exception $e) {
-                // ignore failure
+                // échec ignoré
             }
         }
         $sent = true;

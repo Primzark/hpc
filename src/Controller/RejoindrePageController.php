@@ -10,7 +10,7 @@ if (!isset($_GET['event']) || !is_numeric($_GET['event'])) {
 }
 
 $eventId = (int) $_GET['event'];
-$evenement = Evenement::getById($eventId); // updated method name
+$evenement = Evenement::getById($eventId); // nom de méthode mis à jour
 $participantCount = Inscription::countByEvent($eventId);
 
 if (!$evenement) {
