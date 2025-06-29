@@ -6,6 +6,7 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
 require_once __DIR__ . '/../Model/model-classement.php';
+require_once __DIR__ . '/../bad_words.php';
 require_once __DIR__ . '/admin_required.php';
 
 // Initialisation du tableau des erreurs
@@ -36,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['nomjoueur'] = "Veuillez entrer le nom du joueur.";
     } elseif (!preg_match($regex, $_POST['cla_nomjoueur'])) {
         $errors['nomjoueur'] = "Caractères non autorisés dans le nom du joueur.";
+    } elseif (containsForbiddenWord($_POST['cla_nomjoueur'])) {
+        $errors['nomjoueur'] = "Nom interdit.";
     }
 
     // Vérification du champ rang
