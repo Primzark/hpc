@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-trombinoscope.php';
+require_once __DIR__ . '/../bad_words.php';
 require_once __DIR__ . '/admin_required.php';
 
 $errors = [];
@@ -40,6 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($_POST['pseudo'])) {
         $errors['pseudo'] = "Veuillez entrer le pseudo.";
+    } elseif (containsForbiddenWord($_POST['pseudo'])) {
+        $errors['pseudo'] = "Pseudo interdit.";
     }
 
     if (empty($errors)) {

@@ -3,6 +3,7 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
+require_once __DIR__ . '/../bad_words.php';
 require_once __DIR__ . '/../../vendor/autoload.php'; // Charge PHPMailer
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -30,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['nom'] = 'Champ obligatoire.';
     } elseif (!preg_match($regex_nom, $_POST['nom'])) {
         $errors['nom'] = 'Nom non valide.';
+    } elseif (containsForbiddenWord($_POST['nom'])) {
+        $errors['nom'] = 'Nom interdit.';
     } else {
         // Vérifie si nom déjà utilisé en base via modèle
         $userWithNom = Utilisateur::getByNom($_POST['nom']);
