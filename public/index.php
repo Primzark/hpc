@@ -138,7 +138,7 @@
                         style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod"
+                    <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod"
                         style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">

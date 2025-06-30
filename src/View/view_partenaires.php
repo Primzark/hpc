@@ -95,7 +95,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/caval_brod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
+                    <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Caval Brod</p>
