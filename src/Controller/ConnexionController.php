@@ -41,10 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $errors['email'] = "Votre inscription n'a pas encore été approuvée.";
                 $errors['password'] = "Votre inscription n'a pas encore été approuvée.";
             } else {
-            $_SESSION['user_id'] = $user['id_uti'];
-            $_SESSION['user_admin'] = $user['uti_admin'];
-            header("Location: /");
-            exit;
+                $_SESSION['user_id'] = $user['id_uti'];
+                $_SESSION['user_admin'] = $user['uti_admin'];
+                header("Location: /");
+                exit;
             }
         } else {
             $errors['email'] = "Email ou mot de passe incorrect.";
@@ -55,4 +55,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 // On appelle la vue en lui passant les variables
 require_once __DIR__ . '/../View/view_connexion.php';
-?>

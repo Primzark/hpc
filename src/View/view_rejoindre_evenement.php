@@ -25,7 +25,7 @@
                         <div class="col-md-6">
                             <?php
                             $btnClass = $isRegistered ? 'btn-success' : 'btn-warning';
-                            $btnText = $isRegistered ? 'Vous êtes inscrit' : 'Confirmer l’inscription';
+                            $btnText = $isRegistered ? 'cliquez pour vous désinscrire' : 'Cliquer pour vous inscrire';
                             ?>
                             <button type="button" id="joinEventBtn"
                                 data-event-id="<?php echo htmlspecialchars($event_id); ?>"
