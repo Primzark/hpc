@@ -23,7 +23,7 @@
                     <div class="card custom-add border-0 rounded-3 shadow p-3 text-center">
                         <img src="/asset/img/<?php echo htmlspecialchars($member['tro_image']); ?>" class="mx-auto mb-3"
                             alt="<?php echo htmlspecialchars($member['tro_pseudo']); ?>"
-                            style="width:200px; height:200px; object-fit:cover; border-radius:50%;">
+                            style="width:12.5rem; height:12.5rem; object-fit:cover; border-radius:50%;">
                         <p class="field-text mb-1"><?php echo htmlspecialchars($member['tro_pseudo']); ?></p>
                         <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                             <a href="/supprimer-trombinoscope?id=<?php echo $member['id_tro']; ?>"

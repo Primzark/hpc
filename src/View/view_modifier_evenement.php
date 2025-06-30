@@ -66,7 +66,7 @@
                             <div class="col-12">
                                 <label class="form-label fw-semibold text-light">Image actuelle</label><br>
                                 <img src="/asset/img/<?php echo htmlspecialchars($evenement['eve_image']); ?>"
-                                    alt="Image actuelle" class="img-thumbnail" style="max-height: 200px;">
+                                    alt="Image actuelle" class="img-thumbnail" style="max-height: 12.5rem;">
                             </div>
 
                             <!-- Nouvelle image -->

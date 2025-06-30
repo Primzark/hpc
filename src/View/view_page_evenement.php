@@ -88,7 +88,7 @@
             <!-- Colonne de l'image droite -->
             <div class="col-md-6 text-center">
               <img src="/asset/img/<?php echo htmlspecialchars($evenement['eve_image']); ?>" alt="Image de l'évènement"
-                class="img-fluid rounded" style="max-height: 280px;">
+                class="img-fluid rounded" style="max-height: 17.5rem;">
             </div>
           </div>
 

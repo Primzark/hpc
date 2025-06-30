@@ -21,7 +21,7 @@
 
 .form-control.custom-bg {
   color: #d8d8d8;
-  border: 1px solid #444;
+  border: 0.0625rem solid #444;
 }
 
 .form-control.custom-bg::placeholder {
@@ -51,7 +51,7 @@
 .form-control.custom-add:-webkit-autofill {
   color: #d8d8d8 !important;
   background-color: #393628 !important;
-  border: 1px solid #444 !important;
+  border: 0.0625rem solid #444 !important;
 }
 
 .contact-icon {
@@ -61,7 +61,7 @@
 }
 
 .section-divider {
-  border-top: 1px solid #6B7280;
+  border-top: 0.0625rem solid #6B7280;
   margin: 1rem 0;
 }
 
