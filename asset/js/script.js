@@ -15,11 +15,11 @@ if (joinBtn) {
             .then(data => {
                 if (data.status == 'success') {
                     if (data.action == 'inscrit') {
-                        btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous desinscrire';
+                        btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Cliquer pour vous desinscrire';
                         btn.classList.remove('btn-warning');
                         btn.classList.add('btn-success');
                     } else if (data.action == 'desinscrit') {
-                        btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous inscrire';
+                        btn.innerHTML = '<i class="bi bi-check-circle me-2"></i>Cliquer pour vous inscrire';
                         btn.classList.remove('btn-success');
                         btn.classList.add('btn-warning');
                     }

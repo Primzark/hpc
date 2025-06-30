@@ -27,4 +27,4 @@ if (Inscription::dejaInscrit($id_evenement, $id_utilisateur)) {
 }
 
 $count = Inscription::countByEvent($id_evenement);
-echo json_encode(['status' => 'succès', 'action' => $action, 'count' => $count]);
+echo json_encode(['status' => 'success', 'action' => $action, 'count' => $count]);
