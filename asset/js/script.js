@@ -13,9 +13,9 @@ if (joinBtn) {
         })
             .then(response => response.json())
             .then(data => {
-                if (data.status == 'succès') {
+                if (data.status == 'success') {
                     if (data.action == 'inscrit') {
-                        btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous désinscrire';
+                        btn.innerHTML = '<i class="bi bi-check2-circle me-2"></i>Cliquer pour vous desinscrire';
                         btn.classList.remove('btn-warning');
                         btn.classList.add('btn-success');
                     } else if (data.action == 'desinscrit') {
@@ -30,6 +30,6 @@ if (joinBtn) {
                     alert('Erreur: ' + data.message);
                 }
             })
-            .catch(() => alert('Erreur réseau, veuillez réessayer.'));
+            .catch(() => alert('Erreur reseau, veuillez reessayer.'));
     });
 }
