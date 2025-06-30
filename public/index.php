@@ -14,7 +14,7 @@
                             <div class="col-12">
                                 <img src="/asset/img/bandeau_du_club.png" alt="Bandeau du club"
                                     class="img-fluid rounded shadow w-100"
-                                    style="max-height: 300px; object-fit: cover;">
+                                    style="max-height: 18.75rem; object-fit: cover;">
                             </div>
                         </div>
                     </div>
@@ -119,31 +119,31 @@
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/confo.png" alt="Conforama"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
                     <img src="/asset/img/dfds.png" alt="DFDS"
-                        style="width: 90px; height: 90px; border-radius: 20%; object-fit: cover;">
+                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
             </div>
         </div>

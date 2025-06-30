@@ -8,7 +8,7 @@
         <!-- Logo HPC -->
         <div class="text-center mb-4">
           <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
-            style="max-height: 100px;">
+            style="max-height: 6.25rem;">
         </div>
 
         <div class="form-section-bg rounded p-4 shadow">

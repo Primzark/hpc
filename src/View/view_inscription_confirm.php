@@ -8,7 +8,7 @@
                 <div class="form-section-bg rounded p-4 text-light text-center">
                     <div class="mb-4">
                         <img src="/asset/img/Harfleur_poker_logo.png" alt="Harfleur Poker Club Logo" class="img-fluid"
-                            style="max-height: 100px;">
+                            style="max-height: 6.25rem;">
                     </div>
                     <p class="fs-4 fw-bold mb-2">Bienvenue au Harfleur Poker Club !</p>
                     <p class="mb-4">Votre inscription a été enregistrée et doit être validée par l'administrateur.</p>
