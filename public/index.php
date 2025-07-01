@@ -31,8 +31,7 @@
                                 Bienvenue <?php echo htmlspecialchars($utiNom ?? ''); ?>
                             </div>
                         <?php else: ?>
-                            <a href="/utilisateur/inscription"
-                                class="btn btn-warning fw-bold fs-4">
+                            <a href="/utilisateur/inscription" class="btn btn-warning fw-bold fs-4">
                                 S'inscrire au club
                             </a>
                         <?php endif; ?>
@@ -66,7 +65,8 @@
                                 <img src="/asset/img/<?php echo htmlspecialchars($tournoi['eve_image']); ?>"
                                     class="w-100 h-100 object-fit-cover" alt="Image du tournoi">
                             </div>
-                            <p class="text-light fw-semibold small mb-1"><?php echo htmlspecialchars($tournoi['eve_titre']); ?></p>
+                            <p class="text-light fw-semibold small mb-1"><?php echo htmlspecialchars($tournoi['eve_titre']); ?>
+                            </p>
                             <p class="custom-text small mb-2">
                                 <?php echo date('d/m/Y', strtotime($tournoi['eve_date'])); ?> -
                                 <?php echo htmlspecialchars($tournoi['eve_lieu']); ?>
