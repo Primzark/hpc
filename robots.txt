@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /src/
 Disallow: /asset/img/
 Disallow: /vendor/
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://harfleurpokerclub76.fr/sitemap.xml
