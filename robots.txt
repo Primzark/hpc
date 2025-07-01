@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /src/
+Disallow: /asset/img/
+Disallow: /vendor/
+Sitemap: https://example.com/sitemap.xml
