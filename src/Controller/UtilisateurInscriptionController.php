@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Body = $message;
             $mail->send();
         } catch (Exception $e) {
-            // Unable to send email; silently fail
+            // Impossible d'envoyer l'email = échec silencieux
         }
 
         header('Location: /inscription/confirm');
