@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+  </url>
+  <url><loc>https://example.com/connexion</loc></url>
+  <url><loc>https://example.com/deconnexion</loc></url>
+  <url><loc>https://example.com/deconnexion/confirm</loc></url>
+  <url><loc>https://example.com/evenements</loc></url>
+  <url><loc>https://example.com/ajouter-evenement</loc></url>
+  <url><loc>https://example.com/modifier-evenement</loc></url>
+  <url><loc>https://example.com/supprimer-evenement</loc></url>
+  <url><loc>https://example.com/page-evenement</loc></url>
+  <url><loc>https://example.com/rejoindre-page</loc></url>
+  <url><loc>https://example.com/utilisateurs</loc></url>
+  <url><loc>https://example.com/utilisateur/inscription</loc></url>
+  <url><loc>https://example.com/inscription/confirm</loc></url>
+  <url><loc>https://example.com/supprimer-utilisateur</loc></url>
+  <url><loc>https://example.com/classement</loc></url>
+  <url><loc>https://example.com/ajouter-classement</loc></url>
+  <url><loc>https://example.com/modifier-classement</loc></url>
+  <url><loc>https://example.com/supprimer-classement</loc></url>
+  <url><loc>https://example.com/trombinoscope</loc></url>
+  <url><loc>https://example.com/ajouter-trombinoscope</loc></url>
+  <url><loc>https://example.com/supprimer-trombinoscope</loc></url>
+  <url><loc>https://example.com/partenaires</loc></url>
+  <url><loc>https://example.com/regles</loc></url>
+  <url><loc>https://example.com/contact</loc></url>
+  <url><loc>https://example.com/propos</loc></url>
+  <url><loc>https://example.com/ajax/rejoindre-evenement</loc></url>
+  <url><loc>https://example.com/approve-registration</loc></url>
+  <url><loc>https://example.com/reject-registration</loc></url>
+  <url><loc>https://example.com/forgot-password</loc></url>
+  <url><loc>https://example.com/reset-password</loc></url>
+</urlset>
