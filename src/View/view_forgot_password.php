@@ -12,10 +12,9 @@
               <p class="fs-4 fw-bold text-white mb-4 text-center">Mot de passe oublié</p>
               <div class="mb-3">
                 <label for="email" class="form-label field-text">Email</label>
-                <input type="email"
-                  class="form-control custom-add <?php if (!empty($errors['email']))
-                    echo 'is-invalid'; ?>" id="email"
-                  name="email" value="<?php echo htmlspecialchars($email); ?>" placeholder="Entrez votre email">
+                <input type="email" class="form-control custom-add <?php if (!empty($errors['email']))
+                  echo 'is-invalid'; ?>" id="email" name="email" value="<?php echo htmlspecialchars($email); ?>"
+                  placeholder="Entrez votre email">
                 <?php if (!empty($errors['email'])): ?>
                   <div class="invalid-feedback"><?php echo $errors['email']; ?></div>
                 <?php endif; ?>
