@@ -11,7 +11,7 @@
                     <form action="/modifier-classement?id=<?php echo $classement['id_cla']; ?>" method="post">
                         <div class="mb-3">
                             <label for="nom" class="form-label field-text">Nom du joueur</label>
-                            <input type="text" class="form-control custom-add <?php echo isset($errors['nomjoueur']) ? 'is-invalid' : ''; ?>" id="nom" name="cla_nomjoueur" value="<?php echo htmlspecialchars($cla_nomjoueur); ?>">
+                            <input type="text" class="form-control custom-add <?php if (isset($errors['nomjoueur'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="nom" name="cla_nomjoueur" value="<?php echo htmlspecialchars($cla_nomjoueur); ?>">
                             <?php if (isset($errors['nomjoueur'])): ?>
                                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['nomjoueur']); ?></div>
                             <?php endif; ?>
@@ -19,7 +19,7 @@
                         
                         <div class="mb-3">
                             <label for="rang" class="form-label field-text">Rang</label>
-                            <input type="number" class="form-control custom-add <?php echo isset($errors['rang']) ? 'is-invalid' : ''; ?>" id="rang" name="cla_rang" min="1" value="<?php echo htmlspecialchars($cla_rang); ?>">
+                            <input type="number" class="form-control custom-add <?php if (isset($errors['rang'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="rang" name="cla_rang" min="1" value="<?php echo htmlspecialchars($cla_rang); ?>">
                             <?php if (isset($errors['rang'])): ?>
                                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['rang']); ?></div>
                             <?php endif; ?>
@@ -27,7 +27,7 @@
 
                         <div class="mb-3">
                             <label for="points" class="form-label field-text">Points</label>
-                            <input type="number" class="form-control custom-add <?php echo isset($errors['points']) ? 'is-invalid' : ''; ?>" id="points" name="cla_points" value="<?php echo htmlspecialchars($cla_points); ?>">
+                            <input type="number" class="form-control custom-add <?php if (isset($errors['points'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="points" name="cla_points" value="<?php echo htmlspecialchars($cla_points); ?>">
                             <?php if (isset($errors['points'])): ?>
                                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['points']); ?></div>
                             <?php endif; ?>

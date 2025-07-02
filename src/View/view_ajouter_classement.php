@@ -16,9 +16,9 @@
             <div class="mb-3">
               <label for="nom" class="form-label field-text">Nom du joueur</label>
               <input type="text"
-                class="form-control custom-add <?php echo isset($errors['nomjoueur']) ? 'is-invalid' : ''; ?>" id="nom"
+                class="form-control custom-add <?php if (isset($errors['nomjoueur'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="nom"
                 name="cla_nomjoueur" placeholder="Ex: Jean Dupuis"
-                value="<?php echo isset($cla_nomjoueur) ? htmlspecialchars($cla_nomjoueur) : ''; ?>">
+                value="<?php if (isset($cla_nomjoueur)) { echo htmlspecialchars($cla_nomjoueur); } else { echo ''; } ?>">
               <?php if (isset($errors['nomjoueur'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['nomjoueur']); ?></div>
               <?php endif; ?>
@@ -27,8 +27,8 @@
             <div class="mb-3">
               <label for="rang" class="form-label field-text">Rang</label>
               <input type="number"
-                class="form-control custom-add <?php echo isset($errors['rang']) ? 'is-invalid' : ''; ?>" id="rang"
-                name="cla_rang" placeholder="Ex: 1" value="<?php echo isset($cla_rang) ? (int) $cla_rang : ''; ?>">
+                class="form-control custom-add <?php if (isset($errors['rang'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="rang"
+                name="cla_rang" placeholder="Ex: 1" value="<?php if (isset($cla_rang)) { echo (int) $cla_rang; } else { echo ''; } ?>">
               <?php if (isset($errors['rang'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['rang']); ?></div>
               <?php endif; ?>
@@ -37,9 +37,9 @@
             <div class="mb-3">
               <label for="points" class="form-label field-text">Points</label>
               <input type="number"
-                class="form-control custom-add <?php echo isset($errors['points']) ? 'is-invalid' : ''; ?>" id="points"
+                class="form-control custom-add <?php if (isset($errors['points'])) { echo 'is-invalid'; } else { echo ''; } ?>" id="points"
                 name="cla_points" placeholder="Ex: 1250"
-                value="<?php echo isset($cla_points) ? (int) $cla_points : ''; ?>">
+                value="<?php if (isset($cla_points)) { echo (int) $cla_points; } else { echo ''; } ?>">
               <?php if (isset($errors['points'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['points']); ?></div>
               <?php endif; ?>

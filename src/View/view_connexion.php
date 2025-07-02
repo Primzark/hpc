@@ -20,7 +20,7 @@
               <label for="email" class="form-label field-text">Email</label>
               <input type="email" class="form-control custom-add <?php if (!empty($errors['email']))
                 echo 'is-invalid'; ?>" id="email" name="email"
-                value="<?php echo isset($email) ? htmlspecialchars($email) : ''; ?>" placeholder="Entrez votre email">
+                value="<?php if (isset($email)) { echo htmlspecialchars($email); } else { echo ''; } ?>" placeholder="Entrez votre email">
               <?php if (!empty($errors['email'])): ?>
                 <div class="invalid-feedback">
                   <?php echo $errors['email']; ?>

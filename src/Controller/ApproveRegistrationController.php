@@ -3,8 +3,16 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-utilisateur.php';
 
-$id = $_GET['id'] ?? null;
-$token = $_GET['token'] ?? '';
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    $id = null;
+}
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+} else {
+    $token = '';
+}
 if (!$id || !is_numeric($id)) {
     echo 'Paramètres invalides';
     exit;

@@ -22,7 +22,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $expires = date('Y-m-d H:i:s', time() + 3600);
             Utilisateur::setResetToken($email, $token, $expires);
 
-            $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+            if (isset($_SERVER['HTTP_HOST'])) {
+                $host = $_SERVER['HTTP_HOST'];
+            } else {
+                $host = 'localhost';
+            }
             $resetUrl = "http://{$host}/reset-password?token={$token}";
 
             $mail = new PHPMailer(true);

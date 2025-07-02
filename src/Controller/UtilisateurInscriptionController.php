@@ -23,9 +23,21 @@ $errors = []; // Tableau des erreurs
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Conserve les valeurs saisies
-    $nom = $_POST['nom'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $age = $_POST['age'] ?? '';
+    if (isset($_POST['nom'])) {
+        $nom = $_POST['nom'];
+    } else {
+        $nom = '';
+    }
+    if (isset($_POST['email'])) {
+        $email = $_POST['email'];
+    } else {
+        $email = '';
+    }
+    if (isset($_POST['age'])) {
+        $age = $_POST['age'];
+    } else {
+        $age = '';
+    }
     // Validation nom
     if (empty($_POST['nom'])) {
         $errors['nom'] = 'Champ obligatoire.';
@@ -78,7 +90,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Validation du reCAPTCHA v2
-    $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
+    if (isset($_POST['g-recaptcha-response'])) {
+        $recaptchaResponse = $_POST['g-recaptcha-response'];
+    } else {
+        $recaptchaResponse = '';
+    }
     if (empty($recaptchaResponse)) {
         $errors['captcha'] = "Veuillez confirmer que vous n'êtes pas un robot.";
     } else {
@@ -86,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $data = http_build_query([
             'secret' => RECAPTCHA_SECRET_KEY,
             'response' => $recaptchaResponse,
-            'remoteip' => $_SERVER['REMOTE_ADDR'] ?? ''
+            'remoteip' => isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : ''
         ]);
 
         $options = [
@@ -99,7 +115,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $context = stream_context_create($options);
         $result = file_get_contents($verifyUrl, false, $context);
-        $resultData = json_decode($result ?: '', true);
+        if ($result) {
+            $jsonInput = $result;
+        } else {
+            $jsonInput = '';
+        }
+        $resultData = json_decode($jsonInput, true);
         if (empty($resultData['success'])) {
             $errors['captcha'] = "La vérification reCAPTCHA a échoué.";
         }
@@ -112,7 +133,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $user = Utilisateur::getByEmail($_POST['email']);
 
-        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        if (isset($_SERVER['HTTP_HOST'])) {
+            $host = $_SERVER['HTTP_HOST'];
+        } else {
+            $host = 'localhost';
+        }
         $approveUrl = "http://{$host}/approve-registration?id={$user['id_uti']}&token={$token}";
         $rejectUrl = "http://{$host}/reject-registration?id={$user['id_uti']}&token={$token}";
 

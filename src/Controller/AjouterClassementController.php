@@ -28,9 +28,21 @@ function safeInput($string)
 
 // Si le formulaire a été soumis en méthode POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $cla_nomjoueur = $_POST['cla_nomjoueur'] ?? '';
-    $cla_rang = $_POST['cla_rang'] ?? '';
-    $cla_points = $_POST['cla_points'] ?? '';
+    if (isset($_POST['cla_nomjoueur'])) {
+        $cla_nomjoueur = $_POST['cla_nomjoueur'];
+    } else {
+        $cla_nomjoueur = '';
+    }
+    if (isset($_POST['cla_rang'])) {
+        $cla_rang = $_POST['cla_rang'];
+    } else {
+        $cla_rang = '';
+    }
+    if (isset($_POST['cla_points'])) {
+        $cla_points = $_POST['cla_points'];
+    } else {
+        $cla_points = '';
+    }
 
     // Vérification du champ nom du joueur
     if (!isset($_POST['cla_nomjoueur']) || trim($_POST['cla_nomjoueur']) == '') {
@@ -58,7 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Si aucune erreur n'est détectée, on traite l'ajout
     if (empty($errors)) {
         // On récupère l'identifiant de l'utilisateur connecté (par défaut 1 pour les tests)
-        $user_id = $_SESSION['user_id'] ?? 1;
+        if (isset($_SESSION['user_id'])) {
+            $user_id = $_SESSION['user_id'];
+        } else {
+            $user_id = 1;
+        }
 
         // On appelle la méthode du modèle pour insérer les données
         $result = Classement::ajouter(

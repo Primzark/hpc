@@ -34,7 +34,11 @@ function convertToWebP($sourcePath, $destinationPath, $quality = 75)
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $pseudo = $_POST['pseudo'] ?? '';
+    if (isset($_POST['pseudo'])) {
+        $pseudo = $_POST['pseudo'];
+    } else {
+        $pseudo = '';
+    }
     if ($_FILES['image']['error'] == 4) {
         $errors['image'] = "Veuillez ajouter une image.";
     }
