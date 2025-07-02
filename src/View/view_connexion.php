@@ -19,8 +19,11 @@
             <div class="mb-3">
               <label for="email" class="form-label field-text">Email</label>
               <input type="email" class="form-control custom-add <?php if (!empty($errors['email']))
-                echo 'is-invalid'; ?>" id="email" name="email"
-                value="<?php if (isset($email)) { echo htmlspecialchars($email); } else { echo ''; } ?>" placeholder="Entrez votre email">
+                echo 'is-invalid'; ?>" id="email" name="email" value="<?php if (isset($email)) {
+                    echo htmlspecialchars($email);
+                  } else {
+                    echo '';
+                  } ?>" placeholder="Entrez votre email">
               <?php if (!empty($errors['email'])): ?>
                 <div class="invalid-feedback">
                   <?php echo $errors['email']; ?>
@@ -52,8 +55,7 @@
             </div>
 
             <div class="text-center login-hint mt-3">
-              <small>Pas encore de compte ? <a
-                  href="/utilisateur/inscription">S'inscrire</a></small>
+              <small>Pas encore de compte ? <a href="/utilisateur/inscription">S'inscrire</a></small>
             </div>
             <div class="text-center login-hint mt-1">
               <small><a href="/forgot-password">Mot de passe oubli&eacute; ?</a></small>

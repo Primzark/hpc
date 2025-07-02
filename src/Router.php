@@ -1,5 +1,6 @@
 <?php
-class Router {
+class Router
+{
     private $routes = [];
 
     public function add(string $path, string $file): void

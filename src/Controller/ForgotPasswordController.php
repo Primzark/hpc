@@ -32,17 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail = new PHPMailer(true);
             try {
                 $mail->isSMTP();
-                $mail->Host       = SMTP_HOST;
-                $mail->Port       = SMTP_PORT;
-                $mail->SMTPAuth   = true;
-                $mail->Username   = SMTP_USER;
-                $mail->Password   = SMTP_PASS;
+                $mail->Host = SMTP_HOST;
+                $mail->Port = SMTP_PORT;
+                $mail->SMTPAuth = true;
+                $mail->Username = SMTP_USER;
+                $mail->Password = SMTP_PASS;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 
                 $mail->setFrom('noreply@' . $host, 'HPC');
                 $mail->addAddress($email);
                 $mail->Subject = 'R\xC3\xA9initialisation de votre mot de passe';
-                $mail->Body    = "Pour r\xC3\xA9initialiser votre mot de passe, cliquez sur ce lien : {$resetUrl}";
+                $mail->Body = "Pour r\xC3\xA9initialiser votre mot de passe, cliquez sur ce lien : {$resetUrl}";
                 $mail->send();
             } catch (Exception $e) {
                 // échec ignoré
