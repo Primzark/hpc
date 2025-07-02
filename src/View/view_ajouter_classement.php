@@ -39,7 +39,7 @@
               <label for="points" class="form-label field-text">Points</label>
               <input type="number"
                 class="form-control custom-add <?php echo isset($errors['points']) ? 'is-invalid' : ''; ?>" id="points"
-                name="cla_points" placeholder="Ex: 1250" min="0"
+                name="cla_points" placeholder="Ex: 1250"
                 value="<?php echo isset($cla_points) ? (int) $cla_points : ''; ?>">
               <?php if (isset($errors['points'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['points']); ?></div>
