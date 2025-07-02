@@ -32,9 +32,21 @@ function safeInput($string)
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $cla_nomjoueur = $_POST['cla_nomjoueur'] ?? '';
-    $cla_rang = $_POST['cla_rang'] ?? '';
-    $cla_points = $_POST['cla_points'] ?? '';
+    if (isset($_POST['cla_nomjoueur'])) {
+        $cla_nomjoueur = $_POST['cla_nomjoueur'];
+    } else {
+        $cla_nomjoueur = '';
+    }
+    if (isset($_POST['cla_rang'])) {
+        $cla_rang = $_POST['cla_rang'];
+    } else {
+        $cla_rang = '';
+    }
+    if (isset($_POST['cla_points'])) {
+        $cla_points = $_POST['cla_points'];
+    } else {
+        $cla_points = '';
+    }
 
     if (!isset($_POST['cla_nomjoueur']) || trim($_POST['cla_nomjoueur']) == '') {
         $errors['nomjoueur'] = "Veuillez entrer le nom du joueur.";

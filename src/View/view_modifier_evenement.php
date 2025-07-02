@@ -17,9 +17,9 @@
                             <div class="col-md-6">
                                 <label for="lieu" class="form-label fw-semibold text-light">Lieu</label>
                                 <input type="text"
-                                    class="form-control custom-add <?php echo isset($errors['lieu']) ? 'is-invalid' : ''; ?>"
+                                    class="form-control custom-add <?php if (isset($errors['lieu'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                                     id="lieu" name="lieu"
-                                    value="<?php echo isset($lieu) ? htmlspecialchars($lieu) : htmlspecialchars($evenement['eve_lieu']); ?>">
+                                    value="<?php if (isset($lieu)) { echo htmlspecialchars($lieu); } else { echo htmlspecialchars($evenement['eve_lieu']); } ?>">
                                 <?php if (isset($errors['lieu'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['lieu']; ?></div>
                                 <?php endif; ?>
@@ -29,9 +29,9 @@
                             <div class="col-md-6">
                                 <label for="date" class="form-label fw-semibold text-light">Date</label>
                                 <input type="date" lang="fr"
-                                    class="form-control custom-input custom-add <?php echo isset($errors['date']) ? 'is-invalid' : ''; ?>"
+                                    class="form-control custom-input custom-add <?php if (isset($errors['date'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                                     id="date" name="date"
-                                    value="<?php echo isset($date) ? htmlspecialchars($date) : $evenement['eve_date']; ?>">
+                                    value="<?php if (isset($date)) { echo htmlspecialchars($date); } else { echo $evenement['eve_date']; } ?>">
                                 <?php if (isset($errors['date'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['date']; ?></div>
                                 <?php endif; ?>
@@ -41,9 +41,9 @@
                             <div class="col-md-6">
                                 <label for="heure" class="form-label fw-semibold text-light">Heure</label>
                                 <input type="time"
-                                    class="form-control custom-input custom-add <?php echo isset($errors['heure']) ? 'is-invalid' : ''; ?>"
+                                    class="form-control custom-input custom-add <?php if (isset($errors['heure'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                                     id="heure" name="heure"
-                                    value="<?php echo isset($heure) ? htmlspecialchars($heure) : $evenement['eve_heure']; ?>">
+                                    value="<?php if (isset($heure)) { echo htmlspecialchars($heure); } else { echo $evenement['eve_heure']; } ?>">
                                 <?php if (isset($errors['heure'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['heure']; ?></div>
                                 <?php endif; ?>
@@ -54,9 +54,9 @@
                                 <label for="details" class="form-label fw-semibold text-light">Détails de
                                     l'évènement</label>
                                 <textarea
-                                    class="form-control custom-input custom-add <?php echo isset($errors['details']) ? 'is-invalid' : ''; ?>"
+                                    class="form-control custom-input custom-add <?php if (isset($errors['details'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                                     id="details" name="description"
-                                    rows="5"><?php echo isset($details) ? htmlspecialchars($details) : htmlspecialchars($evenement['eve_description']); ?></textarea>
+                                    rows="5"><?php if (isset($details)) { echo htmlspecialchars($details); } else { echo htmlspecialchars($evenement['eve_description']); } ?></textarea>
                                 <?php if (isset($errors['details'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['details']; ?></div>
                                 <?php endif; ?>
@@ -73,7 +73,7 @@
                             <div class="col-12">
                                 <label for="image" class="form-label fw-semibold text-light">Changer l’image</label>
                                 <input type="file" lang="fr"
-                                    class="form-control custom-add <?php echo isset($errors['image']) ? 'is-invalid' : ''; ?>"
+                                    class="form-control custom-add <?php if (isset($errors['image'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                                     id="image" name="image" accept="image/*">
                                 <?php if (isset($errors['image'])): ?>
                                     <div class="invalid-feedback"><?php echo $errors['image']; ?></div>

@@ -13,8 +13,8 @@
           <form action="/ajouter-trombinoscope" method="post" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="pseudo" class="form-label field-text">Pseudo</label>
-              <input type="text" class="form-control custom-add <?php echo isset($errors['pseudo']) ? 'is-invalid' : ''; ?>"
-                id="pseudo" name="pseudo" value="<?php echo isset($pseudo) ? htmlspecialchars($pseudo) : ''; ?>">
+              <input type="text" class="form-control custom-add <?php if (isset($errors['pseudo'])) { echo 'is-invalid'; } else { echo ''; } ?>"
+                id="pseudo" name="pseudo" value="<?php if (isset($pseudo)) { echo htmlspecialchars($pseudo); } else { echo ''; } ?>">
               <?php if (isset($errors['pseudo'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['pseudo']); ?></div>
               <?php endif; ?>
@@ -22,7 +22,7 @@
             <div class="mb-3">
               <label for="image" class="form-label field-text">Image</label>
               <input type="file" lang="fr"
-                class="form-control custom-input custom-add <?php echo isset($errors['image']) ? 'is-invalid' : ''; ?>"
+                class="form-control custom-input custom-add <?php if (isset($errors['image'])) { echo 'is-invalid'; } else { echo ''; } ?>"
                 id="image" name="image" accept="image/*">
               <?php if (isset($errors['image'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['image']); ?></div>

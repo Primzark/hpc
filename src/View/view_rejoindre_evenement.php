@@ -24,8 +24,13 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <?php
-                            $btnClass = $isRegistered ? 'btn-success' : 'btn-warning';
-                            $btnText = $isRegistered ? 'cliquez pour vous désinscrire' : 'Cliquer pour vous inscrire';
+                            if ($isRegistered) {
+                                $btnClass = 'btn-success';
+                                $btnText = 'cliquez pour vous désinscrire';
+                            } else {
+                                $btnClass = 'btn-warning';
+                                $btnText = 'Cliquer pour vous inscrire';
+                            }
                             ?>
                             <button type="button" id="joinEventBtn"
                                 data-event-id="<?php echo htmlspecialchars($event_id); ?>"

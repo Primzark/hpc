@@ -43,11 +43,31 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $titre = $_POST['titre'] ?? '';
-    $lieu = $_POST['lieu'] ?? '';
-    $date = $_POST['date'] ?? '';
-    $heure = $_POST['heure'] ?? '';
-    $details = $_POST['details'] ?? '';
+    if (isset($_POST['titre'])) {
+        $titre = $_POST['titre'];
+    } else {
+        $titre = '';
+    }
+    if (isset($_POST['lieu'])) {
+        $lieu = $_POST['lieu'];
+    } else {
+        $lieu = '';
+    }
+    if (isset($_POST['date'])) {
+        $date = $_POST['date'];
+    } else {
+        $date = '';
+    }
+    if (isset($_POST['heure'])) {
+        $heure = $_POST['heure'];
+    } else {
+        $heure = '';
+    }
+    if (isset($_POST['details'])) {
+        $details = $_POST['details'];
+    } else {
+        $details = '';
+    }
 
     if ($_FILES['image']['error'] == 4) {
         $errors['image'] = "Veuillez ajouter une image.";
@@ -78,7 +98,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if (empty($errors)) {
-        $type = ($_POST['titre'] == 'Tournois') ? 2 : 1;
+        if ($_POST['titre'] == 'Tournois') {
+            $type = 2;
+        } else {
+            $type = 1;
+        }
 
         $tmpPath = $_FILES['image']['tmp_name'];
         $uploadDir = dirname(__DIR__, 2) . '/asset/img/';

@@ -28,7 +28,11 @@
 
                         <?php if (isset($_SESSION['user_id'])): ?>
                             <div class="btn btn-warning fw-bold fs-4">
-                                Bienvenue <?php echo htmlspecialchars($utiNom ?? ''); ?>
+                                Bienvenue <?php if (isset($utiNom)) {
+                                    echo htmlspecialchars($utiNom);
+                                } else {
+                                    echo '';
+                                } ?>
                             </div>
                         <?php else: ?>
                             <a href="/utilisateur/inscription" class="btn btn-warning fw-bold fs-4">

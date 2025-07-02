@@ -3,7 +3,13 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-utilisateur.php';
 
-$token = $_GET['token'] ?? ($_POST['token'] ?? '');
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+} elseif (isset($_POST['token'])) {
+    $token = $_POST['token'];
+} else {
+    $token = '';
+}
 if (!$token) {
     echo 'Lien invalide';
     exit;
