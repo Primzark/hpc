@@ -102,7 +102,7 @@
             </div>
           <?php endif; ?>
 
-          <!-- Boutons d'action -->
+          <!-- Boutons rejoindre -->
           <div class="row g-3 mt-4">
             <?php if ($evenement['id_type_eve'] == 2): ?>
               <?php if (isset($_SESSION['user_id'])): ?>
