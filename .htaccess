@@ -1,8 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
-# If the requested resource doesn't exist as a file or directory,
-# redirect all requests to index.php so the PHP router can handle them
+# Si la ressource demandée n'existe pas en tant que fichier ou répertoire,
+# rediriger toutes les requêtes vers index.php afin que le routeur PHP puisse les gérer
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L]
+
