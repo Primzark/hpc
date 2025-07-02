@@ -28,8 +28,7 @@
               <label for="rang" class="form-label field-text">Rang</label>
               <input type="number"
                 class="form-control custom-add <?php echo isset($errors['rang']) ? 'is-invalid' : ''; ?>" id="rang"
-                name="cla_rang" placeholder="Ex: 1"
-                value="<?php echo isset($cla_rang) ? (int) $cla_rang : ''; ?>">
+                name="cla_rang" placeholder="Ex: 1" value="<?php echo isset($cla_rang) ? (int) $cla_rang : ''; ?>">
               <?php if (isset($errors['rang'])): ?>
                 <div class="invalid-feedback"><?php echo htmlspecialchars($errors['rang']); ?></div>
               <?php endif; ?>
