@@ -27,7 +27,9 @@ class Evenement
         $stmt->bindValue(':id_type_eve', $id_type_eve);
         $stmt->execute();
 
-        return $pdo->lastInsertId();
+        return $pdo->lastInsertId();        /**
+     * Retourne l'index du dernier événement inséré.
+     */
     }
 
     public static function getAll()
