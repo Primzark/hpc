@@ -10,7 +10,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     exit;
 }
 
-$id_evenement = intval($_GET['id']);
+$id_evenement = (int) $_GET['id'];
 
 // Fonction de sécurisation
 function safeInput($string)

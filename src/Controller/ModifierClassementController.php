@@ -11,7 +11,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     exit;
 }
 
-$id_cla = intval($_GET['id']);
+$id_cla = (int) $_GET['id'];
 $classement = Classement::getById($id_cla);
 
 if (!$classement) {

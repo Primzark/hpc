@@ -16,7 +16,7 @@ if (!isset($_POST['event']) || !is_numeric($_POST['event'])) {
 }
 
 $id_utilisateur = $_SESSION['user_id'];
-$id_evenement = intval($_POST['event']);
+$id_evenement = (int) $_POST['event'];
 
 if (Inscription::dejaInscrit($id_evenement, $id_utilisateur)) {
     Inscription::desinscrire($id_evenement, $id_utilisateur);

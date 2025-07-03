@@ -69,10 +69,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validation âge
     if (empty($_POST['age'])) {
         $errors['age'] = 'Champ obligatoire.';
-    } elseif (!is_numeric($_POST['age']) || intval($_POST['age']) < 18) {
+    } elseif (!is_numeric($_POST['age']) || (int) $_POST['age'] < 18) {
         $errors['age'] = 'Vous devez avoir au moins 18 ans pour vous inscrire.';
     } else {
-        $age = intval($_POST['age']);
+        $age = (int) $_POST['age'];
     }
 
     // Validation mot de passe
