@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     exit;
 }
 
-$id_uti = intval($_GET['id']);
+$id_uti = (int) $_GET['id'];
 
 Utilisateur::delete($id_uti);
 
