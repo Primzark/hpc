@@ -15,6 +15,14 @@ define('SMTP_PORT', 587);
 define('SMTP_USER', 'starlod7696@gmail.com');
 define('SMTP_PASS', 'besc oeum rrol rzsx');
 
+// Clés API sandbox pour Stripe
+define('STRIPE_SECRET_KEY', 'sk_test_yourkey');
+define('STRIPE_PUBLISHABLE_KEY', 'pk_test_yourkey');
+
+// Identifiants PayPal sandbox
+define('PAYPAL_CLIENT_ID', 'your_paypal_client_id');
+define('PAYPAL_CLIENT_SECRET', 'your_paypal_client_secret');
+
 // Chemin de base pour créer les URLs absolues
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 define('BASE_PATH', $base == '/' ? '' : $base);
