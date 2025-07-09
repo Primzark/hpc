@@ -24,6 +24,10 @@
                         Des prestataires tiers peuvent toutefois recevoir des informations techniques&nbsp;: Google&nbsp;reCAPTCHA lors de l'inscription et Google&nbsp;Maps sur la page de contact.
                         Ces services appliquent leurs propres politiques de confidentialité.
                     </p>
+                    <p class="custom-text mb-4">
+                        Des cookies tiers sont uniquement utilisés pour charger Google&nbsp;reCAPTCHA et Google&nbsp;Maps.
+                        Ils ne sont placés qu'après votre accord via la bannière de consentement affichée sur le site.
+                    </p>
                     <p class="custom-text mb-0">
                         Conformément au Règlement&nbsp;Général sur la Protection des&nbsp;Données, vous disposez d'un droit d'accès, de rectification et de suppression de vos informations.
                         Pour exercer vos droits ou retirer votre consentement à l'utilisation de votre image, contactez-nous à
