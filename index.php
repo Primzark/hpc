@@ -32,6 +32,7 @@ $router->add('/partenaires', 'src/Controller/PartenaireController.php');
 $router->add('/regles', 'src/Controller/RegleController.php');
 $router->add('/contact', 'src/Controller/ContactController.php');
 $router->add('/propos', 'src/Controller/ProposController.php');
+$router->add('/politique', 'src/Controller/PolitiqueController.php');
 $router->add('/ajax/rejoindre-evenement', 'src/Controller/ajax_rejoindre_evenement.php');
 $router->add('/approve-registration', 'src/Controller/ApproveRegistrationController.php');
 $router->add('/reject-registration', 'src/Controller/RejectRegistrationController.php');

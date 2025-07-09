@@ -109,7 +109,8 @@ CREATE TABLE `utilisateur` (
   `uti_approved` tinyint(1) NOT NULL DEFAULT 0,
   `uti_approval_token` varchar(64) DEFAULT NULL,
   `uti_reset_token` varchar(64) DEFAULT NULL,
-  `uti_reset_expires` datetime DEFAULT NULL
+  `uti_reset_expires` datetime DEFAULT NULL,
+  `uti_image_consent` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

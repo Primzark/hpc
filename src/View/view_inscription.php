@@ -114,6 +114,17 @@
                             <?php endif; ?>
                         </div>
 
+                        <!-- Consentement utilisation image -->
+                        <div class="mb-3 form-check">
+                            <input class="form-check-input <?php if (isset($errors['image_consent'])) { echo 'is-invalid'; } ?>" type="checkbox" value="1" id="image_consent" name="image_consent" <?php if (!empty($image_consent)) { echo 'checked'; } ?>>
+                            <label class="form-check-label custom-text" for="image_consent">
+                                J'autorise la publication de mon image conformément à notre <a href="/politique" target="_blank">politique de confidentialité</a>.
+                            </label>
+                            <?php if (isset($errors['image_consent'])): ?>
+                                <div class="invalid-feedback d-block"><?php echo $errors['image_consent']; ?></div>
+                            <?php endif; ?>
+                        </div>
+
                         <!-- Bouton de validation -->
                         <div class="d-grid mb-3">
                             <button type="submit" class="btn btn-warning">S'inscrire</button>
