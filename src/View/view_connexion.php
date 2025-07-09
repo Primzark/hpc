@@ -1,4 +1,5 @@
 <?php include_once(__DIR__ . '/../../templates/head.php'); ?>
+<?php include_once(__DIR__ . '/../../templates/navbar.php'); ?>
 
 <div class="custom-bg min-vh-100 d-flex align-items-center">
   <div class="container py-5">
