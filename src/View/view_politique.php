@@ -8,9 +8,27 @@
                 <p class="display-6 fw-bold text-light mb-4">Politique de confidentialité</p>
                 <div class="form-section-bg p-4 rounded text-light">
                     <p class="custom-text mb-4">
-                        En vous inscrivant au Harfleur Poker Club, vous acceptez que votre image puisse être utilisée sur nos supports de communication (site internet, réseaux sociaux, etc.).
-                        Cette utilisation est strictement liée à la promotion de nos activités et respecte la réglementation en vigueur (RGPD).
-                        Vous pouvez retirer votre consentement à tout moment en nous contactant.
+                        Le Harfleur Poker Club est responsable du traitement des données recueillies lors de votre inscription.
+                        Nous collectons votre pseudo joueur, votre adresse&nbsp;email, votre âge ainsi que votre image lorsque vous l'autorisez.
+                    </p>
+                    <p class="custom-text mb-4">
+                        Ces informations sont nécessaires pour la gestion de votre compte et l'organisation des activités du club.
+                        Le traitement repose sur l'exécution de votre adhésion et, pour l'utilisation de votre image, sur votre consentement explicite.
+                    </p>
+                    <p class="custom-text mb-4">
+                        Vos données sont conservées pendant toute la durée de votre adhésion, puis archivées pendant trois&nbsp;ans.
+                        Les images publiées sont retirées dès que vous retirez votre consentement.
+                    </p>
+                    <p class="custom-text mb-4">
+                        Seules les personnes habilitées du club accèdent à vos données.
+                        Des prestataires tiers peuvent toutefois recevoir des informations techniques&nbsp;: Google&nbsp;reCAPTCHA lors de l'inscription et Google&nbsp;Maps sur la page de contact.
+                        Ces services appliquent leurs propres politiques de confidentialité.
+                    </p>
+                    <p class="custom-text mb-0">
+                        Conformément au Règlement&nbsp;Général sur la Protection des&nbsp;Données, vous disposez d'un droit d'accès, de rectification et de suppression de vos informations.
+                        Pour exercer vos droits ou retirer votre consentement à l'utilisation de votre image, contactez-nous à
+                        <a href="mailto:patrick.piednoel@sfr.fr" class="text-warning">patrick.piednoel@sfr.fr</a>
+                        ou via la page <a href="/contact" class="text-warning">contact</a>.
                     </p>
                 </div>
             </div>
