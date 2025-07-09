@@ -17,6 +17,7 @@ $regex_password = "/^[a-zA-Z0-9.@-]{4,}$/";
 $nom = '';
 $email = '';
 $age = '';
+$image_consent = false;
 
 $errors = []; // Tableau des erreurs
 
@@ -37,6 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $age = $_POST['age'];
     } else {
         $age = '';
+    }
+    if (isset($_POST['image_consent'])) {
+        $image_consent = true;
+    } else {
+        $image_consent = false;
     }
     // Validation nom
     if (empty($_POST['nom'])) {
@@ -89,6 +95,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['confirm_password'] = 'Les mots de passe ne correspondent pas.';
     }
 
+    // Consentement à l'utilisation de l'image
+    if (!$image_consent) {
+        $errors['image_consent'] = 'Vous devez autoriser l\'utilisation de votre image.';
+    }
+
     // Validation du reCAPTCHA v2
     if (isset($_POST['g-recaptcha-response'])) {
         $recaptchaResponse = $_POST['g-recaptcha-response'];
@@ -129,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
     if (empty($errors)) {
         $token = bin2hex(random_bytes(16));
-        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password'], $token);
+        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password'], $token, $image_consent ? 1 : 0);
 
         $user = Utilisateur::getByEmail($_POST['email']);
 
