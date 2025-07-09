@@ -12,6 +12,11 @@
             <li class="list-inline-item">
                 <a href="/regles" class="text-decoration-none login-hint">Règles</a>
             </li>
+            <li class="list-inline-item">
+                <a href="/politique" class="text-decoration-none login-hint">Confidentialité</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="/politique#cookie-policy" class="text-decoration-none login-hint">Cookies</a>
+            </li>
         </ul>
-    </div>
-</footer>
+    </div></footer>
