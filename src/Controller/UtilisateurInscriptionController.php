@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Si pas d’erreurs, appel modèle pour ajouter utilisateur
     if (empty($errors)) {
         $token = bin2hex(random_bytes(16));
-        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['password'], $token, $image_consent ? 1 : 0);
+        Utilisateur::ajouter($_POST['nom'], $_POST['email'], $_POST['age'], $_POST['password'], $token, $image_consent ? 1 : 0);
 
         $user = Utilisateur::getByEmail($_POST['email']);
 
@@ -154,7 +154,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $message = "Nouvelle inscription:\n" .
             "Nom: {$user['uti_nom']}\n" .
-            "Email: {$user['uti_email']}\n\n" .
+            "Email: {$user['uti_email']}\n" .
+            "Age: {$user['uti_age']}\n\n" .
             "Accepter: {$approveUrl}\n" .
             "Refuser: {$rejectUrl}";
 

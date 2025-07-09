@@ -104,6 +104,7 @@ CREATE TABLE `utilisateur` (
   `id_uti` int(11) NOT NULL,
   `uti_nom` varchar(100) NOT NULL,
   `uti_email` varchar(100) DEFAULT NULL,
+  `uti_age` int(11) DEFAULT NULL,
   `uti_mdp` varchar(255) NOT NULL,
   `uti_admin` tinyint(1) NOT NULL DEFAULT 0,
   `uti_approved` tinyint(1) NOT NULL DEFAULT 0,

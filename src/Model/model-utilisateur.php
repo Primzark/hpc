@@ -11,15 +11,16 @@ class Utilisateur
         return $pdo;
     }
 
-    public static function ajouter($nom, $email, $mdp, $token, $imageConsent)
+    public static function ajouter($nom, $email, $age, $mdp, $token, $imageConsent)
     {
         $pdo = self::getPDO();
 
-        $sql = "INSERT INTO utilisateur (uti_nom, uti_email, uti_mdp, uti_approval_token, uti_image_consent)
-            VALUES (:nom, :email, :mdp, :token, :consent)";
+        $sql = "INSERT INTO utilisateur (uti_nom, uti_email, uti_age, uti_mdp, uti_approval_token, uti_image_consent)"
+            . " VALUES (:nom, :email, :age, :mdp, :token, :consent)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindValue(':nom', $nom);
         $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':age', $age, PDO::PARAM_INT);
         $stmt->bindValue(':mdp', password_hash($mdp, PASSWORD_DEFAULT));
         $stmt->bindValue(':token', $token);
         $stmt->bindValue(':consent', $imageConsent, PDO::PARAM_INT);
@@ -27,11 +28,12 @@ class Utilisateur
     }
 
 
+
     public static function getByEmail($email)
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_age, uti_mdp, uti_admin, uti_approved, uti_approval_token,
                 uti_reset_token, uti_reset_expires, uti_image_consent
                 FROM utilisateur WHERE uti_email = :email";
         $stmt = $pdo->prepare($sql);
@@ -44,7 +46,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_age, uti_mdp, uti_admin, uti_approved, uti_approval_token,
                 uti_reset_token, uti_reset_expires, uti_image_consent
                 FROM utilisateur WHERE id_uti = :id";
         $stmt = $pdo->prepare($sql);
@@ -57,7 +59,7 @@ class Utilisateur
     {
         $pdo = self::getPDO();
 
-        $sql = "SELECT id_uti, uti_nom, uti_email, uti_mdp, uti_admin, uti_approved, uti_approval_token,
+        $sql = "SELECT id_uti, uti_nom, uti_email, uti_age, uti_mdp, uti_admin, uti_approved, uti_approval_token,
                 uti_reset_token, uti_reset_expires, uti_image_consent
                 FROM utilisateur WHERE uti_nom = :nom";
         $stmt = $pdo->prepare($sql);
