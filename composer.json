@@ -2,6 +2,6 @@
     "require": {
         "phpmailer/phpmailer": "^6.10",
         "stripe/stripe-php": "^17.4",
-        "paypal/paypal-checkout-sdk": "^1.0"
+        "paypal/paypal-server-sdk": "^1.0"
     }
 }
