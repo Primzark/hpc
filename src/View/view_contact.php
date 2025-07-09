@@ -51,15 +51,15 @@
                     <div class="section-divider"></div>
 
                     <div class="ratio ratio-16x9 rounded overflow-hidden">
-                        <iframe src="https://www.google.com/maps?q=Harfleur,France&output=embed" style="border:0;"
+                        <iframe data-map-src="https://www.google.com/maps?q=Harfleur,France&output=embed" style="border:0;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
+                    <p class="small text-warning mt-2" id="map-consent-msg">La carte apparaîtra après acceptation des cookies.</p>
                 </div>
 
             </div>
         </div>
     </div>
     <?php include_once(__DIR__ . '/../../templates/VisualFooter.php'); ?>
-    <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
-</div>
+    <?php include_once(__DIR__ . '/../../templates/footer.php'); ?></div>
