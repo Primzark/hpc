@@ -12,6 +12,5 @@
     </div>
     <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
     <script>window.STRIPE_PUBLISHABLE_KEY = '<?php echo STRIPE_PUBLISHABLE_KEY; ?>';</script>
-    <script src="https://js.stripe.com/v3/"></script>
     <script src="/asset/js/donation.js"></script>
 </div>
