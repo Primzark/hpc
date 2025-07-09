@@ -3,6 +3,9 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-donation.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../PayPalCheckoutSdk/Core/SandboxEnvironment.php';
+require_once __DIR__ . '/../PayPalCheckoutSdk/Core/PayPalHttpClient.php';
+require_once __DIR__ . '/../PayPalCheckoutSdk/Orders/OrdersCreateRequest.php';
 
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
