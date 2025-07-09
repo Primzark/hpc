@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Vérifie si email déjà utilisé
         $userWithEmail = Utilisateur::getByEmail($_POST['email']);
         if ($userWithEmail !== false) {
-            $errors['email'] = 'Cet email est déjà utilisé.';
+            $errors['email'] = "Impossible d'utiliser cette adresse email.";
         }
     }
 
