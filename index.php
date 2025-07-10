@@ -39,5 +39,6 @@ $router->add('/reject-registration', 'src/Controller/RejectRegistrationControlle
 $router->add('/forgot-password', 'src/Controller/ForgotPasswordController.php');
 $router->add('/reset-password', 'src/Controller/ResetPasswordController.php');
 $router->add('/donation/pay', 'src/Controller/DonationController.php');
+$router->add('/donation/success', 'src/Controller/DonationSuccessController.php');
 
 $router->dispatch();
