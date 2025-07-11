@@ -58,4 +58,23 @@ class Inscription
 
         return (int) $stmt->fetchColumn();
     }
+
+    /**
+     * Récupère la liste des participants inscrits à un événement donné.
+     */
+    public static function getParticipantsByEvent($id_eve)
+    {
+        $pdo = self::getPDO();
+
+        $sql = "SELECT u.id_uti, u.uti_nom
+                FROM s_inscrit_a s
+                JOIN utilisateur u ON s.id_uti = u.id_uti
+                WHERE s.id_eve = :id_eve
+                ORDER BY u.uti_nom ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id_eve', $id_eve, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
