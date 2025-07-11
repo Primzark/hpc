@@ -39,7 +39,7 @@
                     <div>
                         <i class="bi bi-share-fill contact-icon"></i>
                         <span class="fw-semibold text-warning">Réseaux Sociaux :</span>
-                        Facebook | Twitter | Instagram
+                        <a href="https://www.facebook.com/p/HPC-100057338354447/" class="text-warning text-decoration-none">Facebook</a>
                     </div>
                 </div>
 
