@@ -21,7 +21,7 @@
                     <div class="mb-3">
                         <i class="bi bi-geo-alt-fill contact-icon"></i>
                         <span class="fw-semibold text-warning">Adresse :</span>
-                        Harfleur Poker Club, 123 Rue de la Passion, 76600 Le Havre, France
+                        Harfleur Poker Club, Maison des Associations, 5 rue Friedrich Engels, 76700 Harfleur, France
                     </div>
 
                     <div class="mb-3">
@@ -33,7 +33,7 @@
                     <div class="mb-3">
                         <i class="bi bi-telephone-fill contact-icon"></i>
                         <span class="fw-semibold text-warning">Téléphone :</span>
-                        +33 123 45 67 89
+                        +33 6 28 20 64 35
                     </div>
 
                     <div>
