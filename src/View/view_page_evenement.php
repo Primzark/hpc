@@ -98,6 +98,9 @@
                 <p class="text-warning fw-semibold mb-0">Participants inscrits :
                   <span id="participantsCount"><?php echo $nombreInscrits; ?></span>
                 </p>
+                <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
+                  <a href="/participants-evenement?id=<?php echo $evenement['id_eve']; ?>" class="btn btn-sm btn-outline-warning mt-2">Voir la liste</a>
+                <?php endif; ?>
               </div>
             </div>
           <?php endif; ?>

@@ -31,9 +31,13 @@
                                     <p class="mb-0 text-light">
                                         <?php echo nl2br(htmlspecialchars($evenement['eve_description'])); ?></p>
                                 </div>
-                                <div class="col-md-2 d-flex align-items-center justify-content-end">
+                                <div class="col-md-2 d-flex flex-column align-items-end justify-content-center">
                                     <a href="/page-evenement?id=<?php echo $evenement['id_eve']; ?>"
-                                        class="btn btn-warning btn-rounded fw-semibold">En savoir plus</a>
+                                        class="btn btn-warning btn-rounded fw-semibold mb-2">En savoir plus</a>
+                                    <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1 && $evenement['id_type_eve'] == 2): ?>
+                                        <a href="/participants-evenement?id=<?php echo $evenement['id_eve']; ?>"
+                                            class="btn btn-outline-warning btn-rounded fw-semibold btn-sm">Participants</a>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
