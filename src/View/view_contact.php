@@ -51,7 +51,7 @@
                     <div class="section-divider"></div>
 
                     <div class="ratio ratio-16x9 rounded overflow-hidden">
-                        <iframe data-map-src="https://www.google.com/maps?q=Harfleur,France&output=embed" style="border:0;"
+                        <iframe data-map-src="https://www.google.com/maps?q=Maison+des+Associations,+5+rue+Friedrich+Engels,+76700+Harfleur,+France&output=embed" style="border:0;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
