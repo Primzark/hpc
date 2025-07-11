@@ -177,7 +177,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } catch (Exception $e) {
             // Impossible d'envoyer l'email = échec silencieux
         }
-        
+
+        header('Location: /inscription/confirm');
+
         exit;
     }
 }
