@@ -171,32 +171,6 @@ ALTER TABLE `utilisateur`
   MODIFY `id_uti` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 -- --------------------------------------------------------
-
---
--- Table structure for table `donation`
---
-
-CREATE TABLE `donation` (
-  `id` int(11) NOT NULL,
-  `id_uti` int(11) NOT NULL,
-  `amount` decimal(10,2) NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'pending',
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Indexes for table `donation`
---
-ALTER TABLE `donation`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_uti` (`id_uti`);
-
---
--- AUTO_INCREMENT for table `donation`
---
-ALTER TABLE `donation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

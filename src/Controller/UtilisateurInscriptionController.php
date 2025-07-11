@@ -3,7 +3,6 @@ session_start(); // Démarre la session
 
 require_once __DIR__ . '/../../config.php'; // Charge la config base de données
 require_once __DIR__ . '/../Model/model-utilisateur.php'; // Charge le modèle Utilisateur
-require_once __DIR__ . '/../Model/model-donation.php';
 require_once __DIR__ . '/../bad_words.php';
 require_once __DIR__ . '/../../vendor/autoload.php'; // Charge PHPMailer
 
@@ -19,7 +18,6 @@ $nom = '';
 $email = '';
 $age = '';
 $image_consent = false;
-$donationAmount = 0;
 
 $errors = []; // Tableau des erreurs
 
@@ -45,13 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $image_consent = true;
     } else {
         $image_consent = false;
-    }
-    if (isset($_POST['donation_amount'])) {
-        if ($_POST['donation_amount'] === 'custom' && !empty($_POST['custom_amount'])) {
-            $donationAmount = (float) $_POST['custom_amount'];
-        } elseif (is_numeric($_POST['donation_amount'])) {
-            $donationAmount = (float) $_POST['donation_amount'];
-        }
     }
     // Validation nom
     if (empty($_POST['nom'])) {
@@ -186,13 +177,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } catch (Exception $e) {
             // Impossible d'envoyer l'email = échec silencieux
         }
-
-        $redirect = '/inscription/confirm';
-        if ($donationAmount > 0) {
-            $donationId = Donation::createPending($user['id_uti'], $donationAmount);
-            $redirect = '/donation/pay?donation=' . $donationId;
-        }
-        header('Location: ' . $redirect);
+        
         exit;
     }
 }

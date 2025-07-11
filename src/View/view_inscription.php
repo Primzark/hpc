@@ -25,18 +25,15 @@
                             <label for="nom" class="form-label fw-semibold custom-text">Pseudo joueur</label>
                             <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . _ - +
                             </div>
-                            <input type="text"
-                                class="form-control custom-bg <?php if (isset($errors['nom'])) {
-                                    echo 'is-invalid';
-                                } else {
-                                    echo '';
-                                } ?>"
-                                id="nom" name="nom" placeholder="Entrez votre nom d'utilisateur"
-                                value="<?php if (isset($nom)) {
-                                    echo htmlspecialchars($nom);
-                                } else {
-                                    echo '';
-                                } ?>">
+                            <input type="text" class="form-control custom-bg <?php if (isset($errors['nom'])) {
+                                echo 'is-invalid';
+                            } else {
+                                echo '';
+                            } ?>" id="nom" name="nom" placeholder="Entrez votre nom d'utilisateur" value="<?php if (isset($nom)) {
+                                 echo htmlspecialchars($nom);
+                             } else {
+                                 echo '';
+                             } ?>">
                             <?php if (isset($errors['nom'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['nom']; ?></div>
                             <?php endif; ?>
@@ -46,18 +43,15 @@
                         <div class="mb-3">
                             <label for="email" class="form-label fw-semibold custom-text">Adresse email</label>
                             <div class="form-text login-hint mb-1">Exemple : nom@domaine.com</div>
-                            <input type="email"
-                                class="form-control custom-bg <?php if (isset($errors['email'])) {
-                                    echo 'is-invalid';
-                                } else {
-                                    echo '';
-                                } ?>"
-                                id="email" name="email" placeholder="Entrer votre mail"
-                                value="<?php if (isset($email)) {
-                                    echo htmlspecialchars($email);
-                                } else {
-                                    echo '';
-                                } ?>">
+                            <input type="email" class="form-control custom-bg <?php if (isset($errors['email'])) {
+                                echo 'is-invalid';
+                            } else {
+                                echo '';
+                            } ?>" id="email" name="email" placeholder="Entrer votre mail" value="<?php if (isset($email)) {
+                                 echo htmlspecialchars($email);
+                             } else {
+                                 echo '';
+                             } ?>">
                             <?php if (isset($errors['email'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['email']; ?></div>
                             <?php endif; ?>
@@ -67,18 +61,15 @@
                         <div class="mb-3">
                             <label for="age" class="form-label fw-semibold custom-text">Âge</label>
                             <div class="form-text login-hint mb-1">Vous devez avoir 18 ans ou plus</div>
-                            <input type="number"
-                                class="form-control custom-bg <?php if (isset($errors['age'])) {
-                                    echo 'is-invalid';
-                                } else {
-                                    echo '';
-                                } ?>"
-                                id="age" name="age" min="0" placeholder="Entrez votre âge"
-                                value="<?php if (isset($age)) {
-                                    echo htmlspecialchars($age);
-                                } else {
-                                    echo '';
-                                } ?>">
+                            <input type="number" class="form-control custom-bg <?php if (isset($errors['age'])) {
+                                echo 'is-invalid';
+                            } else {
+                                echo '';
+                            } ?>" id="age" name="age" min="0" placeholder="Entrez votre âge" value="<?php if (isset($age)) {
+                                 echo htmlspecialchars($age);
+                             } else {
+                                 echo '';
+                             } ?>">
                             <?php if (isset($errors['age'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['age']; ?></div>
                             <?php endif; ?>
@@ -88,13 +79,11 @@
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
                             <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . @ -</div>
-                            <input type="password"
-                                class="form-control custom-bg <?php if (isset($errors['password'])) {
-                                    echo 'is-invalid';
-                                } else {
-                                    echo '';
-                                } ?>"
-                                id="password" name="password" placeholder="Entrer votre mot de passe">
+                            <input type="password" class="form-control custom-bg <?php if (isset($errors['password'])) {
+                                echo 'is-invalid';
+                            } else {
+                                echo '';
+                            } ?>" id="password" name="password" placeholder="Entrer votre mot de passe">
                             <?php if (isset($errors['password'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
                             <?php endif; ?>
@@ -104,45 +93,28 @@
                         <div class="mb-4">
                             <label for="confirm_password" class="form-label fw-semibold custom-text">Confirmer le mot de
                                 passe</label>
-                            <input type="password"
-                                class="form-control custom-bg <?php if (isset($errors['confirm_password'])) {
-                                    echo 'is-invalid';
-                                } else {
-                                    echo '';
-                                } ?>"
-                                id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe">
+                            <input type="password" class="form-control custom-bg <?php if (isset($errors['confirm_password'])) {
+                                echo 'is-invalid';
+                            } else {
+                                echo '';
+                            } ?>" id="confirm_password" name="confirm_password" placeholder="Confirmer mot de passe">
                             <?php if (isset($errors['confirm_password'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['confirm_password']; ?></div>
                             <?php endif; ?>
                         </div>
 
-                        <!-- Donation -->
-                        <div class="mb-4">
-                            <label class="form-label fw-semibold custom-text d-block">Soutenir le club</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="donation_amount" id="don1" value="1">
-                                <label class="form-check-label" for="don1">1€</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="donation_amount" id="don2" value="2">
-                                <label class="form-check-label" for="don2">2€</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="donation_amount" id="don5" value="5">
-                                <label class="form-check-label" for="don5">5€</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="donation_amount" id="doncustom" value="custom">
-                                <label class="form-check-label" for="doncustom">Autre</label>
-                            </div>
-                            <input type="number" step="0.01" class="form-control mt-2" id="custom_amount" name="custom_amount" placeholder="Montant libre">
-                        </div>
+
 
                         <!-- Consentement utilisation image -->
                         <div class="mb-3 form-check">
-                            <input class="form-check-input <?php if (isset($errors['image_consent'])) { echo 'is-invalid'; } ?>" type="checkbox" value="1" id="image_consent" name="image_consent" <?php if (!empty($image_consent)) { echo 'checked'; } ?>>
+                            <input class="form-check-input <?php if (isset($errors['image_consent'])) {
+                                echo 'is-invalid';
+                            } ?>" type="checkbox" value="1" id="image_consent" name="image_consent" <?php if (!empty($image_consent)) {
+                                 echo 'checked';
+                             } ?>>
                             <label class="form-check-label custom-text" for="image_consent">
-                                J'autorise la publication de mon image conformément à notre <a href="/politique" target="_blank">politique de confidentialité</a>.
+                                J'autorise la publication de mon image conformément à notre <a href="/politique"
+                                    target="_blank">politique de confidentialité</a>.
                             </label>
                             <?php if (isset($errors['image_consent'])): ?>
                                 <div class="invalid-feedback d-block"><?php echo $errors['image_consent']; ?></div>
@@ -174,6 +146,5 @@
         </div>
 
 
-</div>
+    </div>
     <?php include_once(__DIR__ . '/../../templates/footer.php'); ?>
-    <script src="/asset/js/donation.js"></script></div>
