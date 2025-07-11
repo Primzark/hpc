@@ -23,7 +23,7 @@
                         <!-- Nom -->
                         <div class="mb-3">
                             <label for="nom" class="form-label fw-semibold custom-text">Pseudo joueur</label>
-                            <div class="form-text login-hint mb-1">Minimum 12 caractères. Lettres, chiffres, . _ - +
+                            <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . _ - +
                             </div>
                             <input type="text" class="form-control custom-bg <?php if (isset($errors['nom'])) {
                                 echo 'is-invalid';
@@ -78,7 +78,7 @@
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
-                            <div class="form-text login-hint mb-1">Minimum 4 caractères. Lettres, chiffres, . @ -</div>
+                            <div class="form-text login-hint mb-1">Minimum 12 caractères. Lettres, chiffres, . @ -</div>
                             <input type="password" class="form-control custom-bg <?php if (isset($errors['password'])) {
                                 echo 'is-invalid';
                             } else {
