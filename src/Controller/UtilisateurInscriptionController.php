@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Vérifie si nom déjà utilisé en base via modèle
         $userWithNom = Utilisateur::getByNom($_POST['nom']);
         if ($userWithNom !== false) {
-            $errors['nom'] = 'Ce nom est déjà utilisé.';
+            $errors['nom'] = "Impossible d'utiliser ce nom.";
         }
     }
 
