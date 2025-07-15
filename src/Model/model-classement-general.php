@@ -29,6 +29,16 @@ class ClassementGeneral
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    public static function getById($id_gen)
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT id_gen, id_uti, points, bounty FROM classement_general WHERE id_gen = :id";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id', $id_gen, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public static function insert($id_uti)
     {
         $pdo = self::getPDO();

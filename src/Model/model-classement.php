@@ -70,4 +70,12 @@ class Classement
         $stmt->bindValue(':id', $id_cla, PDO::PARAM_INT);
         return $stmt->execute();
     }
+
+    public static function deleteByUserId($id_uti)
+    {
+        $pdo = self::getPDO();
+        $stmt = $pdo->prepare("DELETE FROM classement WHERE id_uti = :id");
+        $stmt->bindValue(':id', $id_uti, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }

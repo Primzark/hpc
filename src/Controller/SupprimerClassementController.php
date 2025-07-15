@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-classement-general.php';
+require_once __DIR__ . '/../Model/model-classement.php';
 require_once __DIR__ . '/admin_required.php';
 
 
@@ -13,7 +14,11 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $id_gen = (int) $_GET['id'];
 
-ClassementGeneral::delete($id_gen);
+$entry = ClassementGeneral::getById($id_gen);
+if ($entry) {
+    Classement::deleteByUserId($entry['id_uti']);
+    ClassementGeneral::delete($id_gen);
+}
 
 // Redirection vers classement après suppression
 header('Location: /classement');
