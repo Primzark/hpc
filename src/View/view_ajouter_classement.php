@@ -32,43 +32,7 @@
               <?php endif; ?>
             </div>
 
-            <div class="mb-3">
-              <label for="rang" class="form-label field-text">Rang</label>
-              <input type="number"
-                class="form-control custom-add <?php if (isset($errors['rang'])) {
-                  echo 'is-invalid';
-                } else {
-                  echo '';
-                } ?>"
-                id="rang" name="cla_rang" placeholder="Ex: 1"
-                value="<?php if (isset($cla_rang)) {
-                  echo (int) $cla_rang;
-                } else {
-                  echo '';
-                } ?>">
-              <?php if (isset($errors['rang'])): ?>
-                <div class="invalid-feedback"><?php echo htmlspecialchars($errors['rang']); ?></div>
-              <?php endif; ?>
-            </div>
 
-            <div class="mb-3">
-              <label for="points" class="form-label field-text">Points</label>
-              <input type="number"
-                class="form-control custom-add <?php if (isset($errors['points'])) {
-                  echo 'is-invalid';
-                } else {
-                  echo '';
-                } ?>"
-                id="points" name="cla_points" placeholder="Ex: 1250"
-                value="<?php if (isset($cla_points)) {
-                  echo (int) $cla_points;
-                } else {
-                  echo '';
-                } ?>">
-              <?php if (isset($errors['points'])): ?>
-                <div class="invalid-feedback"><?php echo htmlspecialchars($errors['points']); ?></div>
-              <?php endif; ?>
-            </div>
 
             <div class="text-end">
               <button type="submit" class="btn btn-warning">Ajouter</button>

@@ -38,6 +38,19 @@ CREATE TABLE `classement` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `classement_general`
+--
+
+CREATE TABLE `classement_general` (
+  `id_gen` int(11) NOT NULL,
+  `id_uti` int(11) NOT NULL,
+  `points` int(11) NOT NULL DEFAULT 0,
+  `bounty` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `evenement`
 --
 
@@ -163,6 +176,12 @@ ALTER TABLE `evenement`
 --
 ALTER TABLE `trombinoscope`
   MODIFY `id_tro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `classement_general`
+--
+ALTER TABLE `classement_general`
+  MODIFY `id_gen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `utilisateur`
