@@ -6,14 +6,14 @@ session_start();
 require_once __DIR__ . '/../../config.php';
 // Inclusion du modèle qui contient les fonctions liées au classement
 require_once __DIR__ . '/../Model/model-classement.php';
+require_once __DIR__ . '/../Model/model-classement-general.php';
+require_once __DIR__ . '/../Model/model-utilisateur.php';
 require_once __DIR__ . '/../bad_words.php';
 require_once __DIR__ . '/admin_required.php';
 
 // Initialisation du tableau des erreurs
 $errors = [];
 $cla_nomjoueur = '';
-$cla_rang = '';
-$cla_points = '';
 
 // Expression régulière pour valider le nom du joueur (lettres, espaces, tirets, apostrophes, points autorisés)
 $regex = "/^[a-zA-ZÀ-ÖØ-öø-ÿ\s\-'\.]+$/u";
@@ -33,16 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $cla_nomjoueur = '';
     }
-    if (isset($_POST['cla_rang'])) {
-        $cla_rang = $_POST['cla_rang'];
-    } else {
-        $cla_rang = '';
-    }
-    if (isset($_POST['cla_points'])) {
-        $cla_points = $_POST['cla_points'];
-    } else {
-        $cla_points = '';
-    }
 
     // Vérification du champ nom du joueur
     if (!isset($_POST['cla_nomjoueur']) || trim($_POST['cla_nomjoueur']) == '') {
@@ -53,19 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors['nomjoueur'] = "Nom interdit.";
     }
 
-    // Vérification du champ rang
-    if (!isset($_POST['cla_rang']) || trim($_POST['cla_rang']) == '') {
-        $errors['rang'] = "Veuillez entrer le rang.";
-    } elseif (!filter_var($_POST['cla_rang'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 1]])) {
-        $errors['rang'] = "Le rang doit être un entier positif.";
-    }
 
-    // Vérification du champ points
-    if (!isset($_POST['cla_points']) || trim($_POST['cla_points']) == '') {
-        $errors['points'] = "Veuillez entrer le nombre de points.";
-    } elseif (!filter_var($_POST['cla_points'], FILTER_VALIDATE_INT, ["options" => ["min_range" => 0]])) {
-        $errors['points'] = "Les points doivent être un entier positif ou nul.";
-    }
 
     // Si aucune erreur n'est détectée, on traite l'ajout
     if (empty($errors)) {
@@ -76,13 +54,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $user_id = 1;
         }
 
-        // On appelle la méthode du modèle pour insérer les données
+        // On appelle la méthode du modèle pour insérer les données avec des valeurs par défaut
         $result = Classement::ajouter(
             safeInput($_POST['cla_nomjoueur']),
-            (int) $_POST['cla_rang'],
-            (int) $_POST['cla_points'],
+            0,
+            0,
             $user_id
         );
+
+        // Ajout dans le classement général si non présent
+        $user = Utilisateur::getByNom(safeInput($_POST['cla_nomjoueur']));
+        if ($user) {
+            $cg = ClassementGeneral::getByUserId($user['id_uti']);
+            if (!$cg) {
+                ClassementGeneral::insert($user['id_uti']);
+            }
+        }
 
         // Si l'ajout réussit, on redirige vers la page de classement
         if ($result) {
