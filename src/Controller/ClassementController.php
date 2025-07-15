@@ -13,6 +13,7 @@ usort($general, function ($a, $b) {
 $rank = 1;
 foreach ($general as $entry) {
     $classement[] = [
+        'cla_id_gen' => $entry['id_gen'],
         'cla_rang' => $rank++,
         'cla_nomjoueur' => $entry['uti_nom'],
         'cla_points' => $entry['points'],

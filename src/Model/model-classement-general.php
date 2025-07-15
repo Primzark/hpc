@@ -48,4 +48,12 @@ class ClassementGeneral
         $stmt->bindValue(':id', $id_gen, PDO::PARAM_INT);
         $stmt->execute();
     }
+
+    public static function delete($id_gen)
+    {
+        $pdo = self::getPDO();
+        $stmt = $pdo->prepare("DELETE FROM classement_general WHERE id_gen = :id");
+        $stmt->bindValue(':id', $id_gen, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
 }
