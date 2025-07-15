@@ -25,6 +25,7 @@ $router->add('/classement', 'src/Controller/ClassementController.php');
 $router->add('/ajouter-classement', 'src/Controller/AjouterClassementController.php');
 $router->add('/modifier-classement', 'src/Controller/ModifierClassementController.php');
 $router->add('/supprimer-classement', 'src/Controller/SupprimerClassementController.php');
+$router->add('/classement-general', 'src/Controller/ClassementGeneralController.php');
 $router->add('/trombinoscope', 'src/Controller/TrombinoscopeController.php');
 $router->add('/ajouter-trombinoscope', 'src/Controller/AjouterTrombinoscopeController.php');
 $router->add('/supprimer-trombinoscope', 'src/Controller/SupprimerTrombinoscopeController.php');
