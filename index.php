@@ -22,7 +22,6 @@ $router->add('/utilisateur/inscription', 'src/Controller/UtilisateurInscriptionC
 $router->add('/inscription/confirm', 'src/Controller/InscriptionConfirmController.php');
 $router->add('/supprimer-utilisateur', 'src/Controller/SupprimerUtilisateurController.php');
 $router->add('/classement', 'src/Controller/ClassementController.php');
-$router->add('/ajouter-classement', 'src/Controller/AjouterClassementController.php');
 $router->add('/modifier-classement', 'src/Controller/ModifierClassementController.php');
 $router->add('/classement-general', 'src/Controller/ClassementGeneralController.php');
 $router->add('/trombinoscope', 'src/Controller/TrombinoscopeController.php');

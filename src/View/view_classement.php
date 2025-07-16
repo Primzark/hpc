@@ -9,9 +9,6 @@ include_once(__DIR__ . '/../../templates/navbar.php');
 
         <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
             <div class="mt-4 d-flex flex-column gap-2">
-                <a href="/ajouter-classement" class="btn btn-warning btn-rounded w-100 fw-semibold">
-                    <i class="bi bi-plus-lg me-2"></i> Ajouter un classement
-                </a>
                 <a href="/classement-general" class="btn btn-warning btn-rounded w-100 fw-semibold">
                     Classement g&eacute;n&eacute;ral
                 </a>
