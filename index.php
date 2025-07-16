@@ -38,5 +38,6 @@ $router->add('/reject-registration', 'src/Controller/RejectRegistrationControlle
 $router->add('/forgot-password', 'src/Controller/ForgotPasswordController.php');
 $router->add('/reset-password', 'src/Controller/ResetPasswordController.php');
 $router->add('/participants-evenement', 'src/Controller/ParticipantsEvenementController.php');
+$router->add('/vos-tournois', 'src/Controller/VosTournoisController.php');
 
 $router->dispatch();

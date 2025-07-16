@@ -77,4 +77,25 @@ class Inscription
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Récupère les tournois à venir auxquels un utilisateur est inscrit.
+     */
+    public static function getUpcomingEventsByUser($id_uti)
+    {
+        $pdo = self::getPDO();
+
+        $sql = "SELECT e.id_eve, e.eve_titre, e.eve_date, e.eve_heure, e.eve_lieu, e.eve_image
+                FROM s_inscrit_a s
+                JOIN evenement e ON s.id_eve = e.id_eve
+                WHERE s.id_uti = :id_uti
+                AND e.id_type_eve = 2
+                AND e.eve_date >= CURDATE()
+                ORDER BY e.eve_date ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':id_uti', $id_uti, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
