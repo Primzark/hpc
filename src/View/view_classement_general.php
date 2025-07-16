@@ -4,6 +4,12 @@
 <div class="custom-bg min-vh-100 py-5">
     <div class="container">
         <p class="display-6 fw-bold text-light mb-4">Classement g&eacute;n&eacute;ral</p>
+        <form method="get" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Rechercher un membre" value="<?php echo htmlspecialchars($search ?? ''); ?>">
+                <button class="btn btn-outline-warning" type="submit">Rechercher</button>
+            </div>
+        </form>
         <form method="post">
             <div class="form-section-bg p-4 rounded mb-3">
                 <div class="row fw-bold text-light border-bottom pb-2">
