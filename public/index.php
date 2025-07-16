@@ -49,6 +49,34 @@
             </div>
         </div>
 
+        <?php if (!empty($userTournois)): ?>
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <p class="display-6 fw-semibold">Vos prochains tournois</p>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-5" id="userUpcomingTournamentsList">
+                <?php foreach ($userTournois as $tournoi): ?>
+                    <div class="col-12 col-md-4">
+                        <div class="p-2 custom-bg rounded h-100">
+                            <div class="ratio ratio-16x9 mb-2 rounded overflow-hidden">
+                                <img src="/asset/img/<?php echo htmlspecialchars($tournoi['eve_image']); ?>"
+                                    class="w-100 h-100 object-fit-cover" alt="Image du tournoi">
+                            </div>
+                            <p class="text-light fw-semibold small mb-1"><?php echo htmlspecialchars($tournoi['eve_titre']); ?></p>
+                            <p class="custom-text small mb-2">
+                                <?php echo date('d/m/Y', strtotime($tournoi['eve_date'])); ?> -
+                                <?php echo htmlspecialchars($tournoi['eve_lieu']); ?>
+                            </p>
+                            <a href="/page-evenement?id=<?php echo $tournoi['id_eve']; ?>"
+                                class="btn btn-sm btn-outline-warning w-100">Détails</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
         <!-- Section des tournois -->
         <div class="row mb-4">
             <div class="col-12 text-center">
