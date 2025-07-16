@@ -14,6 +14,8 @@ foreach ($users as $u) {
     }
 }
 
+$search = isset($_GET['search']) ? trim($_GET['search']) : '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     foreach ($_POST['entries'] as $id_gen => $data) {
         $points = isset($data['points']) ? (int)$data['points'] : 0;
@@ -22,5 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$classementGeneral = ClassementGeneral::getAll();
+if ($search !== '') {
+    $classementGeneral = ClassementGeneral::searchByName($search);
+} else {
+    $classementGeneral = ClassementGeneral::getAll();
+}
 include_once __DIR__ . '/../View/view_classement_general.php';

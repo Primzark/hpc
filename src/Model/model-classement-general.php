@@ -19,6 +19,20 @@ class ClassementGeneral
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public static function searchByName($search)
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT cg.id_gen, cg.id_uti, cg.points, cg.bounty, u.uti_nom
+                FROM classement_general cg
+                JOIN utilisateur u ON cg.id_uti = u.id_uti
+                WHERE u.uti_nom LIKE :search
+                ORDER BY u.uti_nom ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':search', '%' . $search . '%');
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function getByUserId($id_uti)
     {
         $pdo = self::getPDO();
