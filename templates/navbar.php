@@ -28,6 +28,12 @@
                     <a class="nav-link text-white text-nowrap" href="/">Accueil</a>
                 </li>
 
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link text-white text-nowrap" href="/vos-tournois">Vos prochains tournois</a>
+                    </li>
+                <?php endif; ?>
+
                 <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
                     <!-- Admin dropdown visible uniquement pour l'admin -->
                     <li class="nav-item dropdown">

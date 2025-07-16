@@ -27,12 +27,15 @@
                         </p>
 
                         <?php if (isset($_SESSION['user_id'])): ?>
-                            <div class="btn btn-warning fw-bold fs-4">
-                                Bienvenue <?php if (isset($utiNom)) {
-                                    echo htmlspecialchars($utiNom);
-                                } else {
-                                    echo '';
-                                } ?>
+                            <div class="d-flex flex-column align-items-center align-items-md-start">
+                                <div class="btn btn-warning fw-bold fs-4 mb-2">
+                                    Bienvenue <?php if (isset($utiNom)) {
+                                        echo htmlspecialchars($utiNom);
+                                    } else {
+                                        echo '';
+                                    } ?>
+                                </div>
+                                <a href="/vos-tournois" class="btn btn-outline-warning fw-semibold">Vos prochains tournois</a>
                             </div>
                         <?php else: ?>
                             <a href="/utilisateur/inscription" class="btn btn-warning fw-bold fs-4">
