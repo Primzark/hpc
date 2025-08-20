@@ -12,7 +12,7 @@
                     <div class="col-12 col-md-6">
                         <div class="row">
                             <div class="col-12">
-                                <img src="/asset/img/bandeau_du_club.png" alt="Bandeau du club"
+                                <img src="/asset/img/bandeau du club final.png" alt="Bandeau du club"
                                     class="img-fluid rounded shadow w-100"
                                     style="max-height: 18.75rem; object-fit: cover;">
                             </div>
