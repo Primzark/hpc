@@ -126,7 +126,7 @@
             <p class="text-center display-6 fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars"
+                    <img src="/asset/img/Winamax.png" alt="Winamax"
                         style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
