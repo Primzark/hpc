@@ -23,12 +23,11 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/Logo-POKERSTARS.png" alt="PokerStars" class="img-fluid partner-logo">
+                    <img src="/asset/img/Winamax.png" alt="Winamax" class="img-fluid partner-logo">
                 </div>
                 <div class="col-md-10">
-                    <p class="fw-bold text-light mb-1">PokerStars</p>
-                    <p class="custom-text mb-1">PokerStars, leader mondial du poker en ligne, est un partenaire clé qui
-                        soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
+                    <p class="fw-bold text-light mb-1">Winamax</p>
+                    <p class="custom-text mb-1">Winamax, leader du poker en ligne en France, est un partenaire clé qui soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
                 </div>
             </div>
         </div>

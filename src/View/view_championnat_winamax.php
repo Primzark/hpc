@@ -12,6 +12,20 @@
                         Rejoignez-nous pour participer aux tournois et affronter les membres du club.
                     </p>
                 </div>
+                <div class="row text-center mt-4">
+                    <div class="col-md-3 mb-3">
+                        <a href="/championnat-winamax/2euro" class="btn btn-primary w-100">Championnat 2€</a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/championnat-winamax/5euro" class="btn btn-primary w-100">Championnat 5€</a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/championnat-winamax/freeroll" class="btn btn-primary w-100">Freeroll</a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="/championnat-winamax/evenements-speciaux" class="btn btn-primary w-100">Évènements spéciaux</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

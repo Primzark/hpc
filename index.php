@@ -29,6 +29,10 @@ $router->add('/ajouter-trombinoscope', 'src/Controller/AjouterTrombinoscopeContr
 $router->add('/supprimer-trombinoscope', 'src/Controller/SupprimerTrombinoscopeController.php');
 $router->add('/partenaires', 'src/Controller/PartenaireController.php');
 $router->add('/championnat-winamax', 'src/Controller/ChampionnatWinamaxController.php');
+$router->add('/championnat-winamax/2euro', 'src/Controller/ChampionnatWinamax2euroController.php');
+$router->add('/championnat-winamax/5euro', 'src/Controller/ChampionnatWinamax5euroController.php');
+$router->add('/championnat-winamax/freeroll', 'src/Controller/ChampionnatWinamaxFreerollController.php');
+$router->add('/championnat-winamax/evenements-speciaux', 'src/Controller/ChampionnatWinamaxEvenementsSpeciauxController.php');
 $router->add('/regles', 'src/Controller/RegleController.php');
 $router->add('/contact', 'src/Controller/ContactController.php');
 $router->add('/propos', 'src/Controller/ProposController.php');
