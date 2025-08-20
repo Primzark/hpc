@@ -138,7 +138,7 @@
                     </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <a href="https://lehavre.pasino.com" target="_blank">
+                    <a href="https://casino-lehavre.partouche.com" target="_blank">
                         <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
                             style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                     </a>
@@ -150,13 +150,13 @@
                     </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <a href="https://www.autoecole-ingouville.fr" target="_blank">
+                    <a href="https://auto-ecole-ingouville.fr" target="_blank">
                         <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville"
                             style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                     </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <a href="https://cavalbrod.fr" target="_blank">
+                    <a href="https://cavalbrod.com" target="_blank">
                         <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod"
                             style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                     </a>

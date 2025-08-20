@@ -29,7 +29,8 @@
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Winamax</p>
-                    <p class="custom-text mb-1">Winamax, leader du poker en ligne en France, est un partenaire clé qui soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
+                    <p class="custom-text mb-1">Winamax, leader du poker en ligne en France, est un partenaire clé qui
+                        soutient nos initiatives numériques et offre des opportunités de jeu en ligne à nos membres.</p>
                 </div>
             </div>
         </div>
@@ -55,8 +56,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <a href="https://lehavre.pasino.com" target="_blank">
-                        <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid partner-logo">
+                    <a href="https://casino-lehavre.partouche.com" target="_blank">
+                        <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
+                            class="img-fluid partner-logo">
                     </a>
                 </div>
                 <div class="col-md-10">
@@ -88,8 +90,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <a href="https://www.autoecole-ingouville.fr" target="_blank">
-                        <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville" class="img-fluid partner-logo">
+                    <a href="https://auto-ecole-ingouville.fr" target="_blank">
+                        <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville"
+                            class="img-fluid partner-logo">
                     </a>
                 </div>
                 <div class="col-md-10">
@@ -104,7 +107,7 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <a href="https://cavalbrod.fr" target="_blank">
+                    <a href="https://cavalbrod.com" target="_blank">
                         <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
                     </a>
                 </div>
