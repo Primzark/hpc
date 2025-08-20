@@ -9,7 +9,7 @@
                 <div class="form-section-bg p-4 rounded text-light">
                     <p class="custom-text mb-0">
                         Le Harfleur Poker Club organise un championnat en ligne sur la plateforme Winamax.
-                        Rejoignez-nous pour participer aux tournois réguliers et affronter les membres du club.
+                        Rejoignez-nous pour participer aux tournois et affronter les membres du club.
                     </p>
                 </div>
             </div>
