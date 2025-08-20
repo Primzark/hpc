@@ -96,6 +96,10 @@
                     <a class="nav-link text-white text-nowrap" href="/partenaires">Partenaires</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white text-nowrap" href="/championnat-winamax">Championnat Winamax</a>
+                </li>
+
                 <!-- Lien direct vers Contact -->
                 <li class="nav-item">
                     <a class="nav-link text-white text-nowrap" href="/contact">Contact</a>

@@ -28,6 +28,7 @@ $router->add('/trombinoscope', 'src/Controller/TrombinoscopeController.php');
 $router->add('/ajouter-trombinoscope', 'src/Controller/AjouterTrombinoscopeController.php');
 $router->add('/supprimer-trombinoscope', 'src/Controller/SupprimerTrombinoscopeController.php');
 $router->add('/partenaires', 'src/Controller/PartenaireController.php');
+$router->add('/championnat-winamax', 'src/Controller/ChampionnatWinamaxController.php');
 $router->add('/regles', 'src/Controller/RegleController.php');
 $router->add('/contact', 'src/Controller/ContactController.php');
 $router->add('/propos', 'src/Controller/ProposController.php');
