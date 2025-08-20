@@ -23,7 +23,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/Winamax.png" alt="Winamax" class="img-fluid partner-logo">
+                    <a href="https://www.winamax.fr" target="_blank">
+                        <img src="/asset/img/Winamax.png" alt="Winamax" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Winamax</p>
@@ -36,7 +38,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" class="img-fluid partner-logo">
+                    <a href="https://www.circus.be/fr/land-based/casino-de-namur" target="_blank">
+                        <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Circus Casino Namur</p>
@@ -51,7 +55,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid partner-logo">
+                    <a href="https://lehavre.pasino.com" target="_blank">
+                        <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Pasino Le Havre</p>
@@ -66,7 +72,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
+                    <a href="https://www.conforama.fr" target="_blank">
+                        <img src="/asset/img/confo.png" alt="Conforama" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Conforama</p>
@@ -80,7 +88,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville" class="img-fluid partner-logo">
+                    <a href="https://www.autoecole-ingouville.fr" target="_blank">
+                        <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d’Ingouville" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Auto-école d’Ingouville</p>
@@ -94,7 +104,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
+                    <a href="https://cavalbrod.fr" target="_blank">
+                        <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">Caval Brod</p>
@@ -108,7 +120,9 @@
         <div class="form-section-bg p-4 rounded mb-4">
             <div class="row align-items-center">
                 <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <img src="/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
+                    <a href="https://www.dfds.com/fr" target="_blank">
+                        <img src="/asset/img/dfds.png" alt="DFDS" class="img-fluid partner-logo">
+                    </a>
                 </div>
                 <div class="col-md-10">
                     <p class="fw-bold text-light mb-1">DFDS</p>

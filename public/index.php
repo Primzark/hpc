@@ -126,32 +126,46 @@
             <p class="text-center display-6 fw-semibold mb-3">Nos partenaires</p>
             <div class="row justify-content-center g-3">
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/Winamax.png" alt="Winamax"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://www.winamax.fr" target="_blank">
+                        <img src="/asset/img/Winamax.png" alt="Winamax"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://www.circus.be/fr/land-based/casino-de-namur" target="_blank">
+                        <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://lehavre.pasino.com" target="_blank">
+                        <img src="/asset/img/logo-pasino-havre.png" alt="Pasino Le Havre"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/confo.png" alt="Conforama"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://www.conforama.fr" target="_blank">
+                        <img src="/asset/img/confo.png" alt="Conforama"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://www.autoecole-ingouville.fr" target="_blank">
+                        <img src="/asset/img/auto-ecole.jpeg" alt="Auto-école d'Ingouville"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://cavalbrod.fr" target="_blank">
+                        <img src="/asset/img/cavalbrod.jpg" alt="Caval Brod"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <img src="/asset/img/dfds.png" alt="DFDS"
-                        style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    <a href="https://www.dfds.com/fr" target="_blank">
+                        <img src="/asset/img/dfds.png" alt="DFDS"
+                            style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
+                    </a>
                 </div>
             </div>
         </div>
