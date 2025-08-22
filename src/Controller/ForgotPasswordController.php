@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else {
                 $host = 'localhost';
             }
-            $resetUrl = "http://{$host}/reset-password?token={$token}";
+            $resetUrl = "https://{$host}/reset-password?token={$token}";
 
             $mail = new PHPMailer(true);
             try {
