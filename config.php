@@ -12,7 +12,7 @@ define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
 // Configuration SMTP pour PHPMailer
 define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
-define('SMTP_USER', 'starlod7696@gmail.com');
+define('SMTP_USER', 'patrick.piednoel@sfr.fr');
 define('SMTP_PASS', 'besc oeum rrol rzsx');
 
 // Chemin de base pour créer les URLs absolues
