@@ -149,8 +149,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else {
             $host = 'localhost';
         }
-        $approveUrl = "http://{$host}/approve-registration?id={$user['id_uti']}&token={$token}";
-        $rejectUrl = "http://{$host}/reject-registration?id={$user['id_uti']}&token={$token}";
+        $approveUrl = "https://{$host}/approve-registration?id={$user['id_uti']}&token={$token}";
+        $rejectUrl = "https://{$host}/reject-registration?id={$user['id_uti']}&token={$token}";
 
         $message = "Nouvelle inscription:\n" .
             "Nom: {$user['uti_nom']}\n" .
