@@ -78,7 +78,7 @@
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
-                            <div class="form-text login-hint mb-1">Minimum 12 caractères. Lettres, chiffres, . @ -</div>
+                            <div class="form-text login-hint mb-1">Minimum 4 caractères. Tous les caractères sont autorisés.</div>
                             <input type="password" class="form-control custom-bg <?php if (isset($errors['password'])) {
                                 echo 'is-invalid';
                             } else {

@@ -12,7 +12,7 @@ use PHPMailer\PHPMailer\Exception;
 // Expressions régulières pour valider nom, email et mot de passe
 $regex_nom = "/^[a-zA-Z0-9._%+-]{4,}$/";
 $regex_email = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
-$regex_password = "/^[a-zA-Z0-9.@-]{4,}$/";
+$regex_password = "/^.{4,}$/"; // Allow any characters with minimum length 4
 
 $nom = '';
 $email = '';
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($_POST['password'])) {
         $errors['password'] = 'Champ obligatoire.';
     } elseif (!preg_match($regex_password, $_POST['password'])) {
-        $errors['password'] = 'Mot de passe invalide.';
+        $errors['password'] = 'Le mot de passe doit contenir au moins 4 caractères.';
     }
 
     // Confirmation mot de passe
