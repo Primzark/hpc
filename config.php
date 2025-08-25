@@ -10,10 +10,10 @@ define('RECAPTCHA_SITE_KEY', '6LfHSWsrAAAAAM2CWcvUV2W4psnR2B7Ct8cP9rhE');
 define('RECAPTCHA_SECRET_KEY', '6LfHSWsrAAAAAFrZ9oXAepgD4FnTnfitEIBo-vzN');
 
 // Configuration SMTP pour PHPMailer
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587);
+define('SMTP_HOST', 'smtp.sfr.fr');
+define('SMTP_PORT', 465);
 define('SMTP_USER', 'patrick.piednoel@sfr.fr');
-define('SMTP_PASS', 'besc oeum rrol rzsx');
+define('SMTP_PASS', 'Partylite76700!');
 
 // Chemin de base pour créer les URLs absolues
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
