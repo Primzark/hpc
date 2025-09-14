@@ -15,6 +15,13 @@ define('SMTP_PORT', 465);
 define('SMTP_USER', 'patrick.piednoel@sfr.fr');
 define('SMTP_PASS', 'Partylite76700!');
 
+// Liste des emails administrateurs recevant les validations d'inscriptions
+// Kader et Patrick
+define('ADMIN_EMAILS', [
+    'sourisopc@free.fr',
+    'patrick.piednoel@sfr.fr',
+]);
+
 // Chemin de base pour créer les URLs absolues
 $base = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
 define('BASE_PATH', $base == '/' ? '' : $base);

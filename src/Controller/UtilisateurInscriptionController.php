@@ -168,14 +168,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $mail->Username = SMTP_USER;
             $mail->Password = SMTP_PASS;
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->CharSet = 'UTF-8';
+            $mail->isHTML(false);
 
-            $mail->setFrom('noreply@' . $host, 'Inscription');
-            $mail->addAddress('patrick.piednoel@sfr.fr');
+            // Utiliser l'expéditeur authentifié pour éviter DMARC/SPF rejections
+            $mail->setFrom(SMTP_USER, 'HPC - Inscriptions');
+            // Facultatif: définir une adresse de réponse "noreply" sur le domaine du site
+            $mail->addReplyTo('noreply@' . $host, 'Ne pas répondre');
+
+            // Envoyer la notification à tous les administrateurs
+            if (defined('ADMIN_EMAILS') && is_array(ADMIN_EMAILS)) {
+                foreach (ADMIN_EMAILS as $adminEmail) {
+                    if (!empty($adminEmail)) {
+                        $mail->addAddress($adminEmail);
+                    }
+                }
+            } else {
+                // fallback (ancien comportement) si la constante n'est pas définie
+                $mail->addAddress('patrick.piednoel@sfr.fr');
+            }
+
             $mail->Subject = 'Nouvelle inscription';
             $mail->Body = $message;
             $mail->send();
         } catch (Exception $e) {
-            // Impossible d'envoyer l'email = échec silencieux
+            // Journaliser l'erreur d'envoi pour diagnostic sans interrompre le flux utilisateur
+            if (function_exists('error_log')) {
+                error_log('[MAIL][Inscription] ' . $e->getMessage());
+            }
         }
 
         header('Location: /inscription/confirm');

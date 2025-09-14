@@ -38,14 +38,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $mail->Username = SMTP_USER;
                 $mail->Password = SMTP_PASS;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->CharSet = 'UTF-8';
+                $mail->isHTML(false);
 
-                $mail->setFrom('noreply@' . $host, 'HPC');
+                // Utiliser l'expéditeur authentifié pour éviter les rejets
+                $mail->setFrom(SMTP_USER, 'HPC');
+                $mail->addReplyTo('noreply@' . $host, 'Ne pas répondre');
                 $mail->addAddress($email);
                 $mail->Subject = 'R\xC3\xA9initialisation de votre mot de passe';
                 $mail->Body = "Pour r\xC3\xA9initialiser votre mot de passe, cliquez sur ce lien : {$resetUrl}";
                 $mail->send();
             } catch (Exception $e) {
-                // échec ignoré
+                if (function_exists('error_log')) {
+                    error_log('[MAIL][ResetPassword] ' . $e->getMessage());
+                }
             }
         }
         $sent = true;
