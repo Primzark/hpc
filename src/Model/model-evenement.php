@@ -42,6 +42,40 @@ class Evenement
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Récupère tous les évènements à venir à partir d'une date (par défaut aujourd'hui).
+     */
+    public static function getUpcoming($fromDate = null)
+    {
+        $pdo = self::getPDO();
+        if ($fromDate === null) {
+            $fromDate = date('Y-m-d');
+        }
+        $sql = "SELECT id_eve, eve_titre, eve_lieu, eve_date, eve_heure, eve_description, eve_image, id_type_eve
+                FROM evenement WHERE eve_date >= :fromDate ORDER BY eve_date ASC, eve_heure ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':fromDate', $fromDate);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Récupère les évènements sur une plage de dates incluse.
+     */
+    public static function getByDateRange($startDate, $endDate)
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT id_eve, eve_titre, eve_lieu, eve_date, eve_heure, eve_description, eve_image, id_type_eve
+                FROM evenement
+                WHERE eve_date >= :startDate AND eve_date <= :endDate
+                ORDER BY eve_date ASC, eve_heure ASC";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':startDate', $startDate);
+        $stmt->bindValue(':endDate', $endDate);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function getById($id_eve)
     {
         $pdo = self::getPDO();

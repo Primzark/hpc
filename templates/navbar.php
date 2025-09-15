@@ -28,6 +28,10 @@
                     <a class="nav-link text-white text-nowrap" href="/">Accueil</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-white text-nowrap" href="/agenda">Agenda</a>
+                </li>
+
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <li class="nav-item">
                         <a class="nav-link text-white text-nowrap" href="/vos-tournois">Vos prochains tournois</a>

@@ -77,6 +77,24 @@ class Utilisateur
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Retourne la liste des emails de tous les membres approuvés (admins inclus) ayant un email.
+     */
+    public static function getAllApprovedEmails()
+    {
+        $pdo = self::getPDO();
+        $sql = "SELECT uti_email FROM utilisateur WHERE uti_approved = 1 AND uti_email IS NOT NULL AND uti_email <> ''";
+        $stmt = $pdo->query($sql);
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $emails = [];
+        foreach ($rows as $row) {
+            if (filter_var($row['uti_email'], FILTER_VALIDATE_EMAIL)) {
+                $emails[] = $row['uti_email'];
+            }
+        }
+        return $emails;
+    }
+
     public static function setApproved($id_uti, $approved)
     {
         $pdo = self::getPDO();

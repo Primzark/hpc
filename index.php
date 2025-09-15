@@ -45,4 +45,9 @@ $router->add('/reset-password', 'src/Controller/ResetPasswordController.php');
 $router->add('/participants-evenement', 'src/Controller/ParticipantsEvenementController.php');
 $router->add('/vos-tournois', 'src/Controller/VosTournoisController.php');
 
+// Agenda + ICS + envoi aux membres
+$router->add('/agenda', 'src/Controller/AgendaController.php');
+$router->add('/agenda.ics', 'src/Controller/AgendaIcsController.php');
+$router->add('/agenda/envoyer', 'src/Controller/AgendaSendController.php');
+
 $router->dispatch();
