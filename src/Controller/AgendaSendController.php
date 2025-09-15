@@ -17,10 +17,28 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Récupère les membres approuvés
 $emails = Utilisateur::getAllApprovedEmails();
 
-// Génère l'ICS pour les 12 prochains mois
-$from = date('Y-m-d');
-$to = date('Y-m-d', strtotime('+12 months'));
-$events = Evenement::getByDateRange($from, $to);
+// Récupère le périmètre à envoyer
+$start = isset($_POST['start_date']) ? $_POST['start_date'] : '';
+$end = isset($_POST['end_date']) ? $_POST['end_date'] : '';
+$selectedIds = isset($_POST['selected_ids']) && is_array($_POST['selected_ids']) ? $_POST['selected_ids'] : [];
+
+// Validation simple des dates (YYYY-MM-DD)
+$isValidDate = function ($d) {
+    if (!$d) return false;
+    $dt = DateTime::createFromFormat('Y-m-d', $d);
+    return $dt && $dt->format('Y-m-d') === $d;
+};
+
+if (!empty($selectedIds)) {
+    $events = Evenement::getByIds($selectedIds);
+} elseif ($isValidDate($start) && $isValidDate($end)) {
+    $events = Evenement::getByDateRange($start, $end);
+} else {
+    // défaut: 12 prochains mois
+    $from = date('Y-m-d');
+    $to = date('Y-m-d', strtotime('+12 months'));
+    $events = Evenement::getByDateRange($from, $to);
+}
 
 function ics_escape_text($text)
 {
@@ -78,7 +96,7 @@ $lines[] = "Voici l'agenda des évènements du Harfleur Poker Club.";
 $lines[] = 'Vous pouvez importer le fichier agenda joint (ICS) dans votre calendrier.';
 $lines[] = 'Ou vous abonner au flux: https://' . $host . '/agenda.ics';
 $lines[] = '';
-$lines[] = 'Prochains évènements:';
+$lines[] = 'Evènements inclus:';
 foreach ($events as $e) {
     $dateStr = date('d/m/Y', strtotime($e['eve_date'])) . ' ' . date('H:i', strtotime($e['eve_heure'])) . ' - ';
     $lines[] = '• ' . $dateStr . $e['eve_titre'] . ' (' . $e['eve_lieu'] . ')';

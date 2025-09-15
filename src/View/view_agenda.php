@@ -33,14 +33,30 @@
             </div>
             <div class="d-flex gap-2">
               <a href="/agenda.ics" class="btn btn-outline-warning btn-sm">Télécharger l'agenda (.ics)</a>
-              <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
-                <form method="post" action="/agenda/envoyer" onsubmit="return confirm('Envoyer l\'agenda à tous les membres ?');">
-                  <button type="submit" class="btn btn-warning btn-sm">Envoyer à tous les membres</button>
-                </form>
-              <?php endif; ?>
             </div>
           </div>
         </div>
+
+        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
+          <form method="post" action="/agenda/envoyer" id="send-agenda-form" onsubmit="return confirm('Envoyer l\'agenda aux membres avec la sélection en cours ?');">
+            <div class="form-section-bg p-3 rounded text-light mb-3">
+              <div class="row g-2 align-items-end">
+                <div class="col-sm-4">
+                  <label class="form-label small">Début</label>
+                  <input type="date" class="form-control custom-add" name="start_date" value="<?php echo htmlspecialchars($firstDay); ?>">
+                </div>
+                <div class="col-sm-4">
+                  <label class="form-label small">Fin</label>
+                  <input type="date" class="form-control custom-add" name="end_date" value="<?php echo htmlspecialchars($lastDay); ?>">
+                </div>
+                <div class="col-sm-4 text-sm-end mt-2 mt-sm-0 d-flex gap-2 justify-content-sm-end">
+                  <button type="button" class="btn btn-outline-warning btn-sm" id="check-all">Tout cocher</button>
+                  <button type="button" class="btn btn-outline-warning btn-sm" id="uncheck-all">Tout décocher</button>
+                  <button type="submit" class="btn btn-warning btn-sm">Envoyer la sélection</button>
+                </div>
+              </div>
+            </div>
+        <?php endif; ?>
 
         <?php
           // Prépare calendrier
@@ -78,10 +94,19 @@
                       $time = date('H:i', strtotime($ev['eve_heure']));
                       $title = htmlspecialchars($ev['eve_titre']);
                       $url = '/page-evenement?id=' . $ev['id_eve'];
-                      echo '<div class="mb-2">'
-                        . '<a class="text-decoration-none text-warning" href="' . $url . '"><strong>' . $time . '</strong> ' . $title . '</a>'
-                        . '<div class="small custom-text">' . htmlspecialchars($ev['eve_lieu']) . '</div>'
-                        . '</div>';
+                      echo '<div class="mb-2">';
+                      if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1) {
+                        echo '<div class="form-check mb-1">'
+                          . '<input class="form-check-input" type="checkbox" name="selected_ids[]" value="' . (int)$ev['id_eve'] . '" id="ev-' . (int)$ev['id_eve'] . '" checked>'
+                          . '<label class="form-check-label" for="ev-' . (int)$ev['id_eve'] . '">'
+                          . '<a class="text-decoration-none text-warning" href="' . $url . '"><strong>' . $time . '</strong> ' . $title . '</a>'
+                          . '</label>'
+                          . '</div>';
+                      } else {
+                        echo '<a class="text-decoration-none text-warning" href="' . $url . '"><strong>' . $time . '</strong> ' . $title . '</a>';
+                      }
+                      echo '<div class="small custom-text">' . htmlspecialchars($ev['eve_lieu']) . '</div>';
+                      echo '</div>';
                     }
                   } else {
                     echo '<div class="small custom-text">Aucun évènement</div>';
@@ -106,6 +131,23 @@
             </tbody>
           </table>
         </div>
+
+        <?php if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1): ?>
+          </form>
+          <script>
+            (function(){
+              const form = document.getElementById('send-agenda-form');
+              const checkAllBtn = document.getElementById('check-all');
+              const uncheckAllBtn = document.getElementById('uncheck-all');
+              function toggleCheckboxes(val) {
+                if (!form) return;
+                form.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = val);
+              }
+              if (checkAllBtn) checkAllBtn.addEventListener('click', () => toggleCheckboxes(true));
+              if (uncheckAllBtn) uncheckAllBtn.addEventListener('click', () => toggleCheckboxes(false));
+            })();
+          </script>
+        <?php endif; ?>
 
         <div class="mt-4">
           <p class="text-light fw-semibold mb-2">Astuces</p>

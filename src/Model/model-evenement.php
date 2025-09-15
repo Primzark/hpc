@@ -76,6 +76,37 @@ class Evenement
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Récupère les évènements correspondant à une liste d'identifiants.
+     */
+    public static function getByIds($ids)
+    {
+        $pdo = self::getPDO();
+        if (!is_array($ids) || empty($ids)) {
+            return [];
+        }
+        $clean = [];
+        foreach ($ids as $id) {
+            $id = (int) $id;
+            if ($id > 0) {
+                $clean[] = $id;
+            }
+        }
+        if (empty($clean)) {
+            return [];
+        }
+        $placeholders = implode(',', array_fill(0, count($clean), '?'));
+        $sql = "SELECT id_eve, eve_titre, eve_lieu, eve_date, eve_heure, eve_description, eve_image, id_type_eve
+                FROM evenement WHERE id_eve IN ($placeholders)
+                ORDER BY eve_date ASC, eve_heure ASC";
+        $stmt = $pdo->prepare($sql);
+        foreach ($clean as $i => $val) {
+            $stmt->bindValue($i + 1, $val, PDO::PARAM_INT);
+        }
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public static function getById($id_eve)
     {
         $pdo = self::getPDO();
