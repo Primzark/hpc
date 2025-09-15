@@ -41,6 +41,17 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Pré-remplit la date si passée en paramètre GET (depuis l'agenda)
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    if (isset($_GET['date'])) {
+        $d = $_GET['date'];
+        $dt = DateTime::createFromFormat('Y-m-d', $d);
+        if ($dt && $dt->format('Y-m-d') === $d) {
+            $date = $d;
+        }
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_POST['titre'])) {

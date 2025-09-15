@@ -86,9 +86,12 @@
                 while ($day <= $daysInMonth) {
                   $dateStr = sprintf('%04d-%02d-%02d', $year, $month, $day);
                   echo '<td class="form-section-bg" style="vertical-align: top;">';
-                  echo '<div class="d-flex justify-content-between align-items-center mb-2">'
-                    . '<span class="badge bg-warning text-dark">' . $day . '</span>'
-                    . '</div>';
+                  $dayBadge = '<span class="badge bg-warning text-dark">' . $day . '</span>';
+                  if (isset($_SESSION['user_id']) && isset($_SESSION['user_admin']) && $_SESSION['user_admin'] == 1) {
+                    $addUrl = '/ajouter-evenement?date=' . $dateStr;
+                    $dayBadge = '<a class="text-decoration-none" href="' . $addUrl . '" title="Ajouter un évènement">' . $dayBadge . '</a>';
+                  }
+                  echo '<div class="d-flex justify-content-between align-items-center mb-2">' . $dayBadge . '</div>';
                   if (isset($eventsByDate[$dateStr])) {
                     foreach ($eventsByDate[$dateStr] as $ev) {
                       $time = date('H:i', strtotime($ev['eve_heure']));
