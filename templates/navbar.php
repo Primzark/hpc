@@ -19,7 +19,7 @@
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a class="nav-link text-warning fw-semibold" href="/connexion">Se
+                        <a class="nav-link text-warning fw-semibold text-nowrap" href="/connexion">Se
                             connecter</a>
                     </li>
                 <?php endif; ?>
