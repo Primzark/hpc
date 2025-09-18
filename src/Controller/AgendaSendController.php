@@ -21,6 +21,7 @@ $emails = Utilisateur::getAllApprovedEmails();
 $start = isset($_POST['start_date']) ? $_POST['start_date'] : '';
 $end = isset($_POST['end_date']) ? $_POST['end_date'] : '';
 $selectedIds = isset($_POST['selected_ids']) && is_array($_POST['selected_ids']) ? $_POST['selected_ids'] : [];
+$useSelectionOnly = isset($_POST['use_selection']) && $_POST['use_selection'] === '1';
 
 // Validation simple des dates (YYYY-MM-DD)
 $isValidDate = function ($d) {
@@ -29,10 +30,33 @@ $isValidDate = function ($d) {
     return $dt && $dt->format('Y-m-d') === $d;
 };
 
-if (!empty($selectedIds)) {
-    $events = Evenement::getByIds($selectedIds);
-} elseif ($isValidDate($start) && $isValidDate($end)) {
+if ($isValidDate($start) && $isValidDate($end)) {
+    $startDate = DateTime::createFromFormat('Y-m-d', $start);
+    $endDate = DateTime::createFromFormat('Y-m-d', $end);
+    if ($startDate && $endDate && $startDate > $endDate) {
+        [$startDate, $endDate] = [$endDate, $startDate];
+    }
+    $start = $startDate ? $startDate->format('Y-m-d') : $start;
+    $end = $endDate ? $endDate->format('Y-m-d') : $end;
+
     $events = Evenement::getByDateRange($start, $end);
+
+    if ($useSelectionOnly && !empty($selectedIds)) {
+        $selectedIds = array_map('intval', $selectedIds);
+        $selectedIds = array_filter($selectedIds, function ($id) {
+            return $id > 0;
+        });
+        if (!empty($selectedIds)) {
+            $events = array_values(array_filter(
+                $events,
+                function ($event) use ($selectedIds) {
+                    return in_array((int) $event['id_eve'], $selectedIds, true);
+                }
+            ));
+        }
+    }
+} elseif ($useSelectionOnly && !empty($selectedIds)) {
+    $events = Evenement::getByIds($selectedIds);
 } else {
     // défaut: 12 prochains mois
     $from = date('Y-m-d');

@@ -49,10 +49,16 @@
                   <label class="form-label small">Fin</label>
                   <input type="date" class="form-control custom-add" name="end_date" value="<?php echo htmlspecialchars($lastDay); ?>">
                 </div>
-                <div class="col-sm-4 text-sm-end mt-2 mt-sm-0 d-flex gap-2 justify-content-sm-end">
-                  <button type="button" class="btn btn-outline-warning btn-sm" id="check-all">Tout cocher</button>
-                  <button type="button" class="btn btn-outline-warning btn-sm" id="uncheck-all">Tout décocher</button>
-                  <button type="submit" class="btn btn-warning btn-sm">Envoyer la sélection</button>
+                <div class="col-sm-4 text-sm-end mt-2 mt-sm-0 d-flex flex-column gap-2 justify-content-sm-end align-items-sm-end align-items-start">
+                  <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-outline-warning btn-sm" id="check-all">Tout cocher</button>
+                    <button type="button" class="btn btn-outline-warning btn-sm" id="uncheck-all">Tout décocher</button>
+                  </div>
+                  <div class="form-check text-start">
+                    <input class="form-check-input" type="checkbox" name="use_selection" value="1" id="use-selection">
+                    <label class="form-check-label small" for="use-selection">N'envoyer que les évènements cochés</label>
+                  </div>
+                  <button type="submit" class="btn btn-warning btn-sm">Envoyer</button>
                 </div>
               </div>
             </div>
