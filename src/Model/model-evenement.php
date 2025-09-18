@@ -171,4 +171,30 @@ class Evenement
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    /**
+     * Récupère les prochains événements pour le type spécifié, triés par date/heure croissante.
+     */
+    public static function getUpcomingByType($type, $limit, $fromDate = null)
+    {
+        $pdo = self::getPDO();
+
+        if ($fromDate === null) {
+            $fromDate = date('Y-m-d');
+        }
+
+        $sql = "SELECT id_eve, eve_titre, eve_date, eve_heure, eve_lieu, eve_description, eve_image
+                FROM evenement
+                WHERE id_type_eve = :type
+                AND eve_date >= :fromDate
+                ORDER BY eve_date ASC, eve_heure ASC
+                LIMIT :lim";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':type', $type, PDO::PARAM_INT);
+        $stmt->bindValue(':fromDate', $fromDate);
+        $stmt->bindValue(':lim', (int) $limit, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

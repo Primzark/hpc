@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../config.php';
 require_once __DIR__ . '/../Model/model-evenement.php';
 require_once __DIR__ . '/../Model/model-utilisateur.php';
 
-$tournois = Evenement::getLatestByType(2, 3);
+$tournois = Evenement::getUpcomingByType(2, 11);
 $actus = Evenement::getLatestByType(1, 3);
 
 $utiNom = '';

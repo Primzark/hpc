@@ -5,7 +5,7 @@ require_once __DIR__ . '/../Model/model-evenement.php';
 require_once __DIR__ . '/admin_required.php';
 
 $errors = [];
-$regex = "/^[^#%^&*\\][;}{=+\\|><`~]*$/";
+$forbiddenCharsPattern = "/[#%^&*\\\\;}{=+\\|><`~]/";
 
 $titre = '';
 $lieu = '';
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($_POST['lieu'])) {
         $errors['lieu'] = "Veuillez renseigner le lieu.";
-    } elseif (!preg_match($regex, $_POST['lieu'])) {
+    } elseif (preg_match($forbiddenCharsPattern, $_POST['lieu'])) {
         $errors['lieu'] = "Caractères non autorisés dans le lieu.";
     }
 
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (empty($_POST['details'])) {
         $errors['details'] = "Veuillez entrer une description.";
-    } elseif (!preg_match($regex, $_POST['details'])) {
+    } elseif (preg_match($forbiddenCharsPattern, $_POST['details'])) {
         $errors['details'] = "Caractères non autorisés dans la description.";
     }
 
