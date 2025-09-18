@@ -49,5 +49,7 @@ $router->add('/vos-tournois', 'src/Controller/VosTournoisController.php');
 $router->add('/agenda', 'src/Controller/AgendaController.php');
 $router->add('/agenda.ics', 'src/Controller/AgendaIcsController.php');
 $router->add('/agenda/envoyer', 'src/Controller/AgendaSendController.php');
+$router->add('/agenda/events-range', 'src/Controller/AgendaEventsRangeController.php');
+$router->add('/agenda/tournois', 'src/Controller/AgendaTournoisController.php');
 
 $router->dispatch();
