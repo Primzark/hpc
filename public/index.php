@@ -132,7 +132,7 @@
                     </a>
                 </div>
                 <div class="col-4 col-sm-3 col-md-2">
-                    <a href="https://www.circus.be/fr/land-based/casino-de-namur" target="_blank">
+                    <a href="https://www.circus-poker.com/fr/" target="_blank">
                         <img src="/asset/img/namur_casino.png" alt="Circus Casino Namur"
                             style="width: 5.625rem; height: 5.625rem; border-radius: 20%; object-fit: cover;">
                     </a>
