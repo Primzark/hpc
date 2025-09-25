@@ -18,8 +18,8 @@ include_once(__DIR__ . '/../../templates/navbar.php');
         <div class="form-section-bg p-4 rounded">
             <!-- Ligne d'en-tête -->
             <div class="row text-light fw-bold border-bottom py-2">
-                <div class="col-4 col-md-1">Rang</div>
-                <div class="col-4 col-md-7">Joueur</div>
+                <div class="col-2 col-md-1">Rang</div>
+                <div class="col-6 col-md-8">Joueur</div>
                 <div class="col-4 col-md-3">Points</div>
                 <?php // Action column removed ?>
             </div>
@@ -27,8 +27,8 @@ include_once(__DIR__ . '/../../templates/navbar.php');
             <!-- Lignes de données -->
         <?php foreach ($classement as $entry): ?>
                 <div class="row border-bottom py-2 custom-text align-items-center">
-                    <div class="col-4 col-md-1"><?php echo htmlspecialchars($entry['cla_rang']); ?></div>
-                    <div class="col-4 col-md-7"><?php echo htmlspecialchars($entry['cla_nomjoueur']); ?></div>
+                    <div class="col-2 col-md-1"><?php echo htmlspecialchars($entry['cla_rang']); ?></div>
+                    <div class="col-6 col-md-8"><?php echo htmlspecialchars($entry['cla_nomjoueur']); ?></div>
                     <div class="col-4 col-md-3"><?php echo htmlspecialchars($entry['cla_points']); ?></div>
                     <?php // Delete button removed ?>
                 </div>
