@@ -75,6 +75,14 @@
                             <?php endif; ?>
                         </div>
 
+                        <!-- reCAPTCHA -->
+                        <div class="mb-3 mt-4">
+                            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
+                            <?php if (isset($errors['captcha'])): ?>
+                                <div class="invalid-feedback d-block"><?php echo $errors['captcha']; ?></div>
+                            <?php endif; ?>
+                        </div>
+
                         <!-- Mot de passe -->
                         <div class="mb-3">
                             <label for="password" class="form-label fw-semibold custom-text">Mot de passe</label>
@@ -130,14 +138,6 @@
                         <p class="text-center login-hint small">
                             Déjà un compte ? <a href="/connexion">Connectez-vous ici</a>
                         </p>
-
-                        <!-- reCAPTCHA -->
-                        <div class="mb-3 mt-4">
-                            <div class="g-recaptcha" data-sitekey="<?php echo RECAPTCHA_SITE_KEY; ?>"></div>
-                            <?php if (isset($errors['captcha'])): ?>
-                                <div class="invalid-feedback d-block"><?php echo $errors['captcha']; ?></div>
-                            <?php endif; ?>
-                        </div>
 
                     </form>
                 </div>
