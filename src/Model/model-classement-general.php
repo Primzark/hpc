@@ -22,11 +22,10 @@ class ClassementGeneral
     public static function getAllOrderedByTotalPoints()
     {
         $pdo = self::getPDO();
-        $sql = "SELECT cg.id_gen, cg.id_uti, cg.points, cg.bounty,
-                       (cg.points + cg.bounty) AS total_points, u.uti_nom
+        $sql = "SELECT cg.id_gen, cg.id_uti, cg.points, cg.bounty, u.uti_nom
                 FROM classement_general cg
                 JOIN utilisateur u ON cg.id_uti = u.id_uti
-                ORDER BY total_points DESC, u.uti_nom ASC";
+                ORDER BY cg.points DESC, u.uti_nom ASC";
         $stmt = $pdo->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
