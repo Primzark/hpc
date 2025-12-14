@@ -146,11 +146,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (isset($_SERVER['HTTP_HOST'])) {
             $host = $_SERVER['HTTP_HOST'];
+        } elseif (isset($_SERVER['SERVER_NAME'])) {
+            $host = $_SERVER['SERVER_NAME'];
         } else {
             $host = 'localhost';
         }
         $approveUrl = "https://{$host}/approve-registration?id={$user['id_uti']}&token={$token}";
         $rejectUrl = "https://{$host}/reject-registration?id={$user['id_uti']}&token={$token}";
+
+        $emailHost = preg_replace('/:\d+$/', '', $host);
+        $emailHost = preg_replace('/[^A-Za-z0-9.-]/', '', $emailHost);
+        if (empty($emailHost)) {
+            $emailHost = 'harfleurpokerclub76.fr';
+        }
+        $replyToAddress = 'noreply@' . $emailHost;
+        if (!filter_var($replyToAddress, FILTER_VALIDATE_EMAIL)) {
+            $replyToAddress = 'noreply@harfleurpokerclub76.fr';
+        }
+
+        $adminRecipients = [];
+        if (defined('ADMIN_EMAILS') && is_array(ADMIN_EMAILS)) {
+            foreach (ADMIN_EMAILS as $adminEmail) {
+                if (filter_var($adminEmail, FILTER_VALIDATE_EMAIL)) {
+                    $adminRecipients[] = $adminEmail;
+                }
+            }
+        }
+        if (empty($adminRecipients)) {
+            $adminRecipients[] = 'patrick.piednoel@sfr.fr';
+        }
 
         $message = "Nouvelle inscription:\n" .
             "Nom: {$user['uti_nom']}\n" .
@@ -173,28 +197,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Utiliser l'expéditeur authentifié pour éviter DMARC/SPF rejections
             $mail->setFrom(SMTP_USER, 'HPC - Inscriptions');
-            // Facultatif: définir une adresse de réponse "noreply" sur le domaine du site
-            $mail->addReplyTo('noreply@' . $host, 'Ne pas répondre');
-
-            // Envoyer la notification à tous les administrateurs
-            if (defined('ADMIN_EMAILS') && is_array(ADMIN_EMAILS)) {
-                foreach (ADMIN_EMAILS as $adminEmail) {
-                    if (!empty($adminEmail)) {
-                        $mail->addAddress($adminEmail);
-                    }
-                }
-            } else {
-                // fallback (ancien comportement) si la constante n'est pas définie
-                $mail->addAddress('patrick.piednoel@sfr.fr');
+            if (!empty($replyToAddress)) {
+                $mail->addReplyTo($replyToAddress, 'Ne pas répondre');
             }
-
+            foreach ($adminRecipients as $adminEmail) {
+                $mail->addAddress($adminEmail);
+            }
             $mail->Subject = 'Nouvelle inscription';
             $mail->Body = $message;
             $mail->send();
         } catch (Exception $e) {
             // Journaliser l'erreur d'envoi pour diagnostic sans interrompre le flux utilisateur
             if (function_exists('error_log')) {
-                error_log('[MAIL][Inscription] ' . $e->getMessage());
+                error_log('[MAIL][Inscription][SMTP] ' . $e->getMessage());
+            }
+
+            // Fallback sur la fonction mail() du serveur si SMTP échoue (authentification, réseau, etc.)
+            try {
+                $fallbackMail = new PHPMailer(true);
+                $fallbackMail->isMail();
+                $fallbackMail->CharSet = 'UTF-8';
+                $fallbackMail->isHTML(false);
+
+                $fallbackFrom = $replyToAddress ?: $adminRecipients[0];
+                if (!filter_var($fallbackFrom, FILTER_VALIDATE_EMAIL)) {
+                    $fallbackFrom = $adminRecipients[0];
+                }
+
+                $fallbackMail->setFrom($fallbackFrom, 'HPC - Inscriptions');
+                if (!empty($replyToAddress) && filter_var($replyToAddress, FILTER_VALIDATE_EMAIL)) {
+                    $fallbackMail->addReplyTo($replyToAddress, 'Ne pas répondre');
+                }
+
+                foreach ($adminRecipients as $adminEmail) {
+                    $fallbackMail->addAddress($adminEmail);
+                }
+
+                $fallbackMail->Subject = 'Nouvelle inscription';
+                $fallbackMail->Body = $message;
+                $fallbackMail->send();
+            } catch (Exception $fallbackException) {
+                if (function_exists('error_log')) {
+                    error_log('[MAIL][Inscription][Fallback] ' . $fallbackException->getMessage());
+                }
             }
         }
 
