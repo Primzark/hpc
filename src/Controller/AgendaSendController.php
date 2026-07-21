@@ -129,6 +129,26 @@ $lines[] = '';
 $lines[] = 'A bientôt';
 $message = implode("\n", $lines);
 
+/**
+ * Configure le contenu commun aux transports SMTP et mail().
+ */
+function configureAgendaMessage(PHPMailer $mail, array $emails, string $message, string $ics, string $fromAddress): void
+{
+    $mail->CharSet = 'UTF-8';
+    $mail->isHTML(false);
+    $mail->setFrom($fromAddress, 'HPC - Agenda');
+
+    // Adresse To technique : les adresses des membres restent masquées.
+    $mail->addAddress(SMTP_USER);
+    foreach (array_unique($emails) as $addr) {
+        $mail->addBCC($addr);
+    }
+
+    $mail->Subject = 'Agenda du Harfleur Poker Club';
+    $mail->Body = $message;
+    $mail->addStringAttachment($ics, 'agenda-hpc.ics', 'base64', 'text/calendar; method=PUBLISH; charset=UTF-8');
+}
+
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
@@ -138,27 +158,41 @@ try {
     $mail->Username = SMTP_USER;
     $mail->Password = SMTP_PASS;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $mail->CharSet = 'UTF-8';
-    $mail->isHTML(false);
-
-    $mail->setFrom(SMTP_USER, 'HPC - Agenda');
-    // adresse To technique, pour éviter d'exposer les destinataires
-    $mail->addAddress(SMTP_USER);
-    foreach ($emails as $addr) {
-        $mail->addBCC($addr);
-    }
-
-    $mail->Subject = 'Agenda du Harfleur Poker Club';
-    $mail->Body = $message;
-    $mail->addStringAttachment($ics, 'agenda-hpc.ics', 'base64', 'text/calendar; method=PUBLISH; charset=UTF-8');
-
+    configureAgendaMessage($mail, $emails, $message, $ics, SMTP_USER);
     $mail->send();
     header('Location: /agenda?sent=1');
     exit;
 } catch (Exception $e) {
     if (function_exists('error_log')) {
-        error_log('[MAIL][Agenda] ' . $e->getMessage());
+        error_log('[MAIL][Agenda][SMTP] ' . $e->getMessage());
     }
+
+    // Le SMTP peut être indisponible ou refuser l'authentification. Dans ce cas,
+    // utilise le transport mail() du serveur, comme le flux d'inscription.
+    try {
+        $fallbackMail = new PHPMailer(true);
+        $fallbackMail->isMail();
+
+        $emailHost = preg_replace('/:\d+$/', '', $host);
+        $emailHost = preg_replace('/[^A-Za-z0-9.-]/', '', $emailHost);
+        if (empty($emailHost)) {
+            $emailHost = 'harfleurpokerclub76.fr';
+        }
+        $fallbackFrom = 'noreply@' . $emailHost;
+        if (!filter_var($fallbackFrom, FILTER_VALIDATE_EMAIL)) {
+            $fallbackFrom = 'noreply@harfleurpokerclub76.fr';
+        }
+
+        configureAgendaMessage($fallbackMail, $emails, $message, $ics, $fallbackFrom);
+        $fallbackMail->send();
+        header('Location: /agenda?sent=1');
+        exit;
+    } catch (Exception $fallbackException) {
+        if (function_exists('error_log')) {
+            error_log('[MAIL][Agenda][Fallback] ' . $fallbackException->getMessage());
+        }
+    }
+
     header('Location: /agenda?sent=0');
     exit;
 }
