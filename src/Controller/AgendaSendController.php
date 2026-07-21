@@ -139,7 +139,7 @@ function configureAgendaMessage(PHPMailer $mail, array $emails, string $message,
     $mail->setFrom($fromAddress, 'HPC - Agenda');
 
     // Adresse To technique : les adresses des membres restent masquées.
-    $mail->addAddress(SMTP_USER);
+    $mail->addAddress(AGENDA_SMTP_USER);
     foreach (array_unique($emails) as $addr) {
         $mail->addBCC($addr);
     }
@@ -152,13 +152,13 @@ function configureAgendaMessage(PHPMailer $mail, array $emails, string $message,
 $mail = new PHPMailer(true);
 try {
     $mail->isSMTP();
-    $mail->Host = SMTP_HOST;
-    $mail->Port = SMTP_PORT;
+    $mail->Host = AGENDA_SMTP_HOST;
+    $mail->Port = AGENDA_SMTP_PORT;
     $mail->SMTPAuth = true;
-    $mail->Username = SMTP_USER;
-    $mail->Password = SMTP_PASS;
+    $mail->Username = AGENDA_SMTP_USER;
+    $mail->Password = AGENDA_SMTP_PASS;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    configureAgendaMessage($mail, $emails, $message, $ics, SMTP_USER);
+    configureAgendaMessage($mail, $emails, $message, $ics, AGENDA_SMTP_USER);
     $mail->send();
     header('Location: /agenda?sent=1');
     exit;

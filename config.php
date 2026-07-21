@@ -15,6 +15,24 @@ define('SMTP_PORT', 465);
 define('SMTP_USER', 'patrick.piednoel@sfr.fr');
 define('SMTP_PASS', 'Partylite76700!');
 
+// Configuration SMTP dédiée à l'envoi des agendas. En production, les
+// identifiants sont chargés depuis config.local.php, qui n'est jamais versionné.
+$agendaSmtpConfig = [];
+$agendaSmtpConfigPath = __DIR__ . '/config.local.php';
+if (is_readable($agendaSmtpConfigPath)) {
+    $loadedAgendaSmtpConfig = require $agendaSmtpConfigPath;
+    if (is_array($loadedAgendaSmtpConfig)) {
+        $agendaSmtpConfig = $loadedAgendaSmtpConfig;
+    }
+}
+
+define('AGENDA_SMTP_HOST', $agendaSmtpConfig['AGENDA_SMTP_HOST'] ?? SMTP_HOST);
+define('AGENDA_SMTP_PORT', (int) ($agendaSmtpConfig['AGENDA_SMTP_PORT'] ?? SMTP_PORT));
+define('AGENDA_SMTP_USER', $agendaSmtpConfig['AGENDA_SMTP_USER'] ?? SMTP_USER);
+define('AGENDA_SMTP_PASS', $agendaSmtpConfig['AGENDA_SMTP_PASS'] ?? SMTP_PASS);
+
+unset($agendaSmtpConfig, $agendaSmtpConfigPath, $loadedAgendaSmtpConfig);
+
 // Liste des emails administrateurs recevant les validations d'inscriptions
 // Kader et Patrick
 define('ADMIN_EMAILS', [
