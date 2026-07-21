@@ -21,3 +21,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_REMOTE_DIR }}  # Dossier ou les fichier vont etres envoyées.
           local-dir: ./ 
+          exclude: |
+            config.local.php

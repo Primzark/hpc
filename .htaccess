@@ -1,9 +1,11 @@
 RewriteEngine On
 RewriteBase /
 
+# Le fichier de configuration local contient des identifiants de production.
+RewriteRule ^config\.local\.php$ - [F,L]
+
 # Si la ressource demandée n'existe pas en tant que fichier ou répertoire,
 # rediriger toutes les requêtes vers index.php afin que le routeur PHP puisse les gérer
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L]
-

@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'AGENDA_SMTP_HOST' => 'mail-a.easy-hebergement.net',
+    'AGENDA_SMTP_PORT' => 465,
+    'AGENDA_SMTP_USER' => 'noreply@harfleurpokerclub76.fr',
+    'AGENDA_SMTP_PASS' => 'replace-with-the-mailbox-password',
+];
